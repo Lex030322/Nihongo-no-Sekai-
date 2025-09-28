@@ -1,79 +1,47 @@
-@media (max-width: 860px) {
-    header {
-        flex-direction: row;
-        padding: 0.8em 1em;
-    }
-    .logo img {
-        height: 42px;
-    }
-    nav {
-        position: absolute;
-        top: 80px; right: 0;
-        width: 100vw;
-        background: #fff;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 1.5em 2em;
-        box-shadow: 0 2px 16px rgba(0,0,0,0.12);
-        display: none;
-    }
-    nav.nav-open {
-        display: flex;
-    }
-    nav a {
-        margin: 1em 0;
-        font-size: 1.2em;
-        width: 100%;
-    }
-    .burger-menu { display: inline-block; }
+@media (max-width: 768px) {
+  .collage-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.8rem;
+  }
+  .banner-img {
+    max-height: 220px;
+  }
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  h1 {
+    font-size: 1.5rem !important;
+  }
+  h2 {
+    font-size: 1.2rem !important;
+  }
 }
-
-@media (max-width: 750px) {
-    .hero img { height: 220px; }
-    .hero-content { 
-        padding: 1em 1.2em; 
-        font-size: 1em; 
-        left: 2%; 
-        top: 12%;
-        max-width: 80vw;
-    }
-    .bienvenida { 
-        padding: 1em; 
-        font-size: 1em; 
-        margin: 1em auto;
-    }
-    section h2 {
-        font-size: 1.3em;
-    }
-    .links-destacados { 
-        gap: 1em; 
-    }
-    .link-box {
-        padding: 1em 1.2em;
-        font-size: 1.02em;
-    }
-    .galeria {
-        grid-template-columns: 1fr 1fr;
-        gap: 0.9em;
-    }
-}
-
 @media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 1.4em;
-    }
-    .hero-content p {
-        font-size: 1em;
-    }
-    .galeria {
-        grid-template-columns: 1fr;
-        gap: 0.7em;
-    }
-    .bienvenida, .links-destacados {
-        padding: 0.5em;
-    }
-    .link-box {
-        font-size: 0.95em;
-        padding: 0.7em 0.7em;
-    }
+  .collage-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  .banner-img {
+    max-height: 120px;
+  }
+  header img {
+    height: 48px !important;
+    width: 48px !important;
+  }
+  .writing-system-card img {
+    height: 84px !important;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+  }
+  .collage-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+  }
+  .banner-img {
+    max-height: 500px;
+  }
 }
