@@ -1,0 +1,1427 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lista mejorada de los 181 kanji del 6º Grado de Primaria según el plan educativo japonés (Kyōiku Kanji).">
+  <meta name="keywords" content="kanji, 6º grado, japonés, kyōiku kanji, aprendizaje">
+  <meta name="author" content="Nihongo no Sekai">
+  <title>6º Grado Mejorado – Nihongo no Sekai</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+    .animated-btn {
+      transition: all 0.3s ease;
+      transform: scale(1);
+    }
+    .animated-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #e5e7eb;
+      padding: 10px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    th {
+      background-color: #dc2626;
+      color: white;
+      font-weight: bold;
+    }
+    tr:hover {
+      background-color: #f3f4f6;
+      cursor: pointer;
+    }
+    .search-container {
+      margin: 20px 0;
+    }
+    .search-container input {
+      padding: 8px;
+      width: 100%;
+      max-width: 300px;
+      border: 1px solid #e5e7eb;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="leading-relaxed">
+  <header class="bg-red-600 text-white py-6">
+    <div class="container mx-auto px-4 text-center">
+      <h1 class="text-3xl font-bold">Nihongo no Sekai (日本語の世界)</h1>
+      <p class="text-sm">Aprende el idioma y su cultura paso a paso</p>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8 bg-white shadow-lg rounded-lg">
+    <article class="mb-12">
+      <a href="javascript:history.back()" class="animated-btn inline-block mb-4 text-white bg-red-600 px-4 py-2 rounded-md hover:bg-red-700">Volver</a>
+      <h2 class="text-3xl font-bold text-red-800 mb-6">6º Grado Mejorado – 181 Kanji</h2>
+      <p class="mb-6 text-lg">Lista optimizada de los 181 kanji del 6º Grado de Primaria, completando los 1006 Kyōiku Kanji. Usa la barra de búsqueda para filtrar.</p>
+
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Buscar por kanji, lectura o significado..." aria-label="Buscar kanji" class="focus:outline-none focus:ring-2 focus:ring-red-600">
+      </div>
+
+      <table id="kanjiTable" role="grid" aria-describedby="kanjiDescription">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Kanji</th>
+            <th>On’yomi</th>
+            <th>Kun’yomi</th>
+            <th>Significado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr key="kanji-1">
+            <td>1</td>
+            <td>異</td>
+            <td>イ</td>
+            <td>ことなる</td>
+            <td>diferente, extraño</td>
+          </tr>
+          <tr key="kanji-2">
+            <td>2</td>
+            <td>遺</td>
+            <td>イ</td>
+            <td>のこす</td>
+            <td>heredar, legado</td>
+          </tr>
+          <tr key="kanji-3">
+            <td>3</td>
+            <td>域</td>
+            <td>イキ</td>
+            <td>—</td>
+            <td>región, zona</td>
+          </tr>
+          <tr key="kanji-4">
+            <td>4</td>
+            <td>宇</td>
+            <td>ウ</td>
+            <td>—</td>
+            <td>universo, espacio</td>
+          </tr>
+          <tr key="kanji-5">
+            <td>5</td>
+            <td>映</td>
+            <td>エイ</td>
+            <td>うつる/うつす</td>
+            <td>reflejar, proyectar</td>
+          </tr>
+          <tr key="kanji-6">
+            <td>6</td>
+            <td>延</td>
+            <td>エン</td>
+            <td>のばす/のべる</td>
+            <td>extender, prolongar</td>
+          </tr>
+          <tr key="kanji-7">
+            <td>7</td>
+            <td>沿</td>
+            <td>エン</td>
+            <td>そい/えんずる</td>
+            <td>seguir, a lo largo de</td>
+          </tr>
+          <tr key="kanji-8">
+            <td>8</td>
+            <td>我</td>
+            <td>ガ</td>
+            <td>われ/われわれ</td>
+            <td>yo, nosotros</td>
+          </tr>
+          <tr key="kanji-9">
+            <td>9</td>
+            <td>灰</td>
+            <td>カイ</td>
+            <td>はい</td>
+            <td>ceniza</td>
+          </tr>
+          <tr key="kanji-10">
+            <td>10</td>
+            <td>拡</td>
+            <td>カク</td>
+            <td>ひろげる</td>
+            <td>expandir</td>
+          </tr>
+          <tr key="kanji-11">
+            <td>11</td>
+            <td>革</td>
+            <td>カク</td>
+            <td>かわ</td>
+            <td>cuero, reforma</td>
+          </tr>
+          <tr key="kanji-12">
+            <td>12</td>
+            <td>閣</td>
+            <td>カク</td>
+            <td>—</td>
+            <td>pabellón, gabinete</td>
+          </tr>
+          <tr key="kanji-13">
+            <td>13</td>
+            <td>割</td>
+            <td>カツ</td>
+            <td>わる/さばる</td>
+            <td>dividir, romper</td>
+          </tr>
+          <tr key="kanji-14">
+            <td>14</td>
+            <td>株</td>
+            <td>カブ</td>
+            <td>—</td>
+            <td>acciones, cepa (árbol/planta)</td>
+          </tr>
+          <tr key="kanji-15">
+            <td>15</td>
+            <td>干</td>
+            <td>カン</td>
+            <td>ほす/ひる</td>
+            <td>secar</td>
+          </tr>
+          <tr key="kanji-16">
+            <td>16</td>
+            <td>巻</td>
+            <td>カン</td>
+            <td>まく/まき</td>
+            <td>enrollar, volumen</td>
+          </tr>
+          <tr key="kanji-17">
+            <td>17</td>
+            <td>看</td>
+            <td>カン</td>
+            <td>—</td>
+            <td>observar, cuidar</td>
+          </tr>
+          <tr key="kanji-18">
+            <td>18</td>
+            <td>簡</td>
+            <td>カン</td>
+            <td>—</td>
+            <td>simple, breve</td>
+          </tr>
+          <tr key="kanji-19">
+            <td>19</td>
+            <td>危</td>
+            <td>キ</td>
+            <td>あぶない</td>
+            <td>peligroso</td>
+          </tr>
+          <tr key="kanji-20">
+            <td>20</td>
+            <td>机</td>
+            <td>キ</td>
+            <td>つくえ</td>
+            <td>escritorio</td>
+          </tr>
+          <tr key="kanji-21">
+            <td>21</td>
+            <td>揮</td>
+            <td>キ</td>
+            <td>ふる</td>
+            <td>agitar, dirigir</td>
+          </tr>
+          <tr key="kanji-22">
+            <td>22</td>
+            <td>貴</td>
+            <td>キ</td>
+            <td>たっとい/とうとい</td>
+            <td>noble, valioso</td>
+          </tr>
+          <tr key="kanji-23">
+            <td>23</td>
+            <td>疑</td>
+            <td>ギ</td>
+            <td>うたがう</td>
+            <td>dudar, sospechar</td>
+          </tr>
+          <tr key="kanji-24">
+            <td>24</td>
+            <td>吸</td>
+            <td>キュウ</td>
+            <td>すう</td>
+            <td>aspirar, inhalar</td>
+          </tr>
+          <tr key="kanji-25">
+            <td>25</td>
+            <td>供</td>
+            <td>キョウ/ク</td>
+            <td>そなえる/ともに</td>
+            <td>ofrecer, acompañar</td>
+          </tr>
+          <tr key="kanji-26">
+            <td>26</td>
+            <td>胸</td>
+            <td>キョウ</td>
+            <td>むね/むな</td>
+            <td>pecho</td>
+          </tr>
+          <tr key="kanji-27">
+            <td>27</td>
+            <td>郷</td>
+            <td>キョウ/ゴウ</td>
+            <td>—</td>
+            <td>pueblo natal</td>
+          </tr>
+          <tr key="kanji-28">
+            <td>28</td>
+            <td>勤</td>
+            <td>キン/ゴン</td>
+            <td>つとめる</td>
+            <td>trabajar, servicio</td>
+          </tr>
+          <tr key="kanji-29">
+            <td>29</td>
+            <td>筋</td>
+            <td>キン</td>
+            <td>すじ</td>
+            <td>músculo, hilo, trama</td>
+          </tr>
+          <tr key="kanji-30">
+            <td>30</td>
+            <td>系</td>
+            <td>ケイ</td>
+            <td>—</td>
+            <td>sistema, linaje</td>
+          </tr>
+          <tr key="kanji-31">
+            <td>31</td>
+            <td>敬</td>
+            <td>ケイ</td>
+            <td>うやまう</td>
+            <td>respetar</td>
+          </tr>
+          <tr key="kanji-32">
+            <td>32</td>
+            <td>警</td>
+            <td>ケイ</td>
+            <td>—</td>
+            <td>advertencia, policía</td>
+          </tr>
+          <tr key="kanji-33">
+            <td>33</td>
+            <td>劇</td>
+            <td>ゲキ</td>
+            <td>—</td>
+            <td>drama, teatro</td>
+          </tr>
+          <tr key="kanji-34">
+            <td>34</td>
+            <td>激</td>
+            <td>ゲキ</td>
+            <td>はげしい</td>
+            <td>intenso, violento</td>
+          </tr>
+          <tr key="kanji-35">
+            <td>35</td>
+            <td>穴</td>
+            <td>ケツ</td>
+            <td>あな</td>
+            <td>agujero</td>
+          </tr>
+          <tr key="kanji-36">
+            <td>36</td>
+            <td>絹</td>
+            <td>ケン</td>
+            <td>きぬ</td>
+            <td>seda</td>
+          </tr>
+          <tr key="kanji-37">
+            <td>37</td>
+            <td>権</td>
+            <td>ケン/ゴン</td>
+            <td>—</td>
+            <td>derecho, poder</td>
+          </tr>
+          <tr key="kanji-38">
+            <td>38</td>
+            <td>憲</td>
+            <td>ケン</td>
+            <td>—</td>
+            <td>constitución</td>
+          </tr>
+          <tr key="kanji-39">
+            <td>39</td>
+            <td>源</td>
+            <td>ゲン</td>
+            <td>みなもと</td>
+            <td>origen, fuente</td>
+          </tr>
+          <tr key="kanji-40">
+            <td>40</td>
+            <td>厳</td>
+            <td>ゲン/ゴン</td>
+            <td>きびしい/おごそか</td>
+            <td>estricto, severo</td>
+          </tr>
+          <tr key="kanji-41">
+            <td>41</td>
+            <td>己</td>
+            <td>コ/キ</td>
+            <td>おのれ</td>
+            <td>uno mismo</td>
+          </tr>
+          <tr key="kanji-42">
+            <td>42</td>
+            <td>呼</td>
+            <td>コ</td>
+            <td>よぶ</td>
+            <td>llamar</td>
+          </tr>
+          <tr key="kanji-43">
+            <td>43</td>
+            <td>誤</td>
+            <td>ゴ</td>
+            <td>あやまる</td>
+            <td>error</td>
+          </tr>
+          <tr key="kanji-44">
+            <td>44</td>
+            <td>后</td>
+            <td>コウ/ゴ</td>
+            <td>きさき</td>
+            <td>emperatriz, reina</td>
+          </tr>
+          <tr key="kanji-45">
+            <td>45</td>
+            <td>孝</td>
+            <td>コウ</td>
+            <td>—</td>
+            <td>piedad filial</td>
+          </tr>
+          <tr key="kanji-46">
+            <td>46</td>
+            <td>皇</td>
+            <td>コウ</td>
+            <td>—</td>
+            <td>emperador</td>
+          </tr>
+          <tr key="kanji-47">
+            <td>47</td>
+            <td>紅</td>
+            <td>コウ/ク</td>
+            <td>べに/くれない</td>
+            <td>rojo carmesí</td>
+          </tr>
+          <tr key="kanji-48">
+            <td>48</td>
+            <td>降</td>
+            <td>コウ</td>
+            <td>おりる/ふる</td>
+            <td>bajar, caer</td>
+          </tr>
+          <tr key="kanji-49">
+            <td>49</td>
+            <td>鋼</td>
+            <td>コウ</td>
+            <td>はがね</td>
+            <td>acero</td>
+          </tr>
+          <tr key="kanji-50">
+            <td>50</td>
+            <td>刻</td>
+            <td>コク</td>
+            <td>きざむ</td>
+            <td>tallar, grabar</td>
+          </tr>
+          <tr key="kanji-51">
+            <td>51</td>
+            <td>穀</td>
+            <td>コク</td>
+            <td>—</td>
+            <td>cereales</td>
+          </tr>
+          <tr key="kanji-52">
+            <td>52</td>
+            <td>骨</td>
+            <td>コツ</td>
+            <td>ほね</td>
+            <td>hueso</td>
+          </tr>
+          <tr key="kanji-53">
+            <td>53</td>
+            <td>困</td>
+            <td>コン</td>
+            <td>こまる</td>
+            <td>estar en apuros</td>
+          </tr>
+          <tr key="kanji-54">
+            <td>54</td>
+            <td>砂</td>
+            <td>サ</td>
+            <td>すな</td>
+            <td>arena</td>
+          </tr>
+          <tr key="kanji-55">
+            <td>55</td>
+            <td>座</td>
+            <td>ザ</td>
+            <td>すわる</td>
+            <td>sentarse</td>
+          </tr>
+          <tr key="kanji-56">
+            <td>56</td>
+            <td>済</td>
+            <td>サイ/セイ</td>
+            <td>すむ/すめる</td>
+            <td>terminar, liquidar</td>
+          </tr>
+          <tr key="kanji-57">
+            <td>57</td>
+            <td>裁</td>
+            <td>サイ</td>
+            <td>さばく</td>
+            <td>juzgar, coser</td>
+          </tr>
+          <tr key="kanji-58">
+            <td>58</td>
+            <td>策</td>
+            <td>サク</td>
+            <td>—</td>
+            <td>plan, esquema</td>
+          </tr>
+          <tr key="kanji-59">
+            <td>59</td>
+            <td>冊</td>
+            <td>サツ/サク</td>
+            <td>—</td>
+            <td>tomo, contador de libros</td>
+          </tr>
+          <tr key="kanji-60">
+            <td>60</td>
+            <td>蚕</td>
+            <td>サン</td>
+            <td>かいこ</td>
+            <td>gusano de seda</td>
+          </tr>
+          <tr key="kanji-61">
+            <td>61</td>
+            <td>至</td>
+            <td>シ</td>
+            <td>いたる</td>
+            <td>llegar a</td>
+          </tr>
+          <tr key="kanji-62">
+            <td>62</td>
+            <td>私</td>
+            <td>シ</td>
+            <td>わたくし/わたし</td>
+            <td>yo, privado</td>
+          </tr>
+          <tr key="kanji-63">
+            <td>63</td>
+            <td>姿</td>
+            <td>シ</td>
+            <td>すがた</td>
+            <td>figura, forma</td>
+          </tr>
+          <tr key="kanji-64">
+            <td>64</td>
+            <td>視</td>
+            <td>シ</td>
+            <td>みる</td>
+            <td>mirar</td>
+          </tr>
+          <tr key="kanji-65">
+            <td>65</td>
+            <td>詞</td>
+            <td>シ</td>
+            <td>ことば</td>
+            <td>palabra</td>
+          </tr>
+          <tr key="kanji-66">
+            <td>66</td>
+            <td>誌</td>
+            <td>シ</td>
+            <td>—</td>
+            <td>revista, crónica</td>
+          </tr>
+          <tr key="kanji-67">
+            <td>67</td>
+            <td>磁</td>
+            <td>ジ</td>
+            <td>—</td>
+            <td>imán</td>
+          </tr>
+          <tr key="kanji-68">
+            <td>68</td>
+            <td>射</td>
+            <td>シャ</td>
+            <td>いる/さす</td>
+            <td>disparar, lanzar</td>
+          </tr>
+          <tr key="kanji-69">
+            <td>69</td>
+            <td>捨</td>
+            <td>シャ</td>
+            <td>すてる</td>
+            <td>desechar</td>
+          </tr>
+          <tr key="kanji-70">
+            <td>70</td>
+            <td>尺</td>
+            <td>シャク</td>
+            <td>—</td>
+            <td>medida japonesa</td>
+          </tr>
+          <tr key="kanji-71">
+            <td>71</td>
+            <td>若</td>
+            <td>ジャク/ニャク</td>
+            <td>わかい</td>
+            <td>joven</td>
+          </tr>
+          <tr key="kanji-72">
+            <td>72</td>
+            <td>樹</td>
+            <td>ジュ</td>
+            <td>いつき</td>
+            <td>árbol</td>
+          </tr>
+          <tr key="kanji-73">
+            <td>73</td>
+            <td>収</td>
+            <td>シュウ</td>
+            <td>おさめる/おさまる</td>
+            <td>recoger</td>
+          </tr>
+          <tr key="kanji-74">
+            <td>74</td>
+            <td>宗</td>
+            <td>シュウ/ソウ</td>
+            <td>—</td>
+            <td>religión, secta</td>
+          </tr>
+          <tr key="kanji-75">
+            <td>75</td>
+            <td>就</td>
+            <td>シュウ/ジュ</td>
+            <td>つく/つける</td>
+            <td>asumir cargo</td>
+          </tr>
+          <tr key="kanji-76">
+            <td>76</td>
+            <td>衆</td>
+            <td>シュウ</td>
+            <td>—</td>
+            <td>multitud, masa</td>
+          </tr>
+          <tr key="kanji-77">
+            <td>77</td>
+            <td>従</td>
+            <td>ジュ/ショウ/ジュ</td>
+            <td>したがう</td>
+            <td>obedecer, seguir</td>
+          </tr>
+          <tr key="kanji-78">
+            <td>78</td>
+            <td>縦</td>
+            <td>ジュウ</td>
+            <td>たて</td>
+            <td>vertical</td>
+          </tr>
+          <tr key="kanji-79">
+            <td>79</td>
+            <td>縮</td>
+            <td>シュク</td>
+            <td>ちぢむ/ちぢめる</td>
+            <td>encoger</td>
+          </tr>
+          <tr key="kanji-80">
+            <td>80</td>
+            <td>熟</td>
+            <td>ジュク</td>
+            <td>うるおう</td>
+            <td>madurar</td>
+          </tr>
+          <tr key="kanji-81">
+            <td>81</td>
+            <td>純</td>
+            <td>ジュン</td>
+            <td>—</td>
+            <td>puro</td>
+          </tr>
+          <tr key="kanji-82">
+            <td>82</td>
+            <td>処</td>
+            <td>ショ</td>
+            <td>ところ</td>
+            <td>lugar, disposición</td>
+          </tr>
+          <tr key="kanji-83">
+            <td>83</td>
+            <td>署</td>
+            <td>ショ</td>
+            <td>—</td>
+            <td>oficina, firma</td>
+          </tr>
+          <tr key="kanji-84">
+            <td>84</td>
+            <td>諸</td>
+            <td>ショ</td>
+            <td>もろ</td>
+            <td>varios</td>
+          </tr>
+          <tr key="kanji-85">
+            <td>85</td>
+            <td>除</td>
+            <td>ジョ/ジヨ</td>
+            <td>のぞく</td>
+            <td>excluir</td>
+          </tr>
+          <tr key="kanji-86">
+            <td>86</td>
+            <td>傷</td>
+            <td>ショウ</td>
+            <td>きず/いためる</td>
+            <td>herida</td>
+          </tr>
+          <tr key="kanji-87">
+            <td>87</td>
+            <td>障</td>
+            <td>ショウ</td>
+            <td>さわる</td>
+            <td>obstáculo</td>
+          </tr>
+          <tr key="kanji-88">
+            <td>88</td>
+            <td>城</td>
+            <td>ジョウ</td>
+            <td>しろ</td>
+            <td>castillo</td>
+          </tr>
+          <tr key="kanji-89">
+            <td>89</td>
+            <td>蒸</td>
+            <td>ジョウ</td>
+            <td>むす/むすぶ</td>
+            <td>vaporizar</td>
+          </tr>
+          <tr key="kanji-90">
+            <td>90</td>
+            <td>針</td>
+            <td>シン</td>
+            <td>はり</td>
+            <td>aguja</td>
+          </tr>
+          <tr key="kanji-91">
+            <td>91</td>
+            <td>仁</td>
+            <td>ジン/ニ</td>
+            <td>—</td>
+            <td>compasión, virtud humana</td>
+          </tr>
+          <tr key="kanji-92">
+            <td>92</td>
+            <td>垂</td>
+            <td>スイ</td>
+            <td>たれる/たらす</td>
+            <td>colgar, gotear</td>
+          </tr>
+          <tr key="kanji-93">
+            <td>93</td>
+            <td>推</td>
+            <td>スイ</td>
+            <td>おす</td>
+            <td>recomendar, suponer</td>
+          </tr>
+          <tr key="kanji-94">
+            <td>94</td>
+            <td>寸</td>
+            <td>サン</td>
+            <td>—</td>
+            <td>medida</td>
+          </tr>
+          <tr key="kanji-95">
+            <td>95</td>
+            <td>盛</td>
+            <td>セイ/ジョウ</td>
+            <td>盛る/さかる/さかえる</td>
+            <td>prosperar, servir</td>
+          </tr>
+          <tr key="kanji-96">
+            <td>96</td>
+            <td>聖</td>
+            <td>セイ</td>
+            <td>ひじり</td>
+            <td>sagrado</td>
+          </tr>
+          <tr key="kanji-97">
+            <td>97</td>
+            <td>誠</td>
+            <td>セイ</td>
+            <td>まこと</td>
+            <td>sinceridad</td>
+          </tr>
+          <tr key="kanji-98">
+            <td>98</td>
+            <td>舌</td>
+            <td>ゼツ</td>
+            <td>した</td>
+            <td>lengua</td>
+          </tr>
+          <tr key="kanji-99">
+            <td>99</td>
+            <td>宣</td>
+            <td>セン</td>
+            <td>—</td>
+            <td>declarar, proclamar</td>
+          </tr>
+          <tr key="kanji-100">
+            <td>100</td>
+            <td>専</td>
+            <td>セン</td>
+            <td>もっぱら</td>
+            <td>especializado</td>
+          </tr>
+          <tr key="kanji-101">
+            <td>101</td>
+            <td>泉</td>
+            <td>セン</td>
+            <td>いずみ</td>
+            <td>fuente, manantial</td>
+          </tr>
+          <tr key="kanji-102">
+            <td>102</td>
+            <td>洗</td>
+            <td>セン</td>
+            <td>あらう</td>
+            <td>lavar</td>
+          </tr>
+          <tr key="kanji-103">
+            <td>103</td>
+            <td>染</td>
+            <td>セン/ゼン</td>
+            <td>そめる/そまる</td>
+            <td>teñir</td>
+          </tr>
+          <tr key="kanji-104">
+            <td>104</td>
+            <td>銭</td>
+            <td>セン</td>
+            <td>ぜに</td>
+            <td>dinero</td>
+          </tr>
+          <tr key="kanji-105">
+            <td>105</td>
+            <td>善</td>
+            <td>ゼン</td>
+            <td>よい</td>
+            <td>bondad, bueno</td>
+          </tr>
+          <tr key="kanji-106">
+            <td>106</td>
+            <td>奏</td>
+            <td>ソウ</td>
+            <td>かなでる</td>
+            <td>tocar música (instrumento)</td>
+          </tr>
+          <tr key="kanji-107">
+            <td>107</td>
+            <td>窓</td>
+            <td>ソウ</td>
+            <td>まど</td>
+            <td>ventana</td>
+          </tr>
+          <tr key="kanji-108">
+            <td>108</td>
+            <td>創</td>
+            <td>ソウ</td>
+            <td>つくる</td>
+            <td>crear, fundar</td>
+          </tr>
+          <tr key="kanji-109">
+            <td>109</td>
+            <td>装</td>
+            <td>ソウ/ショウ</td>
+            <td>ようそう</td>
+            <td>vestir, equipar</td>
+          </tr>
+          <tr key="kanji-110">
+            <td>110</td>
+            <td>層</td>
+            <td>ソウ</td>
+            <td>—</td>
+            <td>capa, estrato</td>
+          </tr>
+          <tr key="kanji-111">
+            <td>111</td>
+            <td>操</td>
+            <td>ソウ</td>
+            <td>あやつる/みさお</td>
+            <td>manejar, controlar</td>
+          </tr>
+          <tr key="kanji-112">
+            <td>112</td>
+            <td>蔵</td>
+            <td>ゾウ</td>
+            <td>くら</td>
+            <td>almacén</td>
+          </tr>
+          <tr key="kanji-113">
+            <td>113</td>
+            <td>臓</td>
+            <td>ゾウ</td>
+            <td>—</td>
+            <td>víscera</td>
+          </tr>
+          <tr key="kanji-114">
+            <td>114</td>
+            <td>存</td>
+            <td>ソン/ゾン</td>
+            <td>—</td>
+            <td>existir</td>
+          </tr>
+          <tr key="kanji-115">
+            <td>115</td>
+            <td>尊</td>
+            <td>ソン</td>
+            <td>とうと-たい</td>
+            <td>respetar</td>
+          </tr>
+          <tr key="kanji-116">
+            <td>116</td>
+            <td>宅</td>
+            <td>タク</td>
+            <td>—</td>
+            <td>casa, vivienda</td>
+          </tr>
+          <tr key="kanji-117">
+            <td>117</td>
+            <td>担</td>
+            <td>タン</td>
+            <td>にんあう/かつぐ</td>
+            <td>cargar, asumir</td>
+          </tr>
+          <tr key="kanji-118">
+            <td>118</td>
+            <td>探</td>
+            <td>タン</td>
+            <td>さがす/さがる</td>
+            <td>buscar</td>
+          </tr>
+          <tr key="kanji-119">
+            <td>119</td>
+            <td>誕</td>
+            <td>タン</td>
+            <td>—</td>
+            <td>nacimiento</td>
+          </tr>
+          <tr key="kanji-120">
+            <td>120</td>
+            <td>段</td>
+            <td>ダン</td>
+            <td>—</td>
+            <td>escalón, grado</td>
+          </tr>
+          <tr key="kanji-121">
+            <td>121</td>
+            <td>暖</td>
+            <td>ダン</td>
+            <td>あたたかい</td>
+            <td>cálido</td>
+          </tr>
+          <tr key="kanji-122">
+            <td>122</td>
+            <td>値</td>
+            <td>チ</td>
+            <td>あたい</td>
+            <td>valor</td>
+          </tr>
+          <tr key="kanji-123">
+            <td>123</td>
+            <td>宙</td>
+            <td>チュウ</td>
+            <td>—</td>
+            <td>espacio, vacío</td>
+          </tr>
+          <tr key="kanji-124">
+            <td>124</td>
+            <td>忠</td>
+            <td>チュウ</td>
+            <td>—</td>
+            <td>lealtad</td>
+          </tr>
+          <tr key="kanji-125">
+            <td>125</td>
+            <td>著</td>
+            <td>チョ</td>
+            <td>あらわす</td>
+            <td>escribir, notable</td>
+          </tr>
+          <tr key="kanji-126">
+            <td>126</td>
+            <td>庁</td>
+            <td>チョウ</td>
+            <td>—</td>
+            <td>agencia gubernamental</td>
+          </tr>
+          <tr key="kanji-127">
+            <td>127</td>
+            <td>頂</td>
+            <td>チョウ</td>
+            <td>いただき/いただく</td>
+            <td>cima, recibir con respeto</td>
+          </tr>
+          <tr key="kanji-128">
+            <td>128</td>
+            <td>潮</td>
+            <td>チョウ</td>
+            <td>うしお/しお</td>
+            <td>marea</td>
+          </tr>
+          <tr key="kanji-129">
+            <td>129</td>
+            <td>賃</td>
+            <td>チン</td>
+            <td>—</td>
+            <td>salario</td>
+          </tr>
+          <tr key="kanji-130">
+            <td>130</td>
+            <td>痛</td>
+            <td>ツウ</td>
+            <td>いたい/いたむ</td>
+            <td>dolor</td>
+          </tr>
+          <tr key="kanji-131">
+            <td>131</td>
+            <td>展</td>
+            <td>テン</td>
+            <td>—</td>
+            <td>expandir, desplegar</td>
+          </tr>
+          <tr key="kanji-132">
+            <td>132</td>
+            <td>党</td>
+            <td>トウ</td>
+            <td>—</td>
+            <td>partido (político)</td>
+          </tr>
+          <tr key="kanji-133">
+            <td>133</td>
+            <td>糖</td>
+            <td>トウ</td>
+            <td>—</td>
+            <td>azúcar</td>
+          </tr>
+          <tr key="kanji-134">
+            <td>134</td>
+            <td>討</td>
+            <td>トウ</td>
+            <td>うつ</td>
+            <td>atacar, discutir</td>
+          </tr>
+          <tr key="kanji-135">
+            <td>135</td>
+            <td>党</td>
+            <td>トウ</td>
+            <td>—</td>
+            <td>partido</td>
+          </tr>
+          <tr key="kanji-136">
+            <td>136</td>
+            <td>届</td>
+            <td>カイ</td>
+            <td>とどく/とどける</td>
+            <td>entregar, llegar</td>
+          </tr>
+          <tr key="kanji-137">
+            <td>137</td>
+            <td>難</td>
+            <td>ナン</td>
+            <td>むずかしい/かたし</td>
+            <td>difícil</td>
+          </tr>
+          <tr key="kanji-138">
+            <td>138</td>
+            <td>乳</td>
+            <td>ニュウ</td>
+            <td>ちち/ミルク</td>
+            <td>leche</td>
+          </tr>
+          <tr key="kanji-139">
+            <td>139</td>
+            <td>認</td>
+            <td>ニン</td>
+            <td>みとめる</td>
+            <td>reconocer</td>
+          </tr>
+          <tr key="kanji-140">
+            <td>140</td>
+            <td>納</td>
+            <td>ノウ/ナツ/ナン/トウ</td>
+            <td>おさめる</td>
+            <td>almacenar, impuestos</td>
+          </tr>
+          <tr key="kanji-141">
+            <td>141</td>
+            <td>脳</td>
+            <td>ノウ</td>
+            <td>—</td>
+            <td>cerebro</td>
+          </tr>
+          <tr key="kanji-142">
+            <td>142</td>
+            <td>派</td>
+            <td>ハ</td>
+            <td>—</td>
+            <td>facción, grupo</td>
+          </tr>
+          <tr key="kanji-143">
+            <td>143</td>
+            <td>俳</td>
+            <td>ハイ</td>
+            <td>—</td>
+            <td>actor, haiku</td>
+          </tr>
+          <tr key="kanji-144">
+            <td>144</td>
+            <td>班</td>
+            <td>ハン</td>
+            <td>—</td>
+            <td>grupo, escuadra</td>
+          </tr>
+          <tr key="kanji-145">
+            <td>145</td>
+            <td>晩</td>
+            <td>バン</td>
+            <td>—</td>
+            <td>tarde, noche</td>
+          </tr>
+          <tr key="kanji-146">
+            <td>146</td>
+            <td>否</td>
+            <td>ヒ</td>
+            <td>いな</td>
+            <td>negar</td>
+          </tr>
+          <tr key="kanji-147">
+            <td>147</td>
+            <td>批</td>
+            <td>ヒ</td>
+            <td>—</td>
+            <td>crítica</td>
+          </tr>
+          <tr key="kanji-148">
+            <td>148</td>
+            <td>秘</td>
+            <td>ヒ</td>
+            <td>ひそか</td>
+            <td>secreto</td>
+          </tr>
+          <tr key="kanji-149">
+            <td>149</td>
+            <td>腹</td>
+            <td>フク</td>
+            <td>はら</td>
+            <td>abdomen</td>
+          </tr>
+          <tr key="kanji-150">
+            <td>150</td>
+            <td>奮</td>
+            <td>フン</td>
+            <td>ふるう</td>
+            <td>agitarse, esforzarse</td>
+          </tr>
+          <tr key="kanji-151">
+            <td>151</td>
+            <td>並</td>
+            <td>ヘイ</td>
+            <td>ならぶ/ならべる</td>
+            <td>poner en fila</td>
+          </tr>
+          <tr key="kanji-152">
+            <td>152</td>
+            <td>陛</td>
+            <td>ヘイ</td>
+            <td>—</td>
+            <td>su majestad (emperador)</td>
+          </tr>
+          <tr key="kanji-153">
+            <td>153</td>
+            <td>閉</td>
+            <td>ヘイ</td>
+            <td>とじ/しめる</td>
+            <td>cerrar</td>
+          </tr>
+          <tr key="kanji-154">
+            <td>154</td>
+            <td>片</td>
+            <td>ヘン</td>
+            <td>かた</td>
+            <td>pedazo, fragmento</td>
+          </tr>
+          <tr key="kanji-155">
+            <td>155</td>
+            <td>補</td>
+            <td>ホ</td>
+            <td>おぎなう</td>
+            <td>suplir, complementar</td>
+          </tr>
+          <tr key="kanji-156">
+            <td>156</td>
+            <td>暮</td>
+            <td>ボ</td>
+            <td>くれる/くらす</td>
+            <td>anochecer, vivir</td>
+          </tr>
+          <tr key="kanji-157">
+            <td>157</td>
+            <td>宝</td>
+            <td>ホウ</td>
+            <td>たから</td>
+            <td>tesoro</td>
+          </tr>
+          <tr key="kanji-158">
+            <td>158</td>
+            <td>訪</td>
+            <td>ホウ</td>
+            <td>たずねる/おとずれる</td>
+            <td>visitar</td>
+          </tr>
+          <tr key="kanji-159">
+            <td>159</td>
+            <td>亡</td>
+            <td>ボウ/モウ</td>
+            <td>なくなる</td>
+            <td>morir, desaparecer</td>
+          </tr>
+          <tr key="kanji-160">
+            <td>160</td>
+            <td>忘</td>
+            <td>ボウ</td>
+            <td>わすれる</td>
+            <td>olvidar</td>
+          </tr>
+          <tr key="kanji-161">
+            <td>161</td>
+            <td>棒</td>
+            <td>ボウ</td>
+            <td>—</td>
+            <td>palo, barra</td>
+          </tr>
+          <tr key="kanji-162">
+            <td>162</td>
+            <td>枚</td>
+            <td>マイ</td>
+            <td>—</td>
+            <td>contador de hojas/planos</td>
+          </tr>
+          <tr key="kanji-163">
+            <td>163</td>
+            <td>幕</td>
+            <td>マク/バク</td>
+            <td>—</td>
+            <td>cortina, shogunato</td>
+          </tr>
+          <tr key="kanji-164">
+            <td>164</td>
+            <td>密</td>
+            <td>ミツ</td>
+            <td>—</td>
+            <td>secreto, denso</td>
+          </tr>
+          <tr key="kanji-165">
+            <td>165</td>
+            <td>盟</td>
+            <td>メイ</td>
+            <td>—</td>
+            <td>alianza</td>
+          </tr>
+          <tr key="kanji-166">
+            <td>166</td>
+            <td>模</td>
+            <td>モ</td>
+            <td>—</td>
+            <td>imitar, modelo</td>
+          </tr>
+          <tr key="kanji-167">
+            <td>167</td>
+            <td>訳</td>
+            <td>ヤク</td>
+            <td>わけ</td>
+            <td>traducir, razón</td>
+          </tr>
+          <tr key="kanji-168">
+            <td>168</td>
+            <td>優</td>
+            <td>ユウ</td>
+            <td>やさしい/すぐれる</td>
+            <td>excelente, superior</td>
+          </tr>
+          <tr key="kanji-169">
+            <td>169</td>
+            <td>幼</td>
+            <td>ヨウ</td>
+            <td>おさない</td>
+            <td>infantil</td>
+          </tr>
+          <tr key="kanji-170">
+            <td>170</td>
+            <td>欲</td>
+            <td>ヨク</td>
+            <td>ほし</td>
+            <td>deseo</td>
+          </tr>
+          <tr key="kanji-171">
+            <td>171</td>
+            <td>翌</td>
+            <td>ヨク</td>
+            <td>—</td>
+            <td>siguiente (día/año)</td>
+          </tr>
+          <tr key="kanji-172">
+            <td>172</td>
+            <td>乱</td>
+            <td>ラン</td>
+            <td>みだれる</td>
+            <td>caos, desorden</td>
+          </tr>
+          <tr key="kanji-173">
+            <td>173</td>
+            <td>卵</td>
+            <td>ラン</td>
+            <td>たまご</td>
+            <td>huevo</td>
+          </tr>
+          <tr key="kanji-174">
+            <td>174</td>
+            <td>覧</td>
+            <td>ラン</td>
+            <td>みる</td>
+            <td>observar</td>
+          </tr>
+          <tr key="kanji-175">
+            <td>175</td>
+            <td>裏</td>
+            <td>リ</td>
+            <td>うら</td>
+            <td>reverso, dorso</td>
+          </tr>
+          <tr key="kanji-176">
+            <td>176</td>
+            <td>律</td>
+            <td>リツ/リチュ</td>
+            <td>—</td>
+            <td>ley, ritmo</td>
+          </tr>
+          <tr key="kanji-177">
+            <td>177</td>
+            <td>臨</td>
+            <td>リン</td>
+            <td>のぞむ</td>
+            <td>enfrentar, contemplar</td>
+          </tr>
+          <tr key="kanji-178">
+            <td>178</td>
+            <td>朗</td>
+            <td>ロウ</td>
+            <td>あかるい</td>
+            <td>claro, brillante</td>
+          </tr>
+          <tr key="kanji-179">
+            <td>179</td>
+            <td>論</td>
+            <td>ロン</td>
+            <td>—</td>
+            <td>teoría, discusión</td>
+          </tr>
+          <tr key="kanji-180">
+            <td>180</td>
+            <td>卵</td>
+            <td>ラン</td>
+            <td>たまご</td>
+            <td>huevo</td>
+          </tr>
+          <tr key="kanji-181">
+            <td>181</td>
+            <td>覧</td>
+            <td>ラン</td>
+            <td>みる</td>
+            <td>observar</td>
+          </tr>
+        </tbody>
+      </table>
+      <p id="kanjiDescription" class="sr-only">Tabla de los 181 kanji del 6º Grado de Primaria con sus lecturas On’yomi, Kun’yomi y significados principales.</p>
+    </article>
+  </main>
+
+  <footer class="bg-red-600 text-white text-center py-6 mt-8">
+    <p><a href="../index.html" class="animated-btn inline-block mb-4 text-white bg-red-600 px-4 py-2 rounded-md hover:bg-red-700">Volver a Inicio</a></p>
+    <p>© 2025 Nihongo no Sekai – Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('searchInput');
+      const table = document.getElementById('kanjiTable');
+      const rows = table.getElementsByTagName('tr');
+
+      searchInput.addEventListener('input', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        for (let i = 1; i < rows.length; i++) {
+          const cells = rows[i].getElementsByTagName('td');
+          let match = false;
+          for (let j = 0; j < cells.length; j++) {
+            if (cells[j].textContent.toLowerCase().includes(searchTerm)) {
+              match = true;
+              break;
+            }
+          }
+          rows[i].style.display = match ? '' : 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

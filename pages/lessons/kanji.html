@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aprende Kanji con Nihongo no Sekai: tipos de Kanji, pronunciación, usos y vocabulario básico.">
+  <meta name="keywords" content="kanji, japonés, aprender kanji, jōyō kanji, kyōiku kanji, jinmeiyō kanji">
+  <meta name="author" content="Nihongo no Sekai">
+  <title>Kanji – Nihongo no Sekai (日本語の世界)</title>
+  <link rel="icon" href="../../assets/images/icons/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/responsive.css">
+</head>
+<body class="bg-gray-100 text-gray-800 leading-relaxed">
+  <header class="bg-red-600 text-white py-6">
+    <div class="container mx-auto px-4 flex items-center gap-4 flex-col md:flex-row">
+      <img src="../../assets/images/logos/Logo.png" alt="Logo de Nihongo no Sekai" class="h-20 w-20 object-contain rounded-md shadow-sm animated-img">
+      <div class="text-center md:text-left">
+        <h1 class="text-2xl md:text-3xl font-bold">Nihongo no Sekai (日本語の世界)</h1>
+        <p class="text-sm md:text-base">El mundo del japonés: Aprende el idioma y su cultura paso a paso</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="bg-red-800 py-3 sticky top-0 z-10">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none" aria-label="Abrir menú de navegación">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <div id="nav-menu" class="nav-menu md:flex md:space-x-6 absolute md:static top-14 right-0 bg-red-800 md:bg-transparent w-full md:w-auto p-4 md:p-0">
+        <a href="../../index.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Inicio</a>
+        <a href="../menu.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Menú</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mx-auto px-4 py-8 bg-white shadow-lg rounded-lg">
+    <article id="kanji" class="mb-12">
+      <!-- Breadcrumb -->
+      <nav class="mb-6 text-sm">
+        <ol class="flex items-center space-x-2 text-gray-600">
+          <li><a href="../../index.html" class="hover:text-red-600">Inicio</a></li>
+          <li class="flex items-center"><span class="mx-2">›</span><a href="../menu.html" class="hover:text-red-600">Menú</a></li>
+          <li class="flex items-center"><span class="mx-2">›</span>Kanji</li>
+        </ol>
+      </nav>
+
+      <a href="javascript:history.back()" class="back-btn animated-btn inline-block mb-4 text-white bg-red-600 px-4 py-2 rounded-md hover:bg-red-700 transition-colors">← Volver</a>
+      
+      <h2 class="text-2xl md:text-3xl font-bold text-red-800 mb-6">Kanji: El Sistema Logográfico del Japonés (漢字)</h2>
+      
+      <div class="mb-8">
+        <img src="../../assets/images/writing-systems/kanji.png" alt="Kanji" class="w-full max-w-md mx-auto rounded-lg shadow-md">
+      </div>
+
+      <p class="mb-6 text-lg">Kanji es el sistema de escritura logográfico del japonés, adaptado de los caracteres chinos. A diferencia de hiragana y katakana, que son silábicos, los kanji representan ideas o palabras completas. Hay miles de kanji, pero se clasifican en categorías oficiales para su uso educativo y práctico. Cada kanji tiene lecturas on'yomi (de origen chino) y kun'yomi (japonesa), y se combinan con hiragana para formar palabras compuestas.</p>
+
+      <h3 class="text-xl font-bold text-red-800 mb-4">Tipos de Kanji Oficiales</h3>
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+          <h4 class="font-bold text-red-700 mb-2">Jōyō Kanji (常用漢字)</h4>
+          <p class="text-sm">Son los kanji de uso común definidos por el Ministerio de Educación de Japón. Actualmente son 2.136 kanji oficiales (lista actualizada en 2010). Se usan en periódicos, documentos oficiales y la vida cotidiana.</p>
+        </div>
+        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+          <h4 class="font-bold text-blue-700 mb-2">Kyōiku Kanji (教育漢字)</h4>
+          <p class="text-sm">Subconjunto de los anteriores: los 1.006 kanji que aprenden los niños en la escuela primaria (de 1º a 6º). Incluyen números, días de la semana, elementos naturales, verbos básicos, etc.</p>
+        </div>
+        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+          <h4 class="font-bold text-green-700 mb-2">Jinmeiyō Kanji (人名用漢字)</h4>
+          <p class="text-sm">Son unos 863 kanji adicionales que están permitidos para nombres propios (personas y lugares).</p>
+        </div>
+      </div>
+
+      <!-- Sección de Kanji por Niveles -->
+      <section class="mb-8">
+        <h3 class="text-2xl font-bold text-red-800 mb-6">Kanji por Niveles Escolares</h3>
+        <p class="mb-6 text-gray-600">Aprende kanji siguiendo el sistema educativo japonés. Cada nivel incluye los kanji que se enseñan en cada grado escolar.</p>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-8">
+          <a href="../grades/grado1.html" class="animated-btn bg-gradient-to-br from-blue-400 to-blue-500 hover:from-blue-500 hover:to-blue-600 text-white p-4 rounded-lg text-center transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg">
+            <div class="text-2xl font-bold mb-1">1年</div>
+            <div class="text-sm mb-1">Grado 1</div>
+            <div class="text-xs opacity-90">80 kanji</div>
+          </a>
+          
+          <a href="../grades/grado2.html" class="animated-btn bg-gradient-to-br from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-white p-4 rounded-lg text-center transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg">
+            <div class="text-2xl font-bold mb-1">2年</div>
+            <div class="text-sm mb-1">Grado 2</div>
+            <div class="text-xs opacity-90">160 kanji</div>
+          </a>
+          
+          <a href="../grades/grado3.html" class="animated-btn bg-gradient-to-br from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-white p-4 rounded-lg text-center transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg">
+            <div class="text-2xl font-bold mb-1">3年</div>
+            <div class="text-sm mb-1">Grado 3</div>
+            <div class="text-xs opacity-90">200 kanji</div>
+          </a>
+          
+          <a href="../grades/grado4.html" class="animated-btn bg-gradient-to-br from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white p-4 rounded-lg text-center transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg">
+            <div class="text-2xl font-bold mb-1">4年</div>
+            <div class="text-sm mb-1">Grado 4</div>
+            <div class="text-xs opacity-90">200 kanji</div>
+          </a>
+          
+          <a href="../grades/grado5-improved.html" class="animated-btn bg-gradient-to-br from-purple-400 to-purple-500 hover:from-purple-500 hover:to-purple-600 text-white p-4 rounded-lg text-center transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg">
+            <div class="text-2xl font-bold mb-1">5年</div>
+            <div class="text-sm mb-1">Grado 5</div>
+            <div class="text-xs opacity-90">185 kanji</div>
+          </a>
+          
+          <a href="../grades/grado6.html" class="animated-btn bg-gradient-to-br from-pink-400 to-pink-500 hover:from-pink-500 hover:to-pink-600 text-white p-4 rounded-lg text-center transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg">
+            <div class="text-2xl font-bold mb-1">6年</div>
+            <div class="text-sm mb-1">Grado 6</div>
+            <div class="text-xs opacity-90">181 kanji</div>
+          </a>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <a href="../grades/secundaria.html" class="animated-btn bg-gradient-to-br from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white p-4 rounded-lg text-center transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg">
+            <div class="text-xl font-bold mb-1">中学校</div>
+            <div class="text-sm mb-1">Secundaria</div>
+            <div class="text-xs opacity-90">Kanji adicionales</div>
+          </a>
+          
+          <a href="../grades/bachillerato.html" class="animated-btn bg-gradient-to-br from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white p-4 rounded-lg text-center transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg">
+            <div class="text-xl font-bold mb-1">高等学校</div>
+            <div class="text-sm mb-1">Bachillerato</div>
+            <div class="text-xs opacity-90">Nivel avanzado</div>
+          </a>
+          
+          <a href="../grades/jinmeiyo.html" class="animated-btn bg-gradient-to-br from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white p-4 rounded-lg text-center transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg">
+            <div class="text-xl font-bold mb-1">人名用</div>
+            <div class="text-sm mb-1">Nombres Propios</div>
+            <div class="text-xs opacity-90">Jinmeiyō Kanji</div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Sección del Diccionario de Kanji -->
+      <section class="mb-8 bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-xl">
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <div class="md:w-1/3">
+            <img src="../../assets/images/writing-systems/diccionariokanji.jpeg" alt="Diccionario de Kanji" class="w-full rounded-lg shadow-md">
+          </div>
+          <div class="md:w-2/3">
+            <h3 class="text-2xl font-bold text-purple-800 mb-4">Cómo Usar un Diccionario de Kanji</h3>
+            <p class="text-gray-700 mb-4 leading-relaxed">
+              Los diccionarios de kanji son herramientas esenciales para el aprendizaje del japonés. Te permiten buscar caracteres desconocidos y descubrir sus múltiples lecturas, significados y usos en diferentes contextos.
+            </p>
+            <div class="grid sm:grid-cols-2 gap-4 mb-4">
+              <div class="bg-white p-3 rounded-lg shadow-sm">
+                <h4 class="font-bold text-purple-700 mb-2">Por Radicales</h4>
+                <p class="text-sm text-gray-600">Busca kanji usando sus componentes básicos o radicales (部首)</p>
+              </div>
+              <div class="bg-white p-3 rounded-lg shadow-sm">
+                <h4 class="font-bold text-purple-700 mb-2">Por Número de Trazos</h4>
+                <p class="text-sm text-gray-600">Cuenta los trazos totales del kanji para encontrarlo</p>
+              </div>
+              <div class="bg-white p-3 rounded-lg shadow-sm">
+                <h4 class="font-bold text-purple-700 mb-2">Por Lectura</h4>
+                <p class="text-sm text-gray-600">Si conoces la pronunciación, búscalo por on'yomi o kun'yomi</p>
+              </div>
+              <div class="bg-white p-3 rounded-lg shadow-sm">
+                <h4 class="font-bold text-purple-700 mb-2">Por Significado</h4>
+                <p class="text-sm text-gray-600">Algunos diccionarios permiten buscar por concepto o idea</p>
+              </div>
+            </div>
+            <div class="text-center">
+              <span class="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-2 rounded-full font-medium">
+                Guía completa disponible
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <h3 class="text-xl font-bold text-red-800 mb-4">Tips de Aprendizaje y Pronunciación</h3>
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div class="space-y-4">
+          <div class="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+            <span class="text-2xl">🌳</span>
+            <div>
+              <h4 class="font-bold mb-1">Aprende por componentes</h4>
+              <p class="text-sm text-gray-600">Por ejemplo: "木" (árbol) es base para "林" (bosque) y "森" (monte)</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+            <span class="text-2xl">📚</span>
+            <div>
+              <h4 class="font-bold mb-1">On'yomi y Kun'yomi</h4>
+              <p class="text-sm text-gray-600">On'yomi en compuestos (学校 - gakkō), kun'yomi en palabras simples (山 - yama)</p>
+            </div>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+            <span class="text-2xl">🧠</span>
+            <div>
+              <h4 class="font-bold mb-1">Usa mnemónicos</h4>
+              <p class="text-sm text-gray-600">"日" (sol) parece un sol con rayos</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+            <span class="text-2xl">✍️</span>
+            <div>
+              <h4 class="font-bold mb-1">Practica la escritura</h4>
+              <p class="text-sm text-gray-600">Combina con hiragana: "食べる" (taberu) como kanji + hiragana</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-xl font-bold text-red-800 mb-4">Recursos de Video</h3>
+      <div class="grid sm:grid-cols-2 gap-4 mb-6">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/BqIEOf81jBk" frameborder="0" allowfullscreen class="w-full h-48 rounded-lg"></iframe>
+        </div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/9rdx1mBBIRw" frameborder="0" allowfullscreen class="w-full h-48 rounded-lg"></iframe>
+        </div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/-vtcW20cJ1s" frameborder="0" allowfullscreen class="w-full h-48 rounded-lg"></iframe>
+        </div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/makfARFoTGc" frameborder="0" allowfullscreen class="w-full h-48 rounded-lg"></iframe>
+        </div>
+      </div>
+      <p class="text-sm text-gray-600 mb-4">Para guías visuales sobre kanji, incluyendo "にんべんの漢字" (radical de persona). Créditos y derechos de autor a YouTube y a los creadores del contenido.</p>
+    </article>
+  </main>
+
+  <footer class="bg-red-600 text-white text-center py-6 mt-8">
+    <p>© 2025 Nihongo no Sekai – Todos los derechos reservados</p>
+  </footer>
+
+  <script src="../../assets/js/navigation.js"></script>
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aprende Hiragana con Nihongo no Sekai: tabla de caracteres, pronunciación, usos y vocabulario básico.">
+  <meta name="keywords" content="hiragana, japonés, aprender hiragana, pronunciación hiragana, vocabulario japonés">
+  <meta name="author" content="Nihongo no Sekai">
+  <title>Hiragana – Nihongo no Sekai (日本語の世界)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+    }
+    .nav-menu {
+      transition: all 0.3s ease-in-out;
+    }
+    .animated-btn {
+      transition: all 0.3s ease;
+      transform: scale(1);
+    }
+    .animated-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    .animated-img {
+      transition: all 0.3s ease;
+      transform: scale(1);
+      filter: brightness(1);
+    }
+    .animated-img:hover {
+      transform: scale(1.03);
+      filter: brightness(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    @media (max-width: 768px) {
+      .nav-menu {
+        transform: translateX(100%);
+      }
+      .nav-menu.open {
+        transform: translateX(0);
+      }
+    }
+    .dynamic-img {
+      max-width: 1200px;
+      width: 100%;
+      object-fit: cover;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .video-container {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .video-container iframe {
+      width: 100%;
+      height: 315px;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 leading-relaxed">
+  <header class="bg-red-600 text-white py-6">
+    <div class="container mx-auto px-4 flex items-center gap-4 flex-col md:flex-row">
+      <img src="images/Logo.png" alt="Logo de Nihongo no Sekai" class="h-20 w-20 object-contain rounded-md shadow-sm animated-img">
+      <div class="text-center md:text-left">
+        <h1 class="text-2xl md:text-3xl font-bold">Nihongo no Sekai (日本語の世界)</h1>
+        <p class="text-sm md:text-base">El mundo del japonés: Aprende el idioma y su cultura paso a paso</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="bg-red-800 py-3 sticky top-0 z-10">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none" aria-label="Abrir menú de navegación">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <div id="nav-menu" class="nav-menu md:flex md:space-x-6 absolute md:static top-14 right-0 bg-red-800 md:bg-transparent w-full md:w-auto p-4 md:p-0">
+        <a href="index.html#inicio" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Inicio</a>
+        <a href="articulos.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Artículos</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mx-auto px-4 py-8 bg-white shadow-lg rounded-lg">
+    <article id="hiragana" class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-red-800 mb-6">Hiragana: El Sistema Silábico Básico del Japonés</h2>
+      <p class="mb-6 text-lg">Hiragana es uno de los tres sistemas principales de escritura principales del japonés. Se usa principalmente para palabras nativas japonesas, partículas gramaticales, terminaciones verbales y para escribir palabras cuando no se conoce el kanji correspondiente. Es el primer sistema que se aprende porque es fonético y representa sonidos silábicos. Hay 46 caracteres básicos, más variaciones con dakuten (゛) y handakuten (゜), combinaciones (yōon) y otros elementos especiales.</p>
+
+      <h3 class="text-xl font-bold text-red-800 mb-4">Tabla de Hiragana Básico</h3>
+      <p class="mb-4">A continuación, una tabla con los 46 caracteres básicos de hiragana y su pronunciación en rōmaji.</p>
+      <table class="mb-6">
+        <thead>
+          <tr>
+            <th>a</th>
+            <th>i</th>
+            <th>u</th>
+            <th>e</th>
+            <th>o</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>あ (a)</td>
+            <td>い (i)</td>
+            <td>う (u)</td>
+            <td>え (e)</td>
+            <td>お (o)</td>
+          </tr>
+          <tr>
+            <td>か (ka)</td>
+            <td>き (ki)</td>
+            <td>く (ku)</td>
+            <td>け (ke)</td>
+            <td>こ (ko)</td>
+          </tr>
+          <tr>
+            <td>さ (sa)</td>
+            <td>し (shi)</td>
+            <td>す (su)</td>
+            <td>せ (se)</td>
+            <td>そ (so)</td>
+          </tr>
+          <tr>
+            <td>た (ta)</td>
+            <td>ち (chi)</td>
+            <td>つ (tsu)</td>
+            <td>て (te)</td>
+            <td>と (to)</td>
+          </tr>
+          <tr>
+            <td>な (na)</td>
+            <td>に (ni)</td>
+            <td>ぬ (nu)</td>
+            <td>ね (ne)</td>
+            <td>の (no)</td>
+          </tr>
+          <tr>
+            <td>は (ha)</td>
+            <td>ひ (hi)</td>
+            <td>ふ (fu)</td>
+            <td>へ (he)</td>
+            <td>ほ (ho)</td>
+          </tr>
+          <tr>
+            <td>ま (ma)</td>
+            <td>み (mi)</td>
+            <td>む (mu)</td>
+            <td>め (me)</td>
+            <td>も (mo)</td>
+          </tr>
+          <tr>
+            <td>や (ya)</td>
+            <td></td>
+            <td>ゆ (yu)</td>
+            <td></td>
+            <td>よ (yo)</td>
+          </tr>
+          <tr>
+            <td>ら (ra)</td>
+            <td>り (ri)</td>
+            <td>る (ru)</td>
+            <td>れ (re)</td>
+            <td>ろ (ro)</td>
+          </tr>
+          <tr>
+            <td>わ (wa)</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>を (wo)</td>
+          </tr>
+          <tr>
+            <td colspan="5">ん (n)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="text-xl font-bold text-red-800 mb-4">Dakuten y Handakuten</h3>
+      <p class="mb-4">Dakuten (゛) cambia consonantes sordas a sonoras (ej. k → g). Handakuten (゜) se usa en la serie "h" para cambiar a "p".</p>
+      <table class="mb-6">
+        <thead>
+          <tr>
+            <th>ga</th>
+            <th>gi</th>
+            <th>gu</th>
+            <th>ge</th>
+            <th>go</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>が</td>
+            <td>ぎ</td>
+            <td>ぐ</td>
+            <td>げ</td>
+            <td>ご</td>
+          </tr>
+          <tr>
+            <th>za</th>
+            <th>ji</th>
+            <th>zu</th>
+            <th>ze</th>
+            <th>zo</th>
+          </tr>
+          <tr>
+            <td>ざ</td>
+            <td>じ</td>
+            <td>ず</td>
+            <td>ぜ</td>
+            <td>ぞ</td>
+          </tr>
+          <tr>
+            <th>da</th>
+            <th>ji</th>
+            <th>zu</th>
+            <th>de</th>
+            <th>do</th>
+          </tr>
+          <tr>
+            <td>だ</td>
+            <td>ぢ</td>
+            <td>づ</td>
+            <td>で</td>
+            <td>ど</td>
+          </tr>
+          <tr>
+            <th>ba</th>
+            <th>bi</th>
+            <th>bu</th>
+            <th>be</th>
+            <th>bo</th>
+          </tr>
+          <tr>
+            <td>ば</td>
+            <td>び</td>
+            <td>ぶ</td>
+            <td>べ</td>
+            <td>ぼ</td>
+          </tr>
+          <tr>
+            <th>pa</th>
+            <th>pi</th>
+            <th>pu</th>
+            <th>pe</th>
+            <th>po</th>
+          </tr>
+          <tr>
+            <td>ぱ</td>
+            <td>ぴ</td>
+            <td>ぷ</td>
+            <td>ぺ</td>
+            <td>ぽ</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="text-xl font-bold text-red-800 mb-4">Combinaciones (Yōon)</h3>
+      <p class="mb-4">Se combinan caracteres con ya, yu, yo pequeños para formar sílabas como kya, sha, etc.</p>
+      <table class="mb-6">
+        <thead>
+          <tr>
+            <th>kya</th>
+            <th>kyu</th>
+            <th>kyo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>きゃ</td>
+            <td>きゅ</td>
+            <td>きょ</td>
+          </tr>
+          <tr>
+            <th>gya</th>
+            <th>gyu</th>
+            <th>gyo</th>
+          </tr>
+          <tr>
+            <td>ぎゃ</td>
+            <td>ぎゅ</td>
+            <td>ぎょ</td>
+          </tr>
+          <tr>
+            <th>sha</th>
+            <th>shu</th>
+            <th>sho</th>
+          </tr>
+          <tr>
+            <td>しゃ</td>
+            <td>しゅ</td>
+            <td>しょ</td>
+          </tr>
+          <tr>
+            <th>ja</th>
+            <th>ju</th>
+            <th>jo</th>
+          </tr>
+          <tr>
+            <td>じゃ</td>
+            <td>じゅ</td>
+            <td>じょ</td>
+          </tr>
+          <tr>
+            <th>cha</th>
+            <th>chu</th>
+            <th>cho</th>
+          </tr>
+          <tr>
+            <td>ちゃ</td>
+            <td>ちゅ</td>
+            <td>ちょ</td>
+          </tr>
+          <tr>
+            <th>nya</th>
+            <th>nyu</th>
+            <th>nyo</th>
+          </tr>
+          <tr>
+            <td>にゃ</td>
+            <td>にゅ</td>
+            <td>にょ</td>
+          </tr>
+          <tr>
+            <th>hya</th>
+            <th>hyu</th>
+            <th>hyo</th>
+          </tr>
+          <tr>
+            <td>ひゃ</td>
+            <td>ひゅ</td>
+            <td>ひょ</td>
+          </tr>
+          <tr>
+            <th>bya</th>
+            <th>byu</th>
+            <th>byo</th>
+          </tr>
+          <tr>
+            <td>びゃ</td>
+            <td>びゅ</td>
+            <td>びょ</td>
+          </tr>
+          <tr>
+            <th>pya</th>
+            <th>pyu</th>
+            <th>pyo</th>
+          </tr>
+          <tr>
+            <td>ぴゃ</td>
+            <td>ぴゅ</td>
+            <td>ぴょ</td>
+          </tr>
+          <tr>
+            <th>mya</th>
+            <th>myu</th>
+            <th>myo</th>
+          </tr>
+          <tr>
+            <td>みゃ</td>
+            <td>みゅ</td>
+            <td>みょ</td>
+          </tr>
+          <tr>
+            <th>rya</th>
+            <th>ryu</th>
+            <th>ryo</th>
+          </tr>
+          <tr>
+            <td>りゃ</td>
+            <td>りゅ</td>
+            <td>りょ</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="text-xl font-bold text-red-800 mb-4">Small Tsu (っ) - Consonante Doble</h3>
+      <p class="mb-4">El small tsu (っ) indica una pausa breve que duplica la consonante siguiente. Ejemplos: きって (kitte - sello), かっこ (kakko - paréntesis).</p>
+      <table class="mb-6">
+        <thead>
+          <tr>
+            <th>kk</th>
+            <th>ss</th>
+            <th>tt</th>
+            <th>pp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>っk</td>
+            <td>っs</td>
+            <td>っt</td>
+            <td>っp</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="text-xl font-bold text-red-800 mb-4">Vocales Largas</h3>
+      <p class="mb-4">Las vocales largas se forman duplicando el sonido vocal. Ejemplos: ああ (aa), いい (ii), うう (uu), ええ (ee), おお (oo). También ei (えい), ou (おう).</p>
+      <table class="mb-6">
+        <thead>
+          <tr>
+            <th>aa</th>
+            <th>ii</th>
+            <th>uu</th>
+            <th>ee</th>
+            <th>oo</th>
+            <th>ei</th>
+            <th>ou</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ああ</td>
+            <td>いい</td>
+            <td>うう</td>
+            <td>ええ</td>
+            <td>おお</td>
+            <td>えい</td>
+            <td>おう</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="text-xl font-bold text-red-800 mb-4">Tips de Pronunciación</h3>
+      <ul class="list-disc pl-6 mb-6">
+        <li>Las vocales se pronuncian cortas y claras: a como en "padre", i como en "si", u como en "luna", e como en "elefante", o como en "oro".</li>
+        <li>"Shi" se pronuncia "shi" (no "si"), "chi" como "chi" (no "ti"), "tsu" como "tsu" (similar a "tsunami").</li>
+        <li>"Fu" es suave, como una "f" con aire, no como "fu" en español.</li>
+        <li>Practica con audio: repite los sonidos en voz alta. Usa apps como Duolingo o YouTube para oír nativos.</li>
+        <li>Evita acentos: el japonés es plano, sin énfasis en sílabas específicas.</li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-red-800 mb-4">Vocabulario Básico con Hiragana</h3>
+      <ul class="list-disc pl-6 mb-6">
+        <li>こんにちは (konnichiwa) - Hola (durante el día).</li>
+        <li>ありがとう (arigatou) - Gracias.</li>
+        <li>すみません (sumimasen) - Disculpe / Perdón.</li>
+        <li>はい (hai) - Sí.</li>
+        <li>いいえ (iie) - No.</li>
+        <li>わたし (watashi) - Yo.</li>
+        <li>にほん (nihon) - Japón.</li>
+      </ul>
+      <p class="mb-6">Tip: Empieza escribiendo cada carácter 10 veces al día. Usa mnemonics, como "あ" parece una "a" con un gancho.</p>
+
+      <h3 class="text-xl font-bold text-red-800 mb-4">Recurso de Video</h3>
+      <div class="video-container mb-6">
+        <iframe src="https://www.youtube.com/embed/wD3FJgij79c" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <p class="mb-4">Para una guía visual y auditiva sobre cómo leer y escribir hiragana, disfruta de este video. Créditos y derechos de autor a YouTube y al creador del contenido.</p>
+    </article>
+  </main>
+
+  <footer class="bg-red-600 text-white text-center py-6 mt-8">
+    <p>© 2025 Nihongo no Sekai – Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    menuToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
+
+    function adjustImageSize(img) {
+      try {
+        const maxWidth = 1200;
+        if (img.classList.contains('dynamic-img') && img.naturalWidth > maxWidth) {
+          img.style.width = maxWidth + 'px';
+          img.style.height = 'auto';
+        }
+      } catch (e) { /* Manejo silencioso de errores */ }
+    }
+  </script>
+</body>
+</html>

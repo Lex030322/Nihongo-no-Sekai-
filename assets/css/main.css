@@ -1,0 +1,107 @@
+/* Fuentes y configuración base */
+body {
+  font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animaciones para botones */
+.animated-btn {
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+.animated-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animaciones para imágenes */
+.animated-img {
+  transition: all 0.3s ease;
+  transform: scale(1);
+  filter: brightness(1);
+}
+
+.animated-img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Menú de navegación */
+.nav-menu {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Imágenes dinámicas y banner */
+.dynamic-img {
+  max-width: 1200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.banner-img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 400px;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Grid para collage de imágenes */
+.collage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Tarjetas de sistemas de escritura */
+.writing-system-card {
+  transition: transform 0.3s ease;
+}
+
+.writing-system-card:hover {
+  transform: translateY(-5px);
+}
+
+.writing-system-card h4 {
+  color: #b91c1c; /* text-red-700 */
+}
+
+/* Mejoras visuales adicionales */
+.container {
+  max-width: 1200px;
+}
+
+/* Sombras mejoradas */
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Efectos hover para secciones */
+section {
+  transition: all 0.3s ease;
+}
+
+/* Estilo para los títulos de sección */
+h3 {
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #b91c1c; /* red-700 */
+  border-radius: 1px;
+}
