@@ -1,131 +1,79 @@
-/* Responsive Design */
-
-/* Tablets y pantallas medianas */
-@media (max-width: 768px) {
-  .nav-menu {
-    transform: translateX(100%);
-  }
-  
-  .nav-menu.open {
-    transform: translateX(0);
-  }
-  
-  /* Ajuste del grid en tablets */
-  .collage-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
-  }
-  
-  /* Banner más pequeño en móviles */
-  .banner-img {
-    max-height: 250px;
-  }
-  
-  /* Títulos más pequeños */
-  h1 {
-    font-size: 1.5rem !important;
-  }
-  
-  h2 {
-    font-size: 1.8rem !important;
-  }
-  
-  /* Padding reducido */
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
+@media (max-width: 860px) {
+    header {
+        flex-direction: row;
+        padding: 0.8em 1em;
+    }
+    .logo img {
+        height: 42px;
+    }
+    nav {
+        position: absolute;
+        top: 80px; right: 0;
+        width: 100vw;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5em 2em;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+        display: none;
+    }
+    nav.nav-open {
+        display: flex;
+    }
+    nav a {
+        margin: 1em 0;
+        font-size: 1.2em;
+        width: 100%;
+    }
+    .burger-menu { display: inline-block; }
 }
 
-/* Móviles pequeños */
+@media (max-width: 750px) {
+    .hero img { height: 220px; }
+    .hero-content { 
+        padding: 1em 1.2em; 
+        font-size: 1em; 
+        left: 2%; 
+        top: 12%;
+        max-width: 80vw;
+    }
+    .bienvenida { 
+        padding: 1em; 
+        font-size: 1em; 
+        margin: 1em auto;
+    }
+    section h2 {
+        font-size: 1.3em;
+    }
+    .links-destacados { 
+        gap: 1em; 
+    }
+    .link-box {
+        padding: 1em 1.2em;
+        font-size: 1.02em;
+    }
+    .galeria {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.9em;
+    }
+}
+
 @media (max-width: 480px) {
-  /* Grid de una sola columna en móviles muy pequeños */
-  .collage-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-  
-  /* Banner aún más pequeño */
-  .banner-img {
-    max-height: 200px;
-  }
-  
-  /* Tarjetas más compactas */
-  .writing-system-card img {
-    height: 120px !important;
-  }
-  
-  /* Texto más pequeño */
-  .text-lg {
-    font-size: 1rem !important;
-  }
-  
-  /* Header más compacto */
-  header {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-  }
-  
-  /* Logo más pequeño */
-  header img {
-    height: 60px !important;
-    width: 60px !important;
-  }
-}
-
-/* Pantallas muy grandes */
-@media (min-width: 1400px) {
-  .container {
-    max-width: 1400px;
-  }
-  
-  .collage-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-  
-  .banner-img {
-    max-height: 500px;
-  }
-}
-
-/* Mejoras para la navegación móvil */
-@media (max-width: 768px) {
-  #nav-menu a {
-    display: block;
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  #nav-menu a:last-child {
-    border-bottom: none;
-  }
-  
-  #nav-menu a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-}
-
-/* Optimizaciones para impresión */
-@media print {
-  .nav-menu,
-  #menu-toggle,
-  footer {
-    display: none;
-  }
-  
-  .animated-img:hover,
-  .animated-btn:hover {
-    transform: none;
-    box-shadow: none;
-    filter: none;
-  }
-  
-  body {
-    background-color: white;
-  }
-  
-  main {
-    box-shadow: none;
-  }
+    .hero-content h1 {
+        font-size: 1.4em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .galeria {
+        grid-template-columns: 1fr;
+        gap: 0.7em;
+    }
+    .bienvenida, .links-destacados {
+        padding: 0.5em;
+    }
+    .link-box {
+        font-size: 0.95em;
+        padding: 0.7em 0.7em;
+    }
 }
