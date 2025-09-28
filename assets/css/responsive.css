@@ -73,6 +73,13 @@
   }
 }
 
+/* Móviles pequeños (ajuste más estricto) */
+@media (max-width: 480px) {
+  .writing-system-card img {
+    height: 84px !important;
+  }
+}
+
 /* Pantallas muy grandes */
 @media (min-width: 1400px) {
   .container {
