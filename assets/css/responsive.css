@@ -1,47 +1,131 @@
+/* Responsive Design */
+
+/* Tablets y pantallas medianas */
 @media (max-width: 768px) {
+  .nav-menu {
+    transform: translateX(100%);
+  }
+  
+  .nav-menu.open {
+    transform: translateX(0);
+  }
+  
+  /* Ajuste del grid en tablets */
   .collage-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 0.8rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
   }
+  
+  /* Banner más pequeño en móviles */
   .banner-img {
-    max-height: 220px;
+    max-height: 250px;
   }
+  
+  /* Títulos más pequeños */
+  h1 {
+    font-size: 1.5rem !important;
+  }
+  
+  h2 {
+    font-size: 1.8rem !important;
+  }
+  
+  /* Padding reducido */
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  h1 {
-    font-size: 1.5rem !important;
-  }
-  h2 {
-    font-size: 1.2rem !important;
-  }
 }
+
+/* Móviles pequeños */
 @media (max-width: 480px) {
+  /* Grid de una sola columna en móviles muy pequeños */
   .collage-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
+  
+  /* Banner aún más pequeño */
   .banner-img {
-    max-height: 120px;
+    max-height: 200px;
   }
-  header img {
-    height: 48px !important;
-    width: 48px !important;
-  }
+  
+  /* Tarjetas más compactas */
   .writing-system-card img {
-    height: 84px !important;
+    height: 120px !important;
+  }
+  
+  /* Texto más pequeño */
+  .text-lg {
+    font-size: 1rem !important;
+  }
+  
+  /* Header más compacto */
+  header {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  
+  /* Logo más pequeño */
+  header img {
+    height: 60px !important;
+    width: 60px !important;
   }
 }
+
+/* Pantallas muy grandes */
 @media (min-width: 1400px) {
   .container {
     max-width: 1400px;
   }
+  
   .collage-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
   }
+  
   .banner-img {
     max-height: 500px;
+  }
+}
+
+/* Mejoras para la navegación móvil */
+@media (max-width: 768px) {
+  #nav-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  #nav-menu a:last-child {
+    border-bottom: none;
+  }
+  
+  #nav-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Optimizaciones para impresión */
+@media print {
+  .nav-menu,
+  #menu-toggle,
+  footer {
+    display: none;
+  }
+  
+  .animated-img:hover,
+  .animated-btn:hover {
+    transform: none;
+    box-shadow: none;
+    filter: none;
+  }
+  
+  body {
+    background-color: white;
+  }
+  
+  main {
+    box-shadow: none;
   }
 }
