@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aprende sobre el sistema Rōmaji para escribir japonés con caracteres latinos. Sistemas de romanización, usos, ventajas y desventajas con Nihongo no Sekai.">
+  <meta name="keywords" content="japonés, romaji, romanización, hepburn, kunrei-shiki, aprender japonés, escritura japonesa, nihongo, sistema latino">
+  <meta name="author" content="Nihongo no Sekai">
+  <meta name="robots" content="index, follow">
+  <title>Rōmaji – Nihongo no Sekai (日本語の世界)</title>
+  <link rel="icon" href="../../assets/images/icons/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/responsive.css">
+  <style>
+    body {
+      font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+    }
+    .nav-menu { transition: all 0.3s ease-in-out; }
+    .animated-btn {
+      transition: all 0.3s ease;
+      transform: scale(1);
+    }
+    .animated-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .animated-img {
+      transition: all 0.3s ease;
+      transform: scale(1);
+      filter: brightness(1);
+    }
+    .animated-img:hover {
+      transform: scale(1.03);
+      filter: brightness(1.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    html { scroll-behavior: smooth; }
+    .floating-btn {
+      position: fixed;
+      bottom: 1.2rem;
+      right: 1.2rem;
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .btn-action {
+      background: #059669;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      cursor: pointer;
+      font-size: 1.7rem;
+      transition: background 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .btn-action:hover {
+      background: #047857;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.20);
+    }
+    .btn-volver-text {
+      display: none;
+      position: absolute;
+      right: 110%;
+      background: #fff;
+      color: #059669;
+      padding: 0.5em 1em;
+      border-radius: 0.5em;
+      font-size: 1rem;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      white-space: nowrap;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .btn-volver:hover .btn-volver-text {
+      display: block;
+    }
+    @media (max-width: 600px) {
+      .floating-btn {
+        right: 0.6rem;
+        bottom: 0.6rem;
+        gap: 0.7rem;
+      }
+      .btn-action {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+      }
+      .btn-volver-text {
+        font-size: 0.9rem;
+        padding: 0.4em 0.8em;
+      }
+      .nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+      .nav-menu a {
+        width: 100%;
+        text-align: left;
+      }
+    }
+    /* Estilo para la tabla de Rōmaji */
+    .romaji-table {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 100%;
+      background: #fff;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .romaji-table th, .romaji-table td {
+      border: 1px solid #d1fae5;
+      padding: 0.75rem;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    .romaji-table th {
+      background: #d1fae5;
+      color: #047857;
+      font-weight: bold;
+    }
+    .romaji-table td:hover {
+      background: #ecfdf5;
+      transform: scale(1.05);
+      transition: all 0.2s ease;
+    }
+    /* Estilo para el video */
+    .video-container {
+      max-width: 800px;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+    }
+    /* Comparación de sistemas */
+    .comparison-table {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 100%;
+      background: #fff;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .comparison-table th, .comparison-table td {
+      border: 1px solid #d1fae5;
+      padding: 0.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .comparison-table th {
+      background: #059669;
+      color: white;
+      font-weight: bold;
+    }
+    .comparison-table tr:nth-child(even) {
+      background: #f0fdf4;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 leading-relaxed">
+  <header class="bg-red-600 text-white py-6">
+    <div class="container mx-auto px-4 flex items-center gap-4 flex-col md:flex-row">
+      <img src="../../assets/images/logos/logo.png" alt="Logo de Nihongo no Sekai" class="h-20 w-20 object-contain rounded-md shadow-sm animated-img" loading="lazy">
+      <div class="text-center md:text-left">
+        <h1 class="text-2xl md:text-3xl font-bold">Nihongo no Sekai (日本語の世界)</h1>
+        <p class="text-sm md:text-base">El mundo del japonés: Aprende el idioma y su cultura paso a paso</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="bg-red-800 py-3 sticky top-0 z-10">
+    <div class="container mx-auto px-4">
+      <div id="nav-menu" class="nav-menu flex flex-col md:flex-row md:space-x-6 w-full md:w-auto p-4 md:p-0">
+        <a href="../../index.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Inicio</a>
+        <a href="../menu.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Menú</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mx-auto px-4 py-8 bg-white shadow-lg rounded-lg">
+    <article id="romaji-intro" class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-red-800 mb-6 text-center">Rōmaji (ローマ字) – La romanización del japonés</h2>
+      <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl mb-8 border-l-4 border-green-600">
+        <p class="text-lg leading-relaxed">
+          El <strong>Rōmaji</strong> es el sistema de escritura que utiliza el <strong>alfabeto latino</strong> para representar los sonidos del japonés. Aunque no es un sistema de escritura nativo del japonés, es una herramienta invaluable para principiantes, turismo, tecnología y comunicación internacional. Existen varios sistemas de romanización, siendo el <strong>Sistema Hepburn</strong> el más utilizado internacionalmente.
+        </p>
+      </div>
+
+      <!-- Tabla básica de Rōmaji -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-green-700 mb-6">Tabla Básica de Rōmaji (Sistema Hepburn)</h3>
+        <div class="overflow-x-auto">
+          <table class="romaji-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>a</th>
+                <th>i</th>
+                <th>u</th>
+                <th>e</th>
+                <th>o</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>-</th>
+                <td>a (あ/ア)</td>
+                <td>i (い/イ)</td>
+                <td>u (う/ウ)</td>
+                <td>e (え/エ)</td>
+                <td>o (お/オ)</td>
+              </tr>
+              <tr>
+                <th>k</th>
+                <td>ka (か/カ)</td>
+                <td>ki (き/キ)</td>
+                <td>ku (く/ク)</td>
+                <td>ke (け/ケ)</td>
+                <td>ko (こ/コ)</td>
+              </tr>
+              <tr>
+                <th>s</th>
+                <td>sa (さ/サ)</td>
+                <td>shi (し/シ)</td>
+                <td>su (す/ス)</td>
+                <td>se (せ/セ)</td>
+                <td>so (そ/ソ)</td>
+              </tr>
+              <tr>
+                <th>t</th>
+                <td>ta (た/タ)</td>
+                <td>chi (ち/チ)</td>
+                <td>tsu (つ/ツ)</td>
+                <td>te (て/テ)</td>
+                <td>to (と/ト)</td>
+              </tr>
+              <tr>
+                <th>n</th>
+                <td>na (な/ナ)</td>
+                <td>ni (に/ニ)</td>
+                <td>nu (ぬ/ヌ)</td>
+                <td>ne (ね/ネ)</td>
+                <td>no (の/ノ)</td>
+              </tr>
+              <tr>
+                <th>h</th>
+                <td>ha (は/ハ)</td>
+                <td>hi (ひ/ヒ)</td>
+                <td>fu (ふ/フ)</td>
+                <td>he (へ/ヘ)</td>
+                <td>ho (ほ/ホ)</td>
+              </tr>
+              <tr>
+                <th>m</th>
+                <td>ma (ま/マ)</td>
+                <td>mi (み/ミ)</td>
+                <td>mu (む/ム)</td>
+                <td>me (め/メ)</td>
+                <td>mo (も/モ)</td>
+              </tr>
+              <tr>
+                <th>y</th>
+                <td>ya (や/ヤ)</td>
+                <td>-</td>
+                <td>yu (ゆ/ユ)</td>
+                <td>-</td>
+                <td>yo (よ/ヨ)</td>
+              </tr>
+              <tr>
+                <th>r</th>
+                <td>ra (ら/ラ)</td>
+                <td>ri (り/リ)</td>
+                <td>ru (る/ル)</td>
+                <td>re (れ/レ)</td>
+                <td>ro (ろ/ロ)</td>
+              </tr>
+              <tr>
+                <th>w</th>
+                <td>wa (わ/ワ)</td>
+                <td>-</td>
+                <td>-</td>
+                <td>-</td>
+                <td>wo (を/ヲ)</td>
+              </tr>
+              <tr>
+                <th>n</th>
+                <td colspan="5">n (ん/ン)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-sm text-gray-600 mt-4">*Nota: Se muestran los equivalentes en Hiragana y Katakana para referencia.</p>
+      </section>
+
+      <!-- Sistemas de Romanización -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-green-700 mb-6">Sistemas de Romanización</h3>
+        <div class="bg-green-50 p-6 rounded-xl mb-6 border border-green-200">
+          <p class="text-lg mb-4">
+            Existen tres sistemas principales de romanización del japonés, cada uno con sus propias reglas y usos específicos:
+          </p>
+          <div class="overflow-x-auto">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Carácter</th>
+                  <th>Hepburn</th>
+                  <th>Kunrei-shiki</th>
+                  <th>Nihon-shiki</th>
+                  <th>Uso Principal</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>し</td>
+                  <td><strong>shi</strong></td>
+                  <td>si</td>
+                  <td>si</td>
+                  <td>Internacional</td>
+                </tr>
+                <tr>
+                  <td>ち</td>
+                  <td><strong>chi</strong></td>
+                  <td>ti</td>
+                  <td>ti</td>
+                  <td>Internacional</td>
+                </tr>
+                <tr>
+                  <td>つ</td>
+                  <td><strong>tsu</strong></td>
+                  <td>tu</td>
+                  <td>tu</td>
+                  <td>Internacional</td>
+                </tr>
+                <tr>
+                  <td>ふ</td>
+                  <td><strong>fu</strong></td>
+                  <td>hu</td>
+                  <td>hu</td>
+                  <td>Internacional</td>
+                </tr>
+                <tr>
+                  <td>じ</td>
+                  <td><strong>ji</strong></td>
+                  <td>zi</td>
+                  <td>zi</td>
+                  <td>Internacional</td>
+                </tr>
+                <tr>
+                  <td>を</td>
+                  <td><strong>o</strong></td>
+                  <td>o</td>
+                  <td>wo</td>
+                  <td>Gramática</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reglas especiales -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-green-700 mb-6">Reglas Especiales del Rōmaji</h3>
+        
+        <!-- Vocales largas -->
+        <div class="bg-green-50 p-6 rounded-xl mb-6 border border-green-200">
+          <h4 class="text-xl font-bold text-green-800 mb-4">📏 Vocales Largas (Chōon)</h4>
+          <p class="text-lg mb-4">
+            Las vocales largas se pueden representar de varias maneras en Rōmaji:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700 mb-4">
+            <li><strong>Con macrón:</strong> ā, ī, ū, ē, ō (Sistema académico)</li>
+            <li><strong>Con circunflejo:</strong> â, î, û, ê, ô (Alternativo)</li>
+            <li><strong>Duplicando la vocal:</strong> aa, ii, uu, ee, oo (Informal)</li>
+            <li><strong>Con "h":</strong> ah, ih, uh, eh, oh (Método Hepburn modificado)</li>
+          </ul>
+          <div class="bg-white p-4 rounded-lg">
+            <p class="font-bold mb-2">Ejemplos:</p>
+            <ul class="space-y-1 text-sm">
+              <li>東京 → Tōkyō (con macrón) / Tokyo (simplificado)</li>
+              <li>大阪 → Ōsaka (con macrón) / Osaka (simplificado)</li>
+              <li>こんにちは → Konnichiwa</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Doble consonante -->
+        <div class="bg-green-50 p-6 rounded-xl mb-6 border border-green-200">
+          <h4 class="text-xl font-bold text-green-800 mb-4">⏸️ Doble Consonante (Sokuon)</h4>
+          <p class="text-lg mb-4">
+            El pequeño っ/ッ se representa duplicando la consonante siguiente:
+          </p>
+          <div class="bg-white p-4 rounded-lg">
+            <p class="font-bold mb-2">Ejemplos:</p>
+            <ul class="space-y-1 text-sm">
+              <li>がっこう → gakkou (escuela)</li>
+              <li>ざっし → zasshi (revista)</li>
+              <li>いっぱい → ippai (lleno)</li>
+              <li>サッカー → sakkā (fútbol)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Combinaciones y -->
+        <div class="bg-green-50 p-6 rounded-xl mb-6 border border-green-200">
+          <h4 class="text-xl font-bold text-green-800 mb-4">🔄 Combinaciones con Y (Yōon)</h4>
+          <p class="text-lg mb-4">
+            Las combinaciones con ゃ, ゅ, ょ se escriben como consonante + y + vocal:
+          </p>
+          <div class="bg-white p-4 rounded-lg">
+            <p class="font-bold mb-2">Ejemplos:</p>
+            <ul class="space-y-1 text-sm">
+              <li>きゃ → kya</li>
+              <li>しゅ → shu</li>
+              <li>ちょ → cho</li>
+              <li>じゃ → ja</li>
+              <li>りゅう → ryū</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Usos del Rōmaji -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-green-700 mb-6">Usos del Rōmaji en la Sociedad Japonesa</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-5 rounded-lg border border-green-200">
+            <h4 class="font-bold text-green-800 mb-3">✅ Usos Comunes</h4>
+            <ul class="space-y-2 text-gray-700 text-sm">
+              <li>• <strong>Turismo:</strong> Señalización, mapas, guías</li>
+              <li>• <strong>Tecnología:</strong> URLs, emails, programación</li>
+              <li>• <strong>Educación:</strong> Material para principiantes</li>
+              <li>• <strong>Internacional:</strong> Pasaportes, documentos oficiales</li>
+              <li>• <strong>Marcas:</strong> Logos y nombres comerciales</li>
+              <li>• <strong>Transporte:</strong> Estaciones de tren y metro</li>
+            </ul>
+          </div>
+          <div class="bg-white p-5 rounded-lg border border-green-200">
+            <h4 class="font-bold text-green-800 mb-3">❌ Limitaciones</h4>
+            <ul class="space-y-2 text-gray-700 text-sm">
+              <li>• <strong>No es escritura nativa:</strong> Los japoneses no lo usan para escribir</li>
+              <li>• <strong>Ambigüedad:</strong> Múltiples kanji pueden tener la misma romanización</li>
+              <li>• <strong>Pérdida de nuances:</strong> No transmite matices culturales</li>
+              <li>• <strong>Dependencia:</strong> Puede crear dependencia y retrasar el aprendizaje</li>
+              <li>• <strong>Inconsistencias:</strong> Diferentes sistemas crean confusión</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video tutorial -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-green-700 mb-6 flex items-center">
+          <svg class="w-8 h-8 mr-2 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1a3 3 0 015.83-.64"/>
+          </svg>
+          Pronunciación y Uso del Rōmaji
+        </h3>
+        <div class="bg-gradient-to-r from-green-100 to-emerald-100 p-6 rounded-xl mb-6 border border-green-200 shadow-lg">
+          <p class="text-lg mb-4">
+            Comprende mejor la pronunciación del japonés y cómo el Rōmaji puede ayudarte en tu aprendizaje inicial.
+          </p>
+          <ul class="list-disc pl-6 mb-4 text-gray-700">
+            <li>Pronunciación correcta de cada sonido japonés.</li>
+            <li>Cómo usar Rōmaji como herramienta de transición.</li>
+            <li>Cuándo y cómo dejar de depender del Rōmaji.</li>
+            <li>Diferencias entre los sistemas de romanización.</li>
+          </ul>
+          <div class="bg-yellow-100 p-4 rounded-lg border border-yellow-300">
+            <p class="text-sm text-yellow-800">
+              <strong>Nota:</strong> Al ser Rōmaji un sistema auxiliar, recomendamos complementar con videos de pronunciación general del japonés y enfocarse en aprender Hiragana y Katakana lo antes posible.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ejemplos prácticos -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-green-700 mb-6">Ejemplos Prácticos</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-5 rounded-lg border border-green-200">
+            <h4 class="font-bold text-green-800 mb-3">Frases Básicas</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li><span class="font-mono text-lg">Hajimemashite</span> (はじめまして) – Mucho gusto</li>
+              <li><span class="font-mono text-lg">Arigatō gozaimasu</span> (ありがとうございます) – Muchas gracias</li>
+              <li><span class="font-mono text-lg">Sumimasen</span> (すみません) – Disculpe</li>
+              <li><span class="font-mono text-lg">Sayōnara</span> (さようなら) – Adiós</li>
+            </ul>
+          </div>
+          <div class="bg-white p-5 rounded-lg border border-green-200">
+            <h4 class="font-bold text-green-800 mb-3">Lugares y Direcciones</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li><span class="font-mono text-lg">Tōkyō-eki</span> (東京駅) – Estación de Tokio</li>
+              <li><span class="font-mono text-lg">Shibuya</span> (渋谷) – Distrito Shibuya</li>
+              <li><span class="font-mono text-lg">Kōkū</span> (空港) – Aeropuerto</li>
+              <li><span class="font-mono text-lg">Byōin</span> (病院) – Hospital</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Consejos para principiantes -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-green-700 mb-6">Consejos para Usar Rōmaji Efectivamente</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-gradient-to-br from-green-100 to-green-50 p-5 rounded-lg">
+            <div class="text-3xl mb-3">🚀</div>
+            <h4 class="font-bold text-green-800 mb-2">Como Trampolín</h4>
+            <p class="text-sm text-gray-700">Usa Rōmaji solo como herramienta inicial. Transiciona a Hiragana/Katakana lo antes posible para un aprendizaje auténtico.</p>
+          </div>
+          <div class="bg-gradient-to-br from-green-100 to-green-50 p-5 rounded-lg">
+            <div class="text-3xl mb-3">📖</div>
+            <h4 class="font-bold text-green-800 mb-2">Aprende las Reglas</h4>
+            <p class="text-sm text-gray-700">Familiarízate con el sistema Hepburn, ya que es el más usado internacionalmente y más intuitivo para hablantes de español.</p>
+          </div>
+          <div class="bg-gradient-to-br from-green-100 to-green-50 p-5 rounded-lg">
+            <div class="text-3xl mb-3">⚠️</div>
+            <h4 class="font-bold text-green-800 mb-2">Evita la Dependencia</h4>
+            <p class="text-sm text-gray-700">No te acostumbres demasiado al Rōmaji. Su uso prolongado puede obstaculizar tu progreso hacia la escritura japonesa real.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recursos adicionales -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-green-700 mb-6">Recursos Adicionales</h3>
+        <div class="bg-green-50 p-6 rounded-xl border border-green-200">
+          <ul class="space-y-3 text-gray-700">
+            <li>
+              <strong>Guía de Romanización (PDF):</strong> 
+              <a href="../../assets/resources/romaji-guide.pdf" class="text-green-600 hover:underline" target="_blank" rel="noopener noreferrer">Descarga nuestra guía completa</a>
+            </li>
+            <li>
+              <strong>Convertidor Rōmaji-Hiragana:</strong> 
+              <a href="https://www.lexilogos.com/keyboard/hiragana.htm" class="text-green-600 hover:underline" target="_blank" rel="noopener noreferrer">Herramienta online de conversión</a>
+            </li>
+            <li>
+              <strong>Pronunciación japonesa:</strong> 
+              <a href="https://forvo.com/languages/ja/" class="text-green-600 hover:underline" target="_blank" rel="noopener noreferrer">Diccionario de pronunciación Forvo</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- Botones flotantes -->
+  <div class="floating-btn">
+    <button class="btn-action btn-volver" onclick="window.location.href='../menu.html'" title="Volver al menú">
+      <span class="btn-volver-text">Volver al Menú</span>
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+      </svg>
+    </button>
+    <button class="btn-action" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Ir arriba">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+      </svg>
+    </button>
+    <button class="btn-action" onclick="window.location.href='../../index.html'" title="Volver a Inicio">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7m-9 5v6h4v-6m-6 0h6"/>
+      </svg>
+    </button>
+  </div>
+
+  <footer class="bg-red-600 text-white text-center py-6 mt-8">
+    <p>© 2025 Nihongo no Sekai – Todos los derechos reservados</p>
+  </footer>
+
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    // Funcionalidad específica para Rōmaji
+    document.addEventListener('DOMContentLoaded', () => {
+      console.log('Página de Rōmaji cargada correctamente');
+      
+      // Agregar interactividad a las tablas
+      const tables = document.querySelectorAll('.romaji-table, .comparison-table');
+      tables.forEach(table => {
+        table.addEventListener('click', (e) => {
+          if (e.target.tagName === 'TD') {
+            console.log('Celda seleccionada:', e.target.textContent);
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
