@@ -6,6 +6,7 @@
   <meta name="description" content="Aprende japonés y su cultura con Nihongo no Sekai. Explora Hiragana, Katakana, Kanji, Rōmaji y consejos culturales.">
   <meta name="keywords" content="japonés, hiragana, katakana, kanji, rōmaji, cultura japonesa, aprender japonés">
   <meta name="author" content="Nihongo no Sekai">
+  <meta name="robots" content="index, follow">
   <title>Nihongo no Sekai (日本語の世界) – El mundo del japonés</title>
   <link rel="icon" href="assets/images/icons/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -26,13 +27,13 @@
 
   <nav class="bg-red-800 py-3 sticky top-0 z-10">
     <div class="container mx-auto px-4 flex justify-between items-center">
-      <button id="menu-toggle" class="md:hidden text-white focus:outline-none" aria-label="Abrir menú de navegación">
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none" aria-label="Abrir o cerrar menú de navegación">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
-      <div id="nav-menu" class="nav-menu hidden md:flex md:space-x-6 absolute md:static top-14 right-0 bg-red-800 md:bg-transparent w-full md:w-auto p-4 md:p-0">
-        <a href="#inicio" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md" aria-current="page">Inicio</a>
+      <div id="nav-menu" class="nav-menu hidden md:block md:flex md:space-x-6 absolute md:static top-14 right-0 bg-red-800 md:bg-transparent w-full md:w-auto p-4 md:p-0">
+        <a href="index.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md bg-red-900" aria-current="page">Inicio</a>
         <a href="pages/menu.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Menú</a>
       </div>
     </div>
@@ -41,10 +42,10 @@
   <main class="container mx-auto px-4 py-8 bg-white shadow-lg rounded-lg">
     <article id="inicio" class="mb-12">
       <div class="mb-6">
-        <img src="assets/images/banners/japon-banner.jpg" alt="Panorama de Japón - Nihongo no Sekai" class="banner-img rounded-lg animated-img" loading="lazy">
+        <img src="assets/images/banners/japon-banner.jpg" alt="Panorama de Japón - Nihongo no Sekai" class="banner-img w-full max-h-96 object-contain rounded-lg animated-img" loading="lazy">
       </div>
-      <h2 class="text-2xl md:text-3xl font-bold text-red-800 mb-4">Bienvenido a Nihongo no Sekai</h2>
-      <p class="mb-6 text-lg">
+      <h2 class="text-2xl md:text-3xl font-bold text-red-800 mb-4 text-center">Bienvenido a Nihongo no Sekai</h2>
+      <p class="mb-6 text-lg text-center max-w-3xl mx-auto">
         ¡Bienvenido a Nihongo no Sekai, un espacio donde el idioma japonés y su cultura se entrelazan! Aquí aprenderás sobre sus sistemas de escritura (Hiragana, Katakana, Kanji y Rōmaji), frases básicas y consejos culturales, mientras disfrutas de imágenes representativas del Japón tradicional.
       </p>
       
@@ -53,7 +54,7 @@
         <h3 class="text-2xl font-bold text-red-700 mb-6 text-center">Sistemas de Escritura</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto mb-6">
           <a href="pages/lessons/hiragana.html" class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden">
-            <img src="assets/images/writing-systems/hiragana.jpg" alt="Tabla de Hiragana" class="w-full h-40 object-cover" loading="lazy">
+            <img src="assets/images/writing-systems/hiragana.jpg" alt="Tabla de caracteres Hiragana" class="w-full max-h-40 object-contain" loading="lazy">
             <div class="p-4 text-center">
               <h4 class="font-bold text-pink-700 text-lg">Hiragana</h4>
               <p class="text-sm text-gray-600 mt-1">Silabario básico</p>
@@ -61,7 +62,7 @@
           </a>
           
           <a href="pages/lessons/katakana.html" class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden">
-            <img src="assets/images/writing-systems/katakana.jpg" alt="Tabla de Katakana" class="w-full h-40 object-cover" loading="lazy">
+            <img src="assets/images/writing-systems/katakana.jpg" alt="Tabla de caracteres Katakana" class="w-full max-h-40 object-contain" loading="lazy">
             <div class="p-4 text-center">
               <h4 class="font-bold text-blue-700 text-lg">Katakana</h4>
               <p class="text-sm text-gray-600 mt-1">Palabras extranjeras</p>
@@ -69,15 +70,15 @@
           </a>
           
           <a href="pages/lessons/kanji.html" class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden">
-            <img src="assets/images/writing-systems/kanji.png" alt="Ejemplos de Kanji" class="w-full h-40 object-cover" loading="lazy">
+            <img src="assets/images/writing-systems/kanji.png" alt="Ejemplos de caracteres Kanji" class="w-full max-h-40 object-contain" loading="lazy">
             <div class="p-4 text-center">
               <h4 class="font-bold text-red-700 text-lg">Kanji</h4>
               <p class="text-sm text-gray-600 mt-1">Caracteres chinos</p>
             </div>
           </a>
           
-          <a href="pages/lessons/sistemas-escritura.html" class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden">
-            <img src="assets/images/writing-systems/romaji.jpg" alt="Guía de Rōmaji" class="w-full h-40 object-cover" loading="lazy">
+          <a href="pages/lessons/sistemas-escritura.html#romaji" class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden">
+            <img src="assets/images/writing-systems/romaji.jpg" alt="Guía de romanización Rōmaji" class="w-full max-h-40 object-contain" loading="lazy">
             <div class="p-4 text-center">
               <h4 class="font-bold text-green-700 text-lg">Rōmaji</h4>
               <p class="text-sm text-gray-600 mt-1">Romanización</p>
@@ -87,11 +88,11 @@
         
         <!-- Botón destacado para todos los sistemas -->
         <div class="text-center">
-          <a href="pages/lessons/sistemas-escritura.html" class="inline-block bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
-            <img src="assets/images/writing-systems/escrituras.jpeg" alt="Guía completa de sistemas de escritura" class="w-full h-32 object-cover" loading="lazy">
+          <a href="pages/lessons/sistemas-escritura.html" class="inline-block bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100 overflow-hidden">
+            <img src="assets/images/writing-systems/escrituras.jpeg" alt="Guía completa de sistemas de escritura japonesa" class="w-full max-h-32 object-contain" loading="lazy">
             <div class="p-4 text-center">
-              <h4 class="font-bold text-white text-lg">Todos los Sistemas</h4>
-              <p class="text-sm text-purple-100 mt-1">Guía completa</p>
+              <h4 class="font-bold text-purple-700 text-lg">Todos los Sistemas</h4>
+              <p class="text-sm text-gray-600 mt-1">Guía completa</p>
             </div>
           </a>
         </div>
@@ -102,56 +103,56 @@
         <h3 class="text-2xl font-bold text-red-700 mb-6 text-center">Cultura Japonesa</h3>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
           <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
-            <img src="assets/images/culture/cultura.jpeg" alt="Cultura japonesa tradicional" class="w-full h-32 object-cover" loading="lazy">
+            <img src="assets/images/culture/cultura.jpeg" alt="Cultura japonesa tradicional" class="w-full max-h-32 object-contain" loading="lazy">
             <div class="p-3 text-center">
               <h4 class="font-semibold text-gray-800 text-sm">Cultura Tradicional</h4>
             </div>
           </div>
           
           <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
-            <img src="assets/images/culture/cerezos.jpeg" alt="Cerezos en flor (Sakura)" class="w-full h-32 object-cover" loading="lazy">
+            <img src="assets/images/culture/cerezos.jpeg" alt="Cerezos en flor (Sakura)" class="w-full max-h-32 object-contain" loading="lazy">
             <div class="p-3 text-center">
               <h4 class="font-semibold text-gray-800 text-sm">Sakura</h4>
             </div>
           </div>
           
           <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
-            <img src="assets/images/culture/templo.jpeg" alt="Templo japonés" class="w-full h-32 object-cover" loading="lazy">
+            <img src="assets/images/culture/templo.jpeg" alt="Templo japonés" class="w-full max-h-32 object-contain" loading="lazy">
             <div class="p-3 text-center">
               <h4 class="font-semibold text-gray-800 text-sm">Templos</h4>
             </div>
           </div>
           
           <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
-            <img src="assets/images/culture/templo2.jpeg" alt="Arquitectura de templo japonés" class="w-full h-32 object-cover" loading="lazy">
+            <img src="assets/images/culture/templo2.jpeg" alt="Arquitectura de templo japonés" class="w-full max-h-32 object-contain" loading="lazy">
             <div class="p-3 text-center">
               <h4 class="font-semibold text-gray-800 text-sm">Arquitectura</h4>
             </div>
           </div>
           
           <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
-            <img src="assets/images/culture/tori.jpeg" alt="Puerta Torii" class="w-full h-32 object-cover" loading="lazy">
+            <img src="assets/images/culture/tori.jpeg" alt="Puerta Torii" class="w-full max-h-32 object-contain" loading="lazy">
             <div class="p-3 text-center">
               <h4 class="font-semibold text-gray-800 text-sm">Torii</h4>
             </div>
           </div>
           
           <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
-            <img src="assets/images/culture/templobosque.jpeg" alt="Templo en el bosque" class="w-full h-32 object-cover" loading="lazy">
+            <img src="assets/images/culture/templobosque.jpeg" alt="Templo en el bosque" class="w-full max-h-32 object-contain" loading="lazy">
             <div class="p-3 text-center">
               <h4 class="font-semibold text-gray-800 text-sm">Naturaleza</h4>
             </div>
           </div>
           
           <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
-            <img src="assets/images/culture/pintura.jpeg" alt="Pintura japonesa tradicional" class="w-full h-32 object-cover" loading="lazy">
+            <img src="assets/images/culture/pintura.jpeg" alt="Pintura japonesa tradicional" class="w-full max-h-32 object-contain" loading="lazy">
             <div class="p-3 text-center">
               <h4 class="font-semibold text-gray-800 text-sm">Arte Tradicional</h4>
             </div>
           </div>
           
           <div class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
-            <img src="assets/images/culture/montefuji.jpeg" alt="Monte Fuji" class="w-full h-32 object-cover" loading="lazy">
+            <img src="assets/images/culture/montefuji.jpeg" alt="Monte Fuji" class="w-full max-h-32 object-contain" loading="lazy">
             <div class="p-3 text-center">
               <h4 class="font-semibold text-gray-800 text-sm">Monte Fuji</h4>
             </div>
