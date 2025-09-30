@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aprende sobre el sistema de escritura Hiragana japonés, sus caracteres, usos, orden de trazos y consejos para principiantes con Nihongo no Sekai. Incluye un video tutorial sobre el orden de trazos.">
+  <meta name="description" content="Aprende sobre el sistema de escritura Hiragana japonés, sus caracteres, usos, orden de trazos y consejos para principiantes con Nihongo no Sekai. Incluye un video tutorial interactivo sobre el orden de trazos.">
   <meta name="keywords" content="japonés, hiragana, silabario japonés, aprender japonés, escritura japonesa, nihongo">
   <meta name="author" content="Nihongo no Sekai">
   <meta name="robots" content="index, follow">
@@ -148,6 +148,27 @@
     .video-container iframe {
       width: 100%;
       height: 100%;
+    }
+    /* Estilo para la miniatura con ícono de play */
+    .thumbnail-container {
+      position: relative;
+      display: inline-block;
+    }
+    .thumbnail-container::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" stroke="red" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>') no-repeat center;
+      background-size: contain;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+    .thumbnail-container:hover::after {
+      opacity: 1;
     }
   </style>
 </head>
@@ -454,17 +475,29 @@
 
       <!-- Orden de Trazos -->
       <section class="mb-12">
-        <h3 class="text-2xl font-bold text-pink-700 mb-6">Orden de Trazos</h3>
-        <div class="bg-pink-50 p-6 rounded-xl mb-6 border border-pink-200">
+        <h3 class="text-2xl font-bold text-pink-700 mb-6 flex items-center">
+          <svg class="w-8 h-8 mr-2 text-pink-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+          </svg>
+          Orden de Trazos
+        </h3>
+        <div class="bg-gradient-to-r from-pink-100 to-rose-100 p-6 rounded-xl mb-6 border border-pink-200 shadow-lg">
           <p class="text-lg mb-4">
-            Aprende cómo escribir los caracteres de Hiragana siguiendo el orden de trazos correcto con este video tutorial: <strong>"How to Read and Write Hiragana Alphabet | Learn Japanese for Beginners"</strong>.
+            Aprende cómo escribir los caracteres de Hiragana siguiendo el orden de trazos correcto con este video tutorial interactivo.
           </p>
+          <ul class="list-disc pl-6 mb-4 text-gray-700">
+            <li>Orden de trazos para cada carácter Hiragana.</li>
+            <li>Pronunciación clara de cada sonido.</li>
+            <li>Consejos prácticos para memorizar y escribir con fluidez.</li>
+          </ul>
           <div class="flex flex-col md:flex-row gap-6 items-center">
-            <a href="https://youtu.be/wD3FJgij79c" target="_blank" rel="noopener noreferrer" class="animated-img block max-w-xs">
-              <img src="https://img.youtube.com/vi/wD3FJgij79c/0.jpg" alt="Miniatura del video tutorial sobre el orden de trazos de Hiragana" class="w-full max-h-40 object-contain rounded-lg shadow-md" loading="lazy">
-            </a>
-            <div class="video-container max-w-2xl mx-auto">
-              <iframe src="https://www.youtube.com/embed/wD3FJgij79c" title="Video tutorial: Cómo leer y escribir el alfabeto Hiragana" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="thumbnail-container animated-img max-w-xs">
+              <a href="https://youtu.be/wD3FJgij79c" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/wD3FJgij79c/0.jpg" alt="Miniatura del video tutorial sobre el orden de trazos de Hiragana" class="w-full max-h-40 object-contain rounded-lg shadow-md" loading="lazy">
+              </a>
+            </div>
+            <div class="video-container max-w-3xl mx-auto">
+              <iframe src="https://www.youtube.com/embed/wD3FJgij79c?rel=0" title="Video tutorial: Cómo leer y escribir el alfabeto Hiragana" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -561,5 +594,16 @@
   </footer>
 
   <script src="../../assets/js/main.js"></script>
+  <script>
+    // Depuración del video
+    document.addEventListener('DOMContentLoaded', () => {
+      const iframe = document.querySelector('.video-container iframe');
+      if (!iframe) {
+        console.error('Error: No se encontró el iframe del video.');
+      } else {
+        console.log('Video iframe cargado correctamente:', iframe.src);
+      }
+    });
+  </script>
 </body>
 </html>
