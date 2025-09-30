@@ -1,10 +1,18 @@
 /* Fuentes y configuración base */
 body {
   font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 /* Animaciones para botones */
@@ -64,7 +72,6 @@ html {
 /* Tarjetas de sistemas de escritura */
 .writing-system-card {
   transition: transform 0.3s ease;
-  padding-bottom: 0.5em;
 }
 
 .writing-system-card:hover {
@@ -73,19 +80,6 @@ html {
 
 .writing-system-card h4 {
   color: #b91c1c; /* text-red-700 */
-  margin-bottom: 0.7em;
-}
-
-.writing-system-card img {
-  width: 100%;
-  height: 10rem; /* igual a h-40 */
-  object-fit: contain; /* para que no se recorte */
-  border-radius: 0.7em;
-  background: #f8fafc;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  padding: 0.5em;
-  display: block;
-  margin: 0 auto;
 }
 
 /* Mejoras visuales adicionales */
@@ -95,8 +89,7 @@ html {
 
 /* Sombras mejoradas */
 .shadow-lg {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-              0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 /* Efectos hover para secciones */
