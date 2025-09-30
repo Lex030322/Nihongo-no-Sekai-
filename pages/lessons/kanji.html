@@ -12,6 +12,58 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../assets/css/main.css">
   <link rel="stylesheet" href="../assets/css/responsive.css">
+  <style>
+    /* Estilos para botones flotantes */
+    .floating-buttons {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
+    }
+    
+    .floating-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #dc2626, #b91c1c);
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .floating-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+      background: linear-gradient(135deg, #b91c1c, #991b1b);
+    }
+    
+    .floating-btn:active {
+      transform: translateY(0);
+    }
+    
+    @media (max-width: 768px) {
+      .floating-buttons {
+        right: 15px;
+        bottom: 15px;
+      }
+      
+      .floating-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body class="bg-gray-100 text-gray-800 leading-relaxed">
   <header class="bg-red-600 text-white py-6">
@@ -25,7 +77,7 @@
   </header>
 
   <nav class="bg-red-800 py-3 sticky top-0 z-10">
-    <div class="container mx-auto px-4 flex justify-between items-center">
+    <div class="container mx-auto px-4 flex justify-center items-center">
       <button id="menu-toggle" class="md:hidden text-white focus:outline-none" aria-label="Abrir menú de navegación">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -33,15 +85,12 @@
       </button>
       <div id="nav-menu" class="nav-menu md:flex md:space-x-6 absolute md:static top-14 right-0 bg-red-800 md:bg-transparent w-full md:w-auto p-4 md:p-0">
         <a href="../index.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Inicio</a>
-        <a href="../menu.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Menú</a>
       </div>
     </div>
   </nav>
 
   <main class="container mx-auto px-4 py-8 bg-white shadow-lg rounded-lg">
     <article id="kanji" class="mb-12">
-      <a href="javascript:history.back()" class="back-btn animated-btn inline-block mb-4 text-white bg-red-600 px-4 py-2 rounded-md hover:bg-red-700 transition-colors">← Volver</a>
-      
       <h2 class="text-2xl md:text-3xl font-bold text-red-700 mb-6">Kanji: El Sistema Logográfico del Japonés (漢字)</h2>
       
       <div class="mb-8">
@@ -222,6 +271,22 @@
       <p class="text-sm text-gray-600 mb-4">Para guías visuales sobre kanji, incluyendo "にんべんの漢字" (radical de persona). Créditos y derechos de autor a YouTube y a los creadores del contenido.</p>
     </article>
   </main>
+
+  <!-- Botones flotantes -->
+  <div class="floating-buttons">
+    <a href="../index.html" class="floating-btn" title="Ir al inicio">
+      🏠
+    </a>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="floating-btn" title="Subir arriba">
+      ↑
+    </button>
+    <button onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})" class="floating-btn" title="Ir abajo">
+      ↓
+    </button>
+    <button onclick="window.history.back()" class="floating-btn" title="Volver">
+      ←
+    </button>
+  </div>
 
   <footer class="bg-red-600 text-white text-center py-6 mt-8">
     <p>© 2025 Nihongo no Sekai – Todos los derechos reservados</p>
