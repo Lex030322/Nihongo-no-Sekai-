@@ -3,21 +3,179 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explora los sistemas de escritura japoneses: Hiragana, Katakana, Kanji y Rōmaji con Nihongo no Sekai.">
-  <meta name="keywords" content="japonés, hiragana, katakana, kanji, rōmaji, aprender japonés, cultura japonesa">
+  <meta name="description" content="Aprende sobre el sistema de escritura Katakana japonés, sus caracteres, usos, orden de trazos y consejos para principiantes con Nihongo no Sekai. Incluye un video tutorial interactivo sobre el orden de trazos.">
+  <meta name="keywords" content="japonés, katakana, silabario japonés, aprender japonés, escritura japonesa, nihongo, palabras extranjeras, gairaigo">
   <meta name="author" content="Nihongo no Sekai">
   <meta name="robots" content="index, follow">
-  <title>Menú – Nihongo no Sekai (日本語の世界)</title>
-  <link rel="icon" href="../assets/images/icons/favicon.ico" type="image/x-icon">
+  <title>Katakana – Nihongo no Sekai (日本語の世界)</title>
+  <link rel="icon" href="../../assets/images/icons/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="../assets/css/main.css">
-  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/responsive.css">
+  <style>
+    body {
+      font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+    }
+    .nav-menu { transition: all 0.3s ease-in-out; }
+    .animated-btn {
+      transition: all 0.3s ease;
+      transform: scale(1);
+    }
+    .animated-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    .animated-img {
+      transition: all 0.3s ease;
+      transform: scale(1);
+      filter: brightness(1);
+    }
+    .animated-img:hover {
+      transform: scale(1.03);
+      filter: brightness(1.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    html { scroll-behavior: smooth; }
+    .floating-btn {
+      position: fixed;
+      bottom: 1.2rem;
+      right: 1.2rem;
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .btn-action {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      cursor: pointer;
+      font-size: 1.7rem;
+      transition: background 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .btn-action:hover {
+      background: #1d4ed8;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.20);
+    }
+    .btn-volver-text {
+      display: none;
+      position: absolute;
+      right: 110%;
+      background: #fff;
+      color: #2563eb;
+      padding: 0.5em 1em;
+      border-radius: 0.5em;
+      font-size: 1rem;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      white-space: nowrap;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .btn-volver:hover .btn-volver-text {
+      display: block;
+    }
+    @media (max-width: 600px) {
+      .floating-btn {
+        right: 0.6rem;
+        bottom: 0.6rem;
+        gap: 0.7rem;
+      }
+      .btn-action {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+      }
+      .btn-volver-text {
+        font-size: 0.9rem;
+        padding: 0.4em 0.8em;
+      }
+      .nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+      .nav-menu a {
+        width: 100%;
+        text-align: left;
+      }
+    }
+    /* Estilo para la tabla de Katakana */
+    .katakana-table {
+      border-collapse: separate;
+      border-spacing: 0;
+      width: 100%;
+      background: #fff;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .katakana-table th, .katakana-table td {
+      border: 1px solid #dbeafe;
+      padding: 0.75rem;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+    .katakana-table th {
+      background: #dbeafe;
+      color: #1e40af;
+      font-weight: bold;
+    }
+    .katakana-table td:hover {
+      background: #eff6ff;
+      transform: scale(1.05);
+      transition: all 0.2s ease;
+    }
+    /* Estilo para el video */
+    .video-container {
+      max-width: 800px;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+    }
+    /* Estilo para la miniatura con ícono de play */
+    .thumbnail-container {
+      position: relative;
+      display: inline-block;
+    }
+    .thumbnail-container::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" stroke="blue" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>') no-repeat center;
+      background-size: contain;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+    .thumbnail-container:hover::after {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body class="bg-gray-100 text-gray-800 leading-relaxed">
   <header class="bg-red-600 text-white py-6">
     <div class="container mx-auto px-4 flex items-center gap-4 flex-col md:flex-row">
-      <img src="../assets/images/logos/logo.png" alt="Logo de Nihongo no Sekai" class="h-20 w-20 object-contain rounded-md shadow-sm animated-img" loading="lazy">
+      <img src="../../assets/images/logos/logo.png" alt="Logo de Nihongo no Sekai" class="h-20 w-20 object-contain rounded-md shadow-sm animated-img" loading="lazy">
       <div class="text-center md:text-left">
         <h1 class="text-2xl md:text-3xl font-bold">Nihongo no Sekai (日本語の世界)</h1>
         <p class="text-sm md:text-base">El mundo del japonés: Aprende el idioma y su cultura paso a paso</p>
@@ -25,104 +183,465 @@
     </div>
   </header>
 
-  <!-- 🔹 Navegación sin botón hamburguesa -->
   <nav class="bg-red-800 py-3 sticky top-0 z-10">
-    <div class="container mx-auto px-4 flex justify-start items-center space-x-6">
-      <a href="../index.html" class="text-white hover:underline font-semibold animated-btn px-4 py-2 rounded-md">Inicio</a>
-      <a href="menu.html" class="text-white hover:underline font-semibold animated-btn px-4 py-2 rounded-md bg-red-900" aria-current="page">Menú</a>
+    <div class="container mx-auto px-4">
+      <div id="nav-menu" class="nav-menu flex flex-col md:flex-row md:space-x-6 w-full md:w-auto p-4 md:p-0">
+        <a href="../../index.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Inicio</a>
+        <a href="../menu.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Menú</a>
+      </div>
     </div>
   </nav>
 
   <main class="container mx-auto px-4 py-8 bg-white shadow-lg rounded-lg">
-    <article id="menu-principal" class="mb-12">
-      <h2 class="text-2xl md:text-3xl font-bold text-red-800 mb-6 text-center">Sistemas de Escritura Japoneses</h2>
-      <p class="mb-6 text-lg text-center max-w-3xl mx-auto">Explora los fundamentos de los sistemas de escritura japoneses. Selecciona una opción para aprender más sobre cada sistema.</p>
-      
-      <!-- Botón para introducción general -->
-      <div class="text-center mb-8">
-        <a href="lessons/sistemas-escritura.html" class="animated-btn bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 inline-flex items-center gap-3">
-          <span class="text-2xl">📚</span>
-          <span>Introducción a los Sistemas de Escritura</span>
-        </a>
+    <article id="katakana-intro" class="mb-12">
+      <h2 class="text-2xl md:text-3xl font-bold text-red-800 mb-6 text-center">Katakana (カタカナ) – El silabario para palabras extranjeras</h2>
+      <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl mb-8 border-l-4 border-blue-600">
+        <p class="text-lg leading-relaxed">
+          El <strong>Katakana</strong> es uno de los dos silabarios fonéticos del japonés, junto con Hiragana. Se utiliza principalmente para escribir <strong>palabras extranjeras (gairaigo)</strong>, onomatopeyas, nombres científicos, énfasis en texto y nombres de países extranjeros. Con <strong>46 caracteres básicos</strong> que corresponden exactamente a los sonidos del Hiragana, Katakana se distingue por su forma angular y lineal, contrastando con las curvas suaves del Hiragana.
+        </p>
       </div>
 
-      <!-- Botones principales de sistemas de escritura -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto mb-8">
-        <div>
-          <a href="lessons/hiragana.html" class="animated-btn bg-gradient-to-br from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-semibold text-center py-6 px-6 rounded-xl shadow-lg hover:shadow-xl block transition-all duration-300 transform hover:-translate-y-1">
-            <div class="text-3xl mb-2">ひ</div>
-            <div class="text-lg font-bold mb-1">Hiragana</div>
-            <div class="text-sm opacity-90">Silabario básico</div>
-          </a>
+      <!-- Tabla de Katakana -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-blue-700 mb-6">Tabla de Katakana (Gojūon – 五十音)</h3>
+        <div class="overflow-x-auto">
+          <table class="katakana-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>a</th>
+                <th>i</th>
+                <th>u</th>
+                <th>e</th>
+                <th>o</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>-</th>
+                <td>ア</td>
+                <td>イ</td>
+                <td>ウ</td>
+                <td>エ</td>
+                <td>オ</td>
+              </tr>
+              <tr>
+                <th>k</th>
+                <td>カ</td>
+                <td>キ</td>
+                <td>ク</td>
+                <td>ケ</td>
+                <td>コ</td>
+              </tr>
+              <tr>
+                <th>s</th>
+                <td>サ</td>
+                <td>シ</td>
+                <td>ス</td>
+                <td>セ</td>
+                <td>ソ</td>
+              </tr>
+              <tr>
+                <th>t</th>
+                <td>タ</td>
+                <td>チ</td>
+                <td>ツ</td>
+                <td>テ</td>
+                <td>ト</td>
+              </tr>
+              <tr>
+                <th>n</th>
+                <td>ナ</td>
+                <td>ニ</td>
+                <td>ヌ</td>
+                <td>ネ</td>
+                <td>ノ</td>
+              </tr>
+              <tr>
+                <th>h</th>
+                <td>ハ</td>
+                <td>ヒ</td>
+                <td>フ</td>
+                <td>ヘ</td>
+                <td>ホ</td>
+              </tr>
+              <tr>
+                <th>m</th>
+                <td>マ</td>
+                <td>ミ</td>
+                <td>ム</td>
+                <td>メ</td>
+                <td>モ</td>
+              </tr>
+              <tr>
+                <th>y</th>
+                <td>ヤ</td>
+                <td></td>
+                <td>ユ</td>
+                <td></td>
+                <td>ヨ</td>
+              </tr>
+              <tr>
+                <th>r</th>
+                <td>ラ</td>
+                <td>リ</td>
+                <td>ル</td>
+                <td>レ</td>
+                <td>ロ</td>
+              </tr>
+              <tr>
+                <th>w</th>
+                <td>ワ</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>ヲ</td>
+              </tr>
+              <tr>
+                <th>n</th>
+                <td colspan="5">ン</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div>
-          <a href="lessons/katakana.html" class="animated-btn bg-gradient-to-br from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold text-center py-6 px-6 rounded-xl shadow-lg hover:shadow-xl block transition-all duration-300 transform hover:-translate-y-1">
-            <div class="text-3xl mb-2">カ</div>
-            <div class="text-lg font-bold mb-1">Katakana</div>
-            <div class="text-sm opacity-90">Palabras extranjeras</div>
-          </a>
-        </div>
-        <div>
-          <a href="lessons/kanji.html" class="animated-btn bg-gradient-to-br from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold text-center py-6 px-6 rounded-xl shadow-lg hover:shadow-xl block transition-all duration-300 transform hover:-translate-y-1">
-            <div class="text-3xl mb-2">漢</div>
-            <div class="text-lg font-bold mb-1">Kanji</div>
-            <div class="text-sm opacity-90">Caracteres chinos</div>
-          </a>
-        </div>
-        <div>
-          <a href="lessons/sistemas-escritura.html#romaji" class="animated-btn bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-semibold text-center py-6 px-6 rounded-xl shadow-lg hover:shadow-xl block transition-all duration-300 transform hover:-translate-y-1">
-            <div class="text-3xl mb-2">A</div>
-            <div class="text-lg font-bold mb-1">Rōmaji</div>
-            <div class="text-sm opacity-90">Romanización</div>
-          </a>
-        </div>
-      </div>
+        <p class="text-sm text-gray-600 mt-4">*Nota: La "ン" es un carácter especial que representa una nasal y no se combina con vocales.</p>
+      </section>
 
-      <!-- Sección de recursos adicionales -->
-      <section class="mb-8">
-        <h3 class="text-2xl font-bold text-red-700 mb-6 text-center">Recursos Adicionales</h3>
-        <div class="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
-            <div class="relative overflow-hidden rounded-lg mb-4">
-              <img src="../assets/images/culture/cultura.jpeg" alt="Cultura japonesa tradicional" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-105" loading="lazy">
+      <!-- Dakuon y Handakuon -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-blue-700 mb-6">Dakuon (濁音 – ゛) y Handakuon (半濁音 – ゜)</h3>
+        <div class="bg-blue-50 p-6 rounded-xl mb-6 border border-blue-200">
+          <p class="text-lg mb-4">
+            Los caracteres con <strong>dakuon</strong> (dos puntos, ゛) cambian el sonido a una versión más "dura" (por ejemplo, カ ka → ガ ga). Los <strong>handakuon</strong> (círculo, ゜) se aplican solo a la serie "h" para crear sonidos "p" (por ejemplo, ハ ha → パ pa).
+          </p>
+          <div class="overflow-x-auto">
+            <table class="katakana-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>a</th>
+                  <th>i</th>
+                  <th>u</th>
+                  <th>e</th>
+                  <th>o</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>g</th>
+                  <td>ガ</td>
+                  <td>ギ</td>
+                  <td>グ</td>
+                  <td>ゲ</td>
+                  <td>ゴ</td>
+                </tr>
+                <tr>
+                  <th>z</th>
+                  <td>ザ</td>
+                  <td>ジ</td>
+                  <td>ズ</td>
+                  <td>ゼ</td>
+                  <td>ゾ</td>
+                </tr>
+                <tr>
+                  <th>d</th>
+                  <td>ダ</td>
+                  <td>ヂ</td>
+                  <td>ヅ</td>
+                  <td>デ</td>
+                  <td>ド</td>
+                </tr>
+                <tr>
+                  <th>b</th>
+                  <td>バ</td>
+                  <td>ビ</td>
+                  <td>ブ</td>
+                  <td>ベ</td>
+                  <td>ボ</td>
+                </tr>
+                <tr>
+                  <th>p</th>
+                  <td>パ</td>
+                  <td>ピ</td>
+                  <td>プ</td>
+                  <td>ペ</td>
+                  <td>ポ</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Yoon (combinaciones) -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-blue-700 mb-6">Yoon (拗音 – Combinaciones)</h3>
+        <div class="bg-blue-50 p-6 rounded-xl mb-6 border border-blue-200">
+          <p class="text-lg mb-4">
+            Los <strong>yoon</strong> son combinaciones de caracteres que incluyen una "y" pequeña (ャ, ュ, ョ) para crear sonidos compuestos, como キャ (kya) o ショ (sho).
+          </p>
+          <div class="overflow-x-auto">
+            <table class="katakana-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>ya</th>
+                  <th>yu</th>
+                  <th>yo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>k</th>
+                  <td>キャ</td>
+                  <td>キュ</td>
+                  <td>キョ</td>
+                </tr>
+                <tr>
+                  <th>s</th>
+                  <td>シャ</td>
+                  <td>シュ</td>
+                  <td>ショ</td>
+                </tr>
+                <tr>
+                  <th>ch</th>
+                  <td>チャ</td>
+                  <td>チュ</td>
+                  <td>チョ</td>
+                </tr>
+                <tr>
+                  <th>n</th>
+                  <td>ニャ</td>
+                  <td>ニュ</td>
+                  <td>ニョ</td>
+                </tr>
+                <tr>
+                  <th>h</th>
+                  <td>ヒャ</td>
+                  <td>ヒュ</td>
+                  <td>ヒョ</td>
+                </tr>
+                <tr>
+                  <th>m</th>
+                  <td>ミャ</td>
+                  <td>ミュ</td>
+                  <td>ミョ</td>
+                </tr>
+                <tr>
+                  <th>r</th>
+                  <td>リャ</td>
+                  <td>リュ</td>
+                  <td>リョ</td>
+                </tr>
+                <tr>
+                  <th>g</th>
+                  <td>ギャ</td>
+                  <td>ギュ</td>
+                  <td>ギョ</td>
+                </tr>
+                <tr>
+                  <th>j</th>
+                  <td>ジャ</td>
+                  <td>ジュ</td>
+                  <td>ジョ</td>
+                </tr>
+                <tr>
+                  <th>b</th>
+                  <td>ビャ</td>
+                  <td>ビュ</td>
+                  <td>ビョ</td>
+                </tr>
+                <tr>
+                  <th>p</th>
+                  <td>ピャ</td>
+                  <td>ピュ</td>
+                  <td>ピョ</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chōon (長音 – Alargamiento de Vocales) -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-blue-700 mb-6">Chōon (長音 – Alargamiento de Vocales)</h3>
+        <div class="bg-blue-50 p-6 rounded-xl mb-6 border border-blue-200">
+          <p class="text-lg mb-4">
+            En Katakana, el <strong>alargamiento de vocales</strong> se indica con un guión largo horizontal 「ー」, independientemente de la vocal que se alargue. Este es uno de los aspectos distintivos del Katakana comparado con el Hiragana.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700 mb-4">
+            <li>Todas las vocales: Se añade 「ー」. Ej: コーヒー (kōhī - café)</li>
+            <li>Ejemplos comunes:
+              <ul class="list-disc pl-6 mt-2 space-y-1">
+                <li>アイスクリーム (aisukurīmu - helado)</li>
+                <li>コンピューター (konpyūtā - computadora)</li>
+                <li>スーパー (sūpā - supermercado)</li>
+                <li>タクシー (takushī - taxi)</li>
+              </ul>
+            </li>
+          </ul>
+          <p class="text-lg mb-4">
+            Este sistema de alargamiento hace que el Katakana sea más simple y uniforme para escribir palabras extranjeras.
+          </p>
+        </div>
+      </section>
+
+      <!-- Sokuon (促音 – Doble Consonante) -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-blue-700 mb-6">Sokuon (促音 – Doble Consonante)</h3>
+        <div class="bg-blue-50 p-6 rounded-xl mb-6 border border-blue-200">
+          <p class="text-lg mb-4">
+            El <strong>Sokuon</strong> se representa con un carácter 「ッ」 pequeño antes de la consonante que se duplica. Al igual que en Hiragana, este pequeño 「ッ」 indica una pausa o "golpe de glotis" que duplica el sonido de la consonante siguiente.
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-gray-700 mb-4">
+            <li>Ej: ホットドッグ (hottodoggu - hot dog)</li>
+            <li>Ej: サッカー (sakkā - fútbol)</li>
+            <li>Ej: ベッド (beddo - cama)</li>
+            <li>Ej: スキップ (sukippu - saltar)</li>
+          </ul>
+          <p class="text-lg mb-4">
+            Este fenómeno es muy común en palabras extranjeras adaptadas al japonés, especialmente del inglés.
+          </p>
+        </div>
+      </section>
+
+      <!-- Orden de Trazos -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-blue-700 mb-6 flex items-center">
+          <svg class="w-8 h-8 mr-2 text-blue-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+          </svg>
+          Orden de Trazos
+        </h3>
+        <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-xl mb-6 border border-blue-200 shadow-lg">
+          <p class="text-lg mb-4">
+            Aprende cómo escribir los caracteres de Katakana siguiendo el orden de trazos correcto con este video tutorial interactivo.
+          </p>
+          <ul class="list-disc pl-6 mb-4 text-gray-700">
+            <li>Orden de trazos para cada carácter Katakana.</li>
+            <li>Pronunciación clara de cada sonido.</li>
+            <li>Diferencias en la escritura comparada con Hiragana.</li>
+            <li>Consejos prácticos para memorizar la forma angular característica.</li>
+          </ul>
+          <div class="flex flex-col md:flex-row gap-6 items-center">
+            <div class="thumbnail-container animated-img max-w-xs">
+              <a href="https://youtu.be/rf-n_qI2occ" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.youtube.com/vi/rf-n_qI2occ/0.jpg" alt="Miniatura del video tutorial sobre el orden de trazos de Katakana" class="w-full max-h-40 object-contain rounded-lg shadow-md" loading="lazy">
+              </a>
             </div>
-            <h4 class="font-bold text-gray-800 mb-2 text-lg">Aspectos Culturales</h4>
-            <p class="text-sm text-gray-600 mb-4 leading-relaxed">Niveles de cortesía, keigo y contexto cultural del idioma japonés.</p>
-            <div class="flex justify-between items-center">
-              <span class="text-xs bg-gradient-to-r from-yellow-200 to-yellow-300 px-3 py-1 rounded-full font-medium text-yellow-800">Próximamente</span>
-              <div class="flex items-center text-gray-400">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-              </div>
+            <div class="video-container max-w-3xl mx-auto">
+              <iframe src="https://www.youtube.com/embed/rf-n_qI2occ?rel=0" title="Video tutorial: Cómo leer y escribir el alfabeto Katakana" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
-          
-          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
-            <div class="relative overflow-hidden rounded-lg mb-4">
-              <img src="../assets/images/culture/cerezos.jpeg" alt="Cerezos en flor (Sakura)" class="w-full h-40 object-cover transition-transform duration-300 hover:scale-105" loading="lazy">
-            </div>
-            <h4 class="font-bold text-gray-800 mb-2 text-lg">Guía de Pronunciación</h4>
-            <p class="text-sm text-gray-600 mb-4 leading-relaxed">Sonidos del japonés y consejos para mejorar tu pronunciación.</p>
-            <div class="flex justify-between items-center">
-              <span class="text-xs bg-gradient-to-r from-yellow-200 to-yellow-300 px-3 py-1 rounded-full font-medium text-yellow-800">Próximamente</span>
-              <div class="flex items-center text-gray-400">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clip-rule="evenodd"/>
-                </svg>
-              </div>
-            </div>
+        </div>
+      </section>
+
+      <!-- Ejemplos prácticos -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-blue-700 mb-6">Ejemplos Prácticos</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-5 rounded-lg border border-blue-200">
+            <h4 class="font-bold text-blue-800 mb-3">Palabras Extranjeras Comunes</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li><span class="font-mono text-lg">コーヒー</span> (kōhī) – Café</li>
+              <li><span class="font-mono text-lg">レストラン</span> (resutoran) – Restaurante</li>
+              <li><span class="font-mono text-lg">インターネット</span> (intānetto) – Internet</li>
+              <li><span class="font-mono text-lg">コンピューター</span> (konpyūtā) – Computadora</li>
+            </ul>
           </div>
+          <div class="bg-white p-5 rounded-lg border border-blue-200">
+            <h4 class="font-bold text-blue-800 mb-3">Países y Lugares</h4>
+            <ul class="space-y-2 text-gray-700">
+              <li><span class="font-mono text-lg">アメリカ</span> (Amerika) – Estados Unidos</li>
+              <li><span class="font-mono text-lg">フランス</span> (Furansu) – Francia</li>
+              <li><span class="font-mono text-lg">ロンドン</span> (Rondon) – Londres</li>
+              <li><span class="font-mono text-lg">トーキョー</span> (Tōkyō) – Tokio</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Consejos para principiantes -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-blue-700 mb-6">Consejos para Aprender Katakana</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-gradient-to-br from-blue-100 to-blue-50 p-5 rounded-lg">
+            <div class="text-3xl mb-3">📝</div>
+            <h4 class="font-bold text-blue-800 mb-2">Domina Hiragana Primero</h4>
+            <p class="text-sm text-gray-700">Asegúrate de conocer bien Hiragana antes de empezar Katakana, ya que los sonidos son idénticos.</p>
+          </div>
+          <div class="bg-gradient-to-br from-blue-100 to-blue-50 p-5 rounded-lg">
+            <div class="text-3xl mb-3">🔤</div>
+            <h4 class="font-bold text-blue-800 mb-2">Practica con Palabras Familiares</h4>
+            <p class="text-sm text-gray-700">Usa palabras del inglés que conoces (coffee → コーヒー) para practicar la escritura y pronunciación.</p>
+          </div>
+          <div class="bg-gradient-to-br from-blue-100 to-blue-50 p-5 rounded-lg">
+            <div class="text-3xl mb-3">📱</div>
+            <h4 class="font-bold text-blue-800 mb-2">Enfócate en las Formas Angulares</h4>
+            <p class="text-sm text-gray-700">Nota cómo Katakana es más angular y lineal comparado con las curvas suaves del Hiragana.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recursos adicionales -->
+      <section class="mb-12">
+        <h3 class="text-2xl font-bold text-blue-700 mb-6">Recursos Adicionales</h3>
+        <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
+          <ul class="space-y-3 text-gray-700">
+            <li>
+              <strong>Tabla de Katakana (PDF):</strong> 
+              <a href="../../assets/resources/katakana-chart.pdf" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Descarga nuestra tabla imprimible</a>
+            </li>
+            <li>
+              <strong>Ejercicios interactivos:</strong> 
+              <a href="https://www.tofugu.com/learn-japanese" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Tofugu Katakana Practice</a>
+            </li>
+            <li>
+              <strong>Diccionario de Gairaigo:</strong> 
+              <a href="https://jisho.org" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">Busca palabras extranjeras en japonés</a>
+            </li>
+          </ul>
         </div>
       </section>
     </article>
   </main>
 
+  <!-- Botones flotantes -->
+  <div class="floating-btn">
+    <button class="btn-action btn-volver" onclick="window.location.href='../menu.html'" title="Volver al menú">
+      <span class="btn-volver-text">Volver al Menú</span>
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+      </svg>
+    </button>
+    <button class="btn-action" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Ir arriba">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+      </svg>
+    </button>
+    <button class="btn-action" onclick="window.location.href='../../index.html'" title="Volver a Inicio">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7m-9 5v6h4v-6m-6 0h6"/>
+      </svg>
+    </button>
+  </div>
+
   <footer class="bg-red-600 text-white text-center py-6 mt-8">
     <p>© 2025 Nihongo no Sekai – Todos los derechos reservados</p>
   </footer>
 
-  <!-- 🔹 Eliminé navigation.js porque ya no se usa -->
-  <script src="../assets/js/main.js"></script>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    // Depuración del video
+    document.addEventListener('DOMContentLoaded', () => {
+      const iframe = document.querySelector('.video-container iframe');
+      if (!iframe) {
+        console.error('Error: No se encontró el iframe del video.');
+      } else {
+        console.log('Video iframe cargado correctamente:', iframe.src);
+      }
+    });
+  </script>
 </body>
 </html>
