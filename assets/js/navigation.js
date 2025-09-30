@@ -52,10 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    const normalizedHref = href.startsWith('../') ? href.replace('../', '/') : `/${href}`;
-    const normalizedCurrentPath = `/${currentPath.split('/').pop()}`;
-    
-    if (normalizedCurrentPath === normalizedHref || (currentPath.includes('index.html') && href === '#inicio')) {
+    const normalizedHref = href.startsWith('pages/') ? `/${href}` : href === 'index.html' ? '/' : `/${href}`;
+    const normalizedCurrentPath = currentPath === '' || currentPath === '/' ? '/index.html' : currentPath;
+
+    if (normalizedCurrentPath.includes(normalizedHref) || (normalizedCurrentPath.includes('index.html') && href === 'index.html')) {
       link.setAttribute('aria-current', 'page');
       link.classList.add('bg-red-900');
     }
