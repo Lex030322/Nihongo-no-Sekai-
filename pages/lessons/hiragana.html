@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aprende sobre el sistema de escritura Hiragana japonés, sus caracteres, usos, y consejos para principiantes con Nihongo no Sekai. Incluye un video tutorial para aprender a leer y escribir Hiragana.">
+  <meta name="description" content="Aprende sobre el sistema de escritura Hiragana japonés, sus caracteres, usos, orden de trazos y consejos para principiantes con Nihongo no Sekai. Incluye un video tutorial sobre el orden de trazos.">
   <meta name="keywords" content="japonés, hiragana, silabario japonés, aprender japonés, escritura japonesa, nihongo">
   <meta name="author" content="Nihongo no Sekai">
   <meta name="robots" content="index, follow">
@@ -99,6 +99,16 @@
         font-size: 0.9rem;
         padding: 0.4em 0.8em;
       }
+      .nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+      .nav-menu a {
+        width: 100%;
+        text-align: left;
+      }
     }
     /* Estilo para la tabla de Hiragana */
     .hiragana-table {
@@ -128,17 +138,14 @@
     }
     /* Estilo para el video */
     .video-container {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
-      height: 0;
-      overflow: hidden;
+      max-width: 800px;
+      width: 100%;
+      aspect-ratio: 16 / 9;
       border-radius: 0.5rem;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
     }
     .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
     }
@@ -156,13 +163,8 @@
   </header>
 
   <nav class="bg-red-800 py-3 sticky top-0 z-10">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-      <button id="menu-toggle" class="md:hidden text-white focus:outline-none" aria-label="Abrir o cerrar menú de navegación">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-      <div id="nav-menu" class="nav-menu hidden md:block md:flex md:space-x-6 absolute md:static top-14 right-0 bg-red-800 md:bg-transparent w-full md:w-auto p-4 md:p-0">
+    <div class="container mx-auto px-4">
+      <div id="nav-menu" class="nav-menu flex flex-col md:flex-row md:space-x-6 w-full md:w-auto p-4 md:p-0">
         <a href="../../index.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Inicio</a>
         <a href="../menu.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Menú</a>
       </div>
@@ -450,19 +452,19 @@
         </div>
       </section>
 
-      <!-- Video Tutorial -->
+      <!-- Orden de Trazos -->
       <section class="mb-12">
-        <h3 class="text-2xl font-bold text-pink-700 mb-6">Video Tutorial</h3>
+        <h3 class="text-2xl font-bold text-pink-700 mb-6">Orden de Trazos</h3>
         <div class="bg-pink-50 p-6 rounded-xl mb-6 border border-pink-200">
           <p class="text-lg mb-4">
-            Aprende a leer y escribir Hiragana con este video tutorial: <strong>"How to Read and Write Hiragana Alphabet | Learn Japanese for Beginners"</strong>.
+            Aprende cómo escribir los caracteres de Hiragana siguiendo el orden de trazos correcto con este video tutorial: <strong>"How to Read and Write Hiragana Alphabet | Learn Japanese for Beginners"</strong>.
           </p>
           <div class="flex flex-col md:flex-row gap-6 items-center">
             <a href="https://youtu.be/wD3FJgij79c" target="_blank" rel="noopener noreferrer" class="animated-img block max-w-xs">
-              <img src="https://img.youtube.com/vi/wD3FJgij79c/0.jpg" alt="Miniatura del video tutorial de Hiragana" class="w-full max-h-40 object-contain rounded-lg shadow-md" loading="lazy">
+              <img src="https://img.youtube.com/vi/wD3FJgij79c/0.jpg" alt="Miniatura del video tutorial sobre el orden de trazos de Hiragana" class="w-full max-h-40 object-contain rounded-lg shadow-md" loading="lazy">
             </a>
-            <div class="video-container max-w-2xl">
-              <iframe src="https://www.youtube.com/embed/wD3FJgij79c" title="How to Read and Write Hiragana Alphabet | Learn Japanese for Beginners" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="video-container max-w-2xl mx-auto">
+              <iframe src="https://www.youtube.com/embed/wD3FJgij79c" title="Video tutorial: Cómo leer y escribir el alfabeto Hiragana" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -528,10 +530,6 @@
               <strong>Ejercicios interactivos:</strong> 
               <a href="https://www.tofugu.com/learn-japanese" class="text-pink-600 hover:underline" target="_blank" rel="noopener noreferrer">Tofugu Hiragana Practice</a>
             </li>
-            <li>
-              <strong>Video tutorial:</strong> 
-              <a href="https://youtu.be/wD3FJgij79c" class="text-pink-600 hover:underline" target="_blank" rel="noopener noreferrer">Aprende Hiragana en 30 minutos</a>
-            </li>
           </ul>
         </div>
       </section>
@@ -562,7 +560,6 @@
     <p>© 2025 Nihongo no Sekai – Todos los derechos reservados</p>
   </footer>
 
-  <script src="../../assets/js/navigation.js"></script>
   <script src="../../assets/js/main.js"></script>
 </body>
 </html>
