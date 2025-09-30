@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
-    // Normalizar rutas para comparación
     const normalizedHref = href.startsWith('../') ? href.replace('../', '/') : `/${href}`;
     const normalizedCurrentPath = `/${currentPath.split('/').pop()}`;
     
