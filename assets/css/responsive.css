@@ -1,24 +1,79 @@
 /* Responsive Design */
 
+/* Prevenir scroll horizontal */
+body, html {
+  overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
+}
+
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Asegurar que las imágenes no se desborden */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevenir desbordamiento en elementos con padding */
+* {
+  box-sizing: border-box;
+}
+
 /* Tablets y pantallas medianas */
 @media (max-width: 768px) {
   .nav-menu {
     transform: translateX(100%);
+    max-width: 100vw;
   }
   
   .nav-menu.open {
     transform: translateX(0);
+    max-width: 100vw;
+    right: 0;
+    left: auto;
   }
   
   /* Ajuste del grid en tablets */
   .collage-grid {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 1rem;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Asegurar que los grids no se desborden */
+  .grid {
+    width: 100%;
+    max-width: 100%;
   }
   
   /* Banner más pequeño en móviles */
   .banner-img {
     max-height: 250px;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  /* Asegurar que el contenedor principal no se desborde */
+  main {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  /* Ajustar header en móviles */
+  header {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+  
+  /* Ajustar navegación */
+  nav {
+    max-width: 100vw;
+    overflow-x: hidden;
   }
   
   /* Títulos más pequeños */
@@ -43,11 +98,26 @@
   .collage-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  /* Asegurar que todo el contenido se ajuste */
+  body, html, main, .container {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+  
+  /* Prevenir que los botones causen overflow */
+  .animated-btn {
+    max-width: 100%;
+    word-wrap: break-word;
   }
   
   /* Banner aún más pequeño */
   .banner-img {
     max-height: 200px;
+    width: 100% !important;
   }
   
   /* Tarjetas más compactas */
@@ -70,13 +140,6 @@
   header img {
     height: 60px !important;
     width: 60px !important;
-  }
-}
-
-/* Móviles pequeños (ajuste más estricto) */
-@media (max-width: 480px) {
-  .writing-system-card img {
-    height: 84px !important;
   }
 }
 
