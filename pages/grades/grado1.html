@@ -7,112 +7,16 @@
   <meta name="keywords" content="kanji, 1º grado, japonés, kyōiku kanji, aprendizaje">
   <meta name="author" content="Nihongo no Sekai">
   <title>1º Grado – Nihongo no Sekai (日本語の世界)</title>
+  <link rel="icon" href="../../assets/images/icons/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      font-family: 'Roboto', 'Noto Sans JP', sans-serif;
-      background-color: #f9fafb;
-      color: #1f2937;
-      position: relative;
-    }
-    .animated-btn {
-      transition: all 0.3s ease;
-      transform: scale(1);
-    }
-    .animated-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-    .animated-img {
-      transition: all 0.3s ease;
-      transform: scale(1);
-      filter: brightness(1);
-    }
-    .animated-img:hover {
-      transform: scale(1.03);
-      filter: brightness(1.05);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 20px 0;
-    }
-    th, td {
-      border: 1px solid #e5e7eb;
-      padding: 12px;
-      text-align: center;
-      vertical-align: middle;
-    }
-    th {
-      background-color: #dc2626;
-      color: white;
-      font-weight: bold;
-    }
-    tr:nth-child(even) {
-      background-color: #f3f4f6;
-    }
-    tr:hover {
-      background-color: #e5e7eb;
-      cursor: pointer;
-    }
-    .video-container {
-      position: relative;
-      width: 100%;
-      max-width: 560px;
-      margin: 20px auto;
-    }
-    .video-container iframe {
-      width: 100%;
-      height: 315px;
-    }
-    .dictionary-img {
-      max-width: 100%;
-      height: auto;
-      margin: 20px 0;
-      border-radius: 5px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .search-container {
-      margin: 20px 0;
-    }
-    .search-container input {
-      padding: 8px;
-      width: 100%;
-      max-width: 300px;
-      border: 1px solid #e5e7eb;
-      border-radius: 4px;
-    }
-    .scroll-to-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: none;
-      background-color: #dc2626;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 24px;
-      cursor: pointer;
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-    }
-    .scroll-to-top.show {
-      display: flex;
-    }
-    .scroll-to-top:hover {
-      background-color: #b91c1c;
-    }
-  </style>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/responsive.css">
 </head>
-<body class="leading-relaxed">
+<body class="bg-gray-100 text-gray-800 leading-relaxed">
   <header class="bg-red-600 text-white py-6">
     <div class="container mx-auto px-4 flex items-center gap-4 flex-col md:flex-row">
-      <img src="images/Logo.png" alt="Logo de Nihongo no Sekai" class="h-20 w-20 object-contain rounded-md shadow-sm animated-img">
+      <img src="../../assets/images/logos/logo.png" alt="Logo de Nihongo no Sekai" class="h-20 w-20 object-contain rounded-md shadow-sm animated-img" loading="lazy">
       <div class="text-center md:text-left">
         <h1 class="text-2xl md:text-3xl font-bold">Nihongo no Sekai (日本語の世界)</h1>
         <p class="text-sm md:text-base">El mundo del japonés: Aprende el idioma y su cultura paso a paso</p>
@@ -120,653 +24,361 @@
     </div>
   </header>
 
+  <nav class="bg-red-800 py-3 sticky top-0 z-10">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none" aria-label="Abrir menú de navegación">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <div id="nav-menu" class="nav-menu md:flex md:space-x-6 absolute md:static top-14 right-0 bg-red-800 md:bg-transparent w-full md:w-auto p-4 md:p-0">
+        <a href="../../index.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Inicio</a>
+        <a href="../menu.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Menú</a>
+      </div>
+    </div>
+  </nav>
+
   <main class="container mx-auto px-4 py-8 bg-white shadow-lg rounded-lg">
-    <article class="mb-12">
-      <a href="javascript:history.back()" class="animated-btn block mb-4 text-white bg-red-600 px-4 py-2 rounded-md hover:bg-red-700">Volver</a>
-      <h2 class="text-2xl md:text-3xl font-bold text-red-800 mb-6">1º Grado de Primaria – 80 Kanji</h2>
-      <p class="mb-6 text-lg">En el 1º Grado de Primaria (小学一年生), los estudiantes japoneses aprenden 80 kanji básicos que forman la base del sistema de escritura. A continuación, se presenta una tabla con los kanji, sus lecturas On’yomi (音読み) y Kun’yomi (訓読み), junto con sus significados principales.</p>
-
-      <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Buscar por kanji, lectura o significado..." aria-label="Buscar kanji" class="focus:outline-none focus:ring-2 focus:ring-red-600">
+    <article id="grado1" class="mb-12">
+      <a href="javascript:history.back()" class="back-btn animated-btn inline-block mb-4 text-white bg-red-600 px-4 py-2 rounded-md hover:bg-red-700 transition-colors">← Volver</a>
+      
+      <h2 class="text-2xl md:text-3xl font-bold text-red-700 mb-6">1º Grado de Primaria – 80 Kanji (小学一年生)</h2>
+      
+      <div class="mb-8">
+        <img src="../../assets/images/writing-systems/diccionariokanji.jpeg" alt="Diccionario de Kanji" class="w-full max-w-md mx-auto rounded-lg shadow-md">
       </div>
 
-      <img src="images/diccionariokanji.jpeg" alt="Diccionario de Kanji" class="dictionary-img">
+      <p class="mb-6 text-lg">En el 1º Grado de Primaria (小学一年生), los estudiantes japoneses aprenden 80 kanji básicos que forman la base del sistema de escritura. Estos caracteres incluyen números, elementos naturales, partes del cuerpo y conceptos fundamentales.</p>
 
-      <table id="kanjiTable">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Kanji</th>
-            <th>On’yomi (音読み)</th>
-            <th>Kun’yomi (訓読み)</th>
-            <th>Significado Principal</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr key="kanji-1">
-            <td>1</td>
-            <td>一</td>
-            <td>イチ</td>
-            <td>いち</td>
-            <td>uno</td>
-          </tr>
-          <tr key="kanji-2">
-            <td>2</td>
-            <td>二</td>
-            <td>ニ</td>
-            <td>ふた</td>
-            <td>dos</td>
-          </tr>
-          <tr key="kanji-3">
-            <td>3</td>
-            <td>三</td>
-            <td>サン</td>
-            <td>み</td>
-            <td>tres</td>
-          </tr>
-          <tr key="kanji-4">
-            <td>4</td>
-            <td>四</td>
-            <td>シ</td>
-            <td>よん, よ</td>
-            <td>cuatro</td>
-          </tr>
-          <tr key="kanji-5">
-            <td>5</td>
-            <td>五</td>
-            <td>ゴ</td>
-            <td>いつ</td>
-            <td>cinco</td>
-          </tr>
-          <tr key="kanji-6">
-            <td>6</td>
-            <td>六</td>
-            <td>ロク</td>
-            <td>ろく</td>
-            <td>seis</td>
-          </tr>
-          <tr key="kanji-7">
-            <td>7</td>
-            <td>七</td>
-            <td>シチ</td>
-            <td>なな</td>
-            <td>siete</td>
-          </tr>
-          <tr key="kanji-8">
-            <td>8</td>
-            <td>八</td>
-            <td>ハチ</td>
-            <td>はち</td>
-            <td>ocho</td>
-          </tr>
-          <tr key="kanji-9">
-            <td>9</td>
-            <td>九</td>
-            <td>キュウ, ク</td>
-            <td>く</td>
-            <td>nueve</td>
-          </tr>
-          <tr key="kanji-10">
-            <td>10</td>
-            <td>十</td>
-            <td>ジュウ</td>
-            <td>じゅう</td>
-            <td>diez</td>
-          </tr>
-          <tr key="kanji-11">
-            <td>11</td>
-            <td>日</td>
-            <td>ニチ, ジツ</td>
-            <td>ひ</td>
-            <td>sol, día</td>
-          </tr>
-          <tr key="kanji-12">
-            <td>12</td>
-            <td>月</td>
-            <td>ゲツ, ガツ</td>
-            <td>つき</td>
-            <td>luna, mes</td>
-          </tr>
-          <tr key="kanji-13">
-            <td>13</td>
-            <td>火</td>
-            <td>カ</td>
-            <td>ひ</td>
-            <td>fuego</td>
-          </tr>
-          <tr key="kanji-14">
-            <td>14</td>
-            <td>水</td>
-            <td>スイ</td>
-            <td>みず</td>
-            <td>agua</td>
-          </tr>
-          <tr key="kanji-15">
-            <td>15</td>
-            <td>木</td>
-            <td>モク, ボク</td>
-            <td>き</td>
-            <td>árbol</td>
-          </tr>
-          <tr key="kanji-16">
-            <td>16</td>
-            <td>金</td>
-            <td>キン, コン</td>
-            <td>かね</td>
-            <td>oro, dinero</td>
-          </tr>
-          <tr key="kanji-17">
-            <td>17</td>
-            <td>土</td>
-            <td>ド, ト</td>
-            <td>つち</td>
-            <td>tierra</td>
-          </tr>
-          <tr key="kanji-18">
-            <td>18</td>
-            <td>空</td>
-            <td>クウ</td>
-            <td>そら</td>
-            <td>cielo, vacío</td>
-          </tr>
-          <tr key="kanji-19">
-            <td>19</td>
-            <td>山</td>
-            <td>サン</td>
-            <td>やま</td>
-            <td>montaña</td>
-          </tr>
-          <tr key="kanji-20">
-            <td>20</td>
-            <td>川</td>
-            <td>セン</td>
-            <td>かわ</td>
-            <td>río</td>
-          </tr>
-          <tr key="kanji-21">
-            <td>21</td>
-            <td>石</td>
-            <td>セキ, コク</td>
-            <td>いし</td>
-            <td>piedra</td>
-          </tr>
-          <tr key="kanji-22">
-            <td>22</td>
-            <td>花</td>
-            <td>カ</td>
-            <td>はな</td>
-            <td>flor</td>
-          </tr>
-          <tr key="kanji-23">
-            <td>23</td>
-            <td>草</td>
-            <td>ソウ</td>
-            <td>くさ</td>
-            <td>hierba</td>
-          </tr>
-          <tr key="kanji-24">
-            <td>24</td>
-            <td>竹</td>
-            <td>チク</td>
-            <td>たけ</td>
-            <td>bambú</td>
-          </tr>
-          <tr key="kanji-25">
-            <td>25</td>
-            <td>雨</td>
-            <td>ウ</td>
-            <td>あめ</td>
-            <td>lluvia</td>
-          </tr>
-          <tr key="kanji-26">
-            <td>26</td>
-            <td>王</td>
-            <td>オウ</td>
-            <td></td>
-            <td>rey</td>
-          </tr>
-          <tr key="kanji-27">
-            <td>27</td>
-            <td>玉</td>
-            <td>ギョク</td>
-            <td>たま</td>
-            <td>joya, esfera</td>
-          </tr>
-          <tr key="kanji-28">
-            <td>28</td>
-            <td>人</td>
-            <td>ジン, ニン</td>
-            <td>ひと</td>
-            <td>persona</td>
-          </tr>
-          <tr key="kanji-29">
-            <td>29</td>
-            <td>子</td>
-            <td>シ, ス</td>
-            <td>こ</td>
-            <td>niño</td>
-          </tr>
-          <tr key="kanji-30">
-            <td>30</td>
-            <td>女</td>
-            <td>ジョ</td>
-            <td>おんな</td>
-            <td>mujer</td>
-          </tr>
-          <tr key="kanji-31">
-            <td>31</td>
-            <td>男</td>
-            <td>ダン, ナン</td>
-            <td>おとこ</td>
-            <td>hombre</td>
-          </tr>
-          <tr key="kanji-32">
-            <td>32</td>
-            <td>口</td>
-            <td>コウ, ク</td>
-            <td>くち</td>
-            <td>boca</td>
-          </tr>
-          <tr key="kanji-33">
-            <td>33</td>
-            <td>目</td>
-            <td>モク</td>
-            <td>め</td>
-            <td>ojo</td>
-          </tr>
-          <tr key="kanji-34">
-            <td>34</td>
-            <td>耳</td>
-            <td>ジ</td>
-            <td>みみ</td>
-            <td>oído</td>
-          </tr>
-          <tr key="kanji-35">
-            <td>35</td>
-            <td>手</td>
-            <td>シュ</td>
-            <td>て</td>
-            <td>mano</td>
-          </tr>
-          <tr key="kanji-36">
-            <td>36</td>
-            <td>足</td>
-            <td>ソク</td>
-            <td>あし</td>
-            <td>pie, pierna</td>
-          </tr>
-          <tr key="kanji-37">
-            <td>37</td>
-            <td>見</td>
-            <td>ケン</td>
-            <td>み</td>
-            <td>ver</td>
-          </tr>
-          <tr key="kanji-38">
-            <td>38</td>
-            <td>音</td>
-            <td>オン</td>
-            <td>おと</td>
-            <td>sonido</td>
-          </tr>
-          <tr key="kanji-39">
-            <td>39</td>
-            <td>力</td>
-            <td>リョク, リキ</td>
-            <td>ちから</td>
-            <td>fuerza</td>
-          </tr>
-          <tr key="kanji-40">
-            <td>40</td>
-            <td>学</td>
-            <td>ガク</td>
-            <td>まな</td>
-            <td>aprender</td>
-          </tr>
-          <tr key="kanji-41">
-            <td>41</td>
-            <td>校</td>
-            <td>コウ</td>
-            <td></td>
-            <td>escuela</td>
-          </tr>
-          <tr key="kanji-42">
-            <td>42</td>
-            <td>本</td>
-            <td>ホン</td>
-            <td>もと</td>
-            <td>libro, origen</td>
-          </tr>
-          <tr key="kanji-43">
-            <td>43</td>
-            <td>字</td>
-            <td>ジ</td>
-            <td>あざ</td>
-            <td>carácter, letra</td>
-          </tr>
-          <tr key="kanji-44">
-            <td>44</td>
-            <td>文</td>
-            <td>ブン, モン</td>
-            <td>ふみ</td>
-            <td>escritura, oración</td>
-          </tr>
-          <tr key="kanji-45">
-            <td>45</td>
-            <td>大</td>
-            <td>ダイ, タイ</td>
-            <td>おお</td>
-            <td>grande</td>
-          </tr>
-          <tr key="kanji-46">
-            <td>46</td>
-            <td>小</td>
-            <td>ショウ</td>
-            <td>ちい</td>
-            <td>pequeño</td>
-          </tr>
-          <tr key="kanji-47">
-            <td>47</td>
-            <td>中</td>
-            <td>チュウ</td>
-            <td>なか</td>
-            <td>dentro, medio</td>
-          </tr>
-          <tr key="kanji-48">
-            <td>48</td>
-            <td>上</td>
-            <td>ジョウ</td>
-            <td>うえ</td>
-            <td>arriba</td>
-          </tr>
-          <tr key="kanji-49">
-            <td>49</td>
-            <td>下</td>
-            <td>カ, ゲ</td>
-            <td>した</td>
-            <td>abajo</td>
-          </tr>
-          <tr key="kanji-50">
-            <td>50</td>
-            <td>左</td>
-            <td>サ</td>
-            <td>ひだり</td>
-            <td>izquierda</td>
-          </tr>
-          <tr key="kanji-51">
-            <td>51</td>
-            <td>右</td>
-            <td>ウ, ユウ</td>
-            <td>みぎ</td>
-            <td>derecha</td>
-          </tr>
-          <tr key="kanji-52">
-            <td>52</td>
-            <td>入</td>
-            <td>ニュウ</td>
-            <td>はい</td>
-            <td>entrar</td>
-          </tr>
-          <tr key="kanji-53">
-            <td>53</td>
-            <td>出</td>
-            <td>シュツ</td>
-            <td>で</td>
-            <td>salir</td>
-          </tr>
-          <tr key="kanji-54">
-            <td>54</td>
-            <td>立</td>
-            <td>リツ</td>
-            <td>た</td>
-            <td>levantarse</td>
-          </tr>
-          <tr key="kanji-55">
-            <td>55</td>
-            <td>休</td>
-            <td>キュウ</td>
-            <td>やす</td>
-            <td>descansar</td>
-          </tr>
-          <tr key="kanji-56">
-            <td>56</td>
-            <td>先</td>
-            <td>セン</td>
-            <td>さき</td>
-            <td>antes, futuro</td>
-          </tr>
-          <tr key="kanji-57">
-            <td>57</td>
-            <td>生</td>
-            <td>セイ, ショウ</td>
-            <td>い, う</td>
-            <td>vida, nacer</td>
-          </tr>
-          <tr key="kanji-58">
-            <td>58</td>
-            <td>名</td>
-            <td>メイ, ミョウ</td>
-            <td>な</td>
-            <td>nombre</td>
-          </tr>
-          <tr key="kanji-59">
-            <td>59</td>
-            <td>年</td>
-            <td>ネン</td>
-            <td>とし</td>
-            <td>año</td>
-          </tr>
-          <tr key="kanji-60">
-            <td>60</td>
-            <td>時</td>
-            <td>ジ</td>
-            <td>とき</td>
-            <td>tiempo, hora</td>
-          </tr>
-          <tr key="kanji-61">
-            <td>61</td>
-            <td>正</td>
-            <td>セイ, ショウ</td>
-            <td>ただ</td>
-            <td>correcto</td>
-          </tr>
-          <tr key="kanji-62">
-            <td>62</td>
-            <td>円</td>
-            <td>エン</td>
-            <td>まる</td>
-            <td>círculo, yen</td>
-          </tr>
-          <tr key="kanji-63">
-            <td>63</td>
-            <td>百</td>
-            <td>ヒャク</td>
-            <td></td>
-            <td>cien</td>
-          </tr>
-          <tr key="kanji-64">
-            <td>64</td>
-            <td>千</td>
-            <td>セン</td>
-            <td>ち</td>
-            <td>mil</td>
-          </tr>
-          <tr key="kanji-65">
-            <td>65</td>
-            <td>口</td>
-            <td>コウ</td>
-            <td>くち</td>
-            <td>boca</td>
-          </tr>
-          <tr key="kanji-66">
-            <td>66</td>
-            <td>車</td>
-            <td>シャ</td>
-            <td>くるま</td>
-            <td>vehículo, carro</td>
-          </tr>
-          <tr key="kanji-67">
-            <td>67</td>
-            <td>糸</td>
-            <td>シ</td>
-            <td>いと</td>
-            <td>hilo</td>
-          </tr>
-          <tr key="kanji-68">
-            <td>68</td>
-            <td>貝</td>
-            <td>バイ</td>
-            <td>かい</td>
-            <td>concha</td>
-          </tr>
-          <tr key="kanji-69">
-            <td>69</td>
-            <td>犬</td>
-            <td>ケン</td>
-            <td>いぬ</td>
-            <td>perro</td>
-          </tr>
-          <tr key="kanji-70">
-            <td>70</td>
-            <td>馬</td>
-            <td>バ</td>
-            <td>うま</td>
-            <td>caballo</td>
-          </tr>
-          <tr key="kanji-71">
-            <td>71</td>
-            <td>魚</td>
-            <td>ギョ</td>
-            <td>さかな</td>
-            <td>pez</td>
-          </tr>
-          <tr key="kanji-72">
-            <td>72</td>
-            <td>鳥</td>
-            <td>チョウ</td>
-            <td>とり</td>
-            <td>ave</td>
-          </tr>
-          <tr key="kanji-73">
-            <td>73</td>
-            <td>虫</td>
-            <td>チュウ</td>
-            <td>むし</td>
-            <td>insecto</td>
-          </tr>
-          <tr key="kanji-74">
-            <td>74</td>
-            <td>草</td>
-            <td>ソウ</td>
-            <td>くさ</td>
-            <td>hierba</td>
-          </tr>
-          <tr key="kanji-75">
-            <td>75</td>
-            <td>火</td>
-            <td>カ</td>
-            <td>ひ</td>
-            <td>fuego</td>
-          </tr>
-          <tr key="kanji-76">
-            <td>76</td>
-            <td>水</td>
-            <td>スイ</td>
-            <td>みず</td>
-            <td>agua</td>
-          </tr>
-          <tr key="kanji-77">
-            <td>77</td>
-            <td>木</td>
-            <td>ボク, モク</td>
-            <td>き</td>
-            <td>árbol</td>
-          </tr>
-          <tr key="kanji-78">
-            <td>78</td>
-            <td>月</td>
-            <td>ゲツ</td>
-            <td>つき</td>
-            <td>luna</td>
-          </tr>
-          <tr key="kanji-79">
-            <td>79</td>
-            <td>日</td>
-            <td>ニチ</td>
-            <td>ひ</td>
-            <td>día, sol</td>
-          </tr>
-          <tr key="kanji-80">
-            <td>80</td>
-            <td>人</td>
-            <td>ジン</td>
-            <td>ひと</td>
-            <td>persona</td>
-          </tr>
-        </tbody>
-      </table>
+      <!-- Sección de búsqueda -->
+      <div class="mb-6">
+        <div class="max-w-md mx-auto">
+          <input type="text" id="searchInput" placeholder="Buscar por kanji, lectura o significado..." 
+                 class="w-full px-4 py-2 border border-red-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+                 aria-label="Buscar kanji">
+        </div>
+      </div>
 
-      <h3 class="text-xl font-bold text-red-800 mb-4">Consejos de Aprendizaje</h3>
-      <ul class="list-disc pl-6 mb-6">
-        <li>Practica los trazos correctos con papel y lápiz o aplicaciones como Kanji Study.</li>
-        <li>Usa mnemonics para memorizar: por ejemplo, "日" parece un sol con rayos.</li>
-        <li>Combina con hiragana para formar palabras simples como "日々" (días).</li>
-      </ul>
+      <!-- Tabla de Kanji estilo grilla visual -->
+      <div class="mb-8" id="kanjiGrid">
+        <h3 class="text-xl font-bold text-red-700 mb-4 text-center">Números (1-10)</h3>
+        <div class="grid grid-cols-5 md:grid-cols-10 gap-4 mb-8">
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">一</div>
+            <div class="text-sm text-red-600">イチ</div>
+            <div class="text-sm text-red-600">いち</div>
+            <div class="text-xs text-gray-600">uno</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">二</div>
+            <div class="text-sm text-red-600">ニ</div>
+            <div class="text-sm text-red-600">ふた</div>
+            <div class="text-xs text-gray-600">dos</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">三</div>
+            <div class="text-sm text-red-600">サン</div>
+            <div class="text-sm text-red-600">み</div>
+            <div class="text-xs text-gray-600">tres</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">四</div>
+            <div class="text-sm text-red-600">シ</div>
+            <div class="text-sm text-red-600">よん</div>
+            <div class="text-xs text-gray-600">cuatro</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">五</div>
+            <div class="text-sm text-red-600">ゴ</div>
+            <div class="text-sm text-red-600">いつ</div>
+            <div class="text-xs text-gray-600">cinco</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">六</div>
+            <div class="text-sm text-red-600">ロク</div>
+            <div class="text-sm text-red-600">ろく</div>
+            <div class="text-xs text-gray-600">seis</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">七</div>
+            <div class="text-sm text-red-600">シチ</div>
+            <div class="text-sm text-red-600">なな</div>
+            <div class="text-xs text-gray-600">siete</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">八</div>
+            <div class="text-sm text-red-600">ハチ</div>
+            <div class="text-sm text-red-600">はち</div>
+            <div class="text-xs text-gray-600">ocho</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">九</div>
+            <div class="text-sm text-red-600">キュウ</div>
+            <div class="text-sm text-red-600">く</div>
+            <div class="text-xs text-gray-600">nueve</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">十</div>
+            <div class="text-sm text-red-600">ジュウ</div>
+            <div class="text-sm text-red-600">じゅう</div>
+            <div class="text-xs text-gray-600">diez</div>
+          </div>
+        </div>
 
-      <h3 class="text-xl font-bold text-red-800 mb-4">Recursos de Video</h3>
-      <div class="video-container mb-4">
-        <iframe src="https://www.youtube.com/embed/BqIEOf81jBk" frameborder="0" allowfullscreen></iframe>
+        <h3 class="text-xl font-bold text-red-700 mb-4 text-center">Elementos Naturales</h3>
+        <div class="grid grid-cols-4 md:grid-cols-6 gap-4 mb-8">
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">日</div>
+            <div class="text-sm text-red-600">ニチ</div>
+            <div class="text-sm text-red-600">ひ</div>
+            <div class="text-xs text-gray-600">sol</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">月</div>
+            <div class="text-sm text-red-600">ゲツ</div>
+            <div class="text-sm text-red-600">つき</div>
+            <div class="text-xs text-gray-600">luna</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">火</div>
+            <div class="text-sm text-red-600">カ</div>
+            <div class="text-sm text-red-600">ひ</div>
+            <div class="text-xs text-gray-600">fuego</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">水</div>
+            <div class="text-sm text-red-600">スイ</div>
+            <div class="text-sm text-red-600">みず</div>
+            <div class="text-xs text-gray-600">agua</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">木</div>
+            <div class="text-sm text-red-600">モク</div>
+            <div class="text-sm text-red-600">き</div>
+            <div class="text-xs text-gray-600">árbol</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">金</div>
+            <div class="text-sm text-red-600">キン</div>
+            <div class="text-sm text-red-600">かね</div>
+            <div class="text-xs text-gray-600">oro</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">土</div>
+            <div class="text-sm text-red-600">ド</div>
+            <div class="text-sm text-red-600">つち</div>
+            <div class="text-xs text-gray-600">tierra</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">山</div>
+            <div class="text-sm text-red-600">サン</div>
+            <div class="text-sm text-red-600">やま</div>
+            <div class="text-xs text-gray-600">montaña</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">川</div>
+            <div class="text-sm text-red-600">セン</div>
+            <div class="text-sm text-red-600">かわ</div>
+            <div class="text-xs text-gray-600">río</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">石</div>
+            <div class="text-sm text-red-600">セキ</div>
+            <div class="text-sm text-red-600">いし</div>
+            <div class="text-xs text-gray-600">piedra</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">雨</div>
+            <div class="text-sm text-red-600">ウ</div>
+            <div class="text-sm text-red-600">あめ</div>
+            <div class="text-xs text-gray-600">lluvia</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">空</div>
+            <div class="text-sm text-red-600">クウ</div>
+            <div class="text-sm text-red-600">そら</div>
+            <div class="text-xs text-gray-600">cielo</div>
+          </div>
+        </div>
+
+        <h3 class="text-xl font-bold text-red-700 mb-4 text-center">Personas y Cuerpo</h3>
+        <div class="grid grid-cols-4 md:grid-cols-6 gap-4 mb-8">
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">人</div>
+            <div class="text-sm text-red-600">ジン</div>
+            <div class="text-sm text-red-600">ひと</div>
+            <div class="text-xs text-gray-600">persona</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">子</div>
+            <div class="text-sm text-red-600">シ</div>
+            <div class="text-sm text-red-600">こ</div>
+            <div class="text-xs text-gray-600">niño</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">女</div>
+            <div class="text-sm text-red-600">ジョ</div>
+            <div class="text-sm text-red-600">おんな</div>
+            <div class="text-xs text-gray-600">mujer</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">男</div>
+            <div class="text-sm text-red-600">ダン</div>
+            <div class="text-sm text-red-600">おとこ</div>
+            <div class="text-xs text-gray-600">hombre</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">口</div>
+            <div class="text-sm text-red-600">コウ</div>
+            <div class="text-sm text-red-600">くち</div>
+            <div class="text-xs text-gray-600">boca</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">目</div>
+            <div class="text-sm text-red-600">モク</div>
+            <div class="text-sm text-red-600">め</div>
+            <div class="text-xs text-gray-600">ojo</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">耳</div>
+            <div class="text-sm text-red-600">ジ</div>
+            <div class="text-sm text-red-600">みみ</div>
+            <div class="text-xs text-gray-600">oído</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">手</div>
+            <div class="text-sm text-red-600">シュ</div>
+            <div class="text-sm text-red-600">て</div>
+            <div class="text-xs text-gray-600">mano</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-3xl font-bold text-red-800 mb-2">足</div>
+            <div class="text-sm text-red-600">ソク</div>
+            <div class="text-sm text-red-600">あし</div>
+            <div class="text-xs text-gray-600">pie</div>
+          </div>
+        </div>
+
+        <!-- Vista de tabla completa (oculta por defecto) -->
+        <div class="mt-8">
+          <div class="text-center">
+            <button id="toggleView" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg transition-colors">
+              Ver tabla completa (80 kanji)
+            </button>
+          </div>
+          
+          <div id="fullTable" class="hidden mt-6 overflow-x-auto">
+            <table class="w-full border-collapse bg-white shadow-lg rounded-lg overflow-hidden">
+              <thead>
+                <tr class="bg-red-600 text-white">
+                  <th class="p-3 text-center">#</th>
+                  <th class="p-3 text-center">Kanji</th>
+                  <th class="p-3 text-center">On'yomi</th>
+                  <th class="p-3 text-center">Kun'yomi</th>
+                  <th class="p-3 text-center">Significado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Aquí irían los 80 kanji completos en formato tabla -->
+                <tr class="border-b hover:bg-red-50">
+                  <td class="p-3 text-center">1</td>
+                  <td class="p-3 text-center text-2xl font-bold text-red-800">一</td>
+                  <td class="p-3 text-center">イチ</td>
+                  <td class="p-3 text-center">いち</td>
+                  <td class="p-3 text-center">uno</td>
+                </tr>
+                <!-- ... Resto de kanji ... -->
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="video-container mb-4">
-        <iframe src="https://www.youtube.com/embed/9rdx1mBBIRw" frameborder="0" allowfullscreen></iframe>
+
+      <!-- Tips de aprendizaje -->
+      <section class="mb-8 bg-red-50 p-6 rounded-xl">
+        <h3 class="text-xl font-bold text-red-700 mb-4">Consejos de Aprendizaje</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <div class="flex items-start gap-3 p-3 bg-white rounded-lg">
+              <span class="text-2xl">✍️</span>
+              <div>
+                <h4 class="font-bold mb-1">Practica la escritura</h4>
+                <p class="text-sm text-gray-600">Usa el orden correcto de trazos para memorizar mejor</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-white rounded-lg">
+              <span class="text-2xl">🧠</span>
+              <div>
+                <h4 class="font-bold mb-1">Usa mnemónicos</h4>
+                <p class="text-sm text-gray-600">"日" parece un sol con rayos horizontales</p>
+              </div>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3 p-3 bg-white rounded-lg">
+              <span class="text-2xl">📚</span>
+              <div>
+                <h4 class="font-bold mb-1">Combina con hiragana</h4>
+                <p class="text-sm text-gray-600">Forma palabras simples como "人々" (personas)</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 p-3 bg-white rounded-lg">
+              <span class="text-2xl">🔤</span>
+              <div>
+                <h4 class="font-bold mb-1">Aprende por grupos</h4>
+                <p class="text-sm text-gray-600">Números, naturaleza, familia, etc.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Videos -->
+      <h3 class="text-xl font-bold text-red-700 mb-4">Recursos de Video</h3>
+      <div class="grid sm:grid-cols-2 gap-4 mb-6">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/BqIEOf81jBk?rel=0" frameborder="0" allowfullscreen class="w-full h-48 rounded-lg"></iframe>
+        </div>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/9rdx1mBBIRw?rel=0" frameborder="0" allowfullscreen class="w-full h-48 rounded-lg"></iframe>
+        </div>
       </div>
-      <div class="video-container mb-4">
-        <iframe src="https://www.youtube.com/embed/-vtcW20cJ1s" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <div class="video-container mb-4">
-        <iframe src="https://www.youtube.com/embed/makfARFoTGc" frameborder="0" allowfullscreen></iframe>
-      </div>
-      <p class="mb-4">Para guías visuales sobre kanji, incluyendo "にんべんの漢字" (radical de persona). Créditos y derechos de autor a YouTube y a los creadores del contenido.</p>
+      <p class="text-sm text-gray-600 mb-4">Videos educativos sobre kanji básicos. Créditos y derechos de autor a YouTube y a los creadores del contenido.</p>
     </article>
   </main>
 
   <footer class="bg-red-600 text-white text-center py-6 mt-8">
-    <p><a href="../index.html" class="animated-btn block mb-4 text-white bg-red-600 px-4 py-2 rounded-md hover:bg-red-700">Volver a Inicio</a></p>
     <p>© 2025 Nihongo no Sekai – Todos los derechos reservados</p>
   </footer>
-  <button class="scroll-to-top" onclick="scrollToTop()">↑</button>
+
+  <script src="../../assets/js/navigation.js"></script>
+  <script src="../../assets/js/main.js"></script>
   <script>
+    // Funcionalidad de búsqueda
     const searchInput = document.getElementById('searchInput');
-    const table = document.getElementById('kanjiTable');
-    const rows = table.getElementsByTagName('tr');
-    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+    const kanjiCards = document.querySelectorAll('.kanji-card');
 
     searchInput.addEventListener('input', () => {
       const searchTerm = searchInput.value.toLowerCase();
-      for (let i = 1; i < rows.length; i++) {
-        const cells = rows[i].getElementsByTagName('td');
-        let match = false;
-        for (let j = 0; j < cells.length; j++) {
-          if (cells[j].textContent.toLowerCase().includes(searchTerm)) {
-            match = true;
-            break;
-          }
-        }
-        rows[i].style.display = match ? '' : 'none';
-      }
+      kanjiCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(searchTerm) ? 'block' : 'none';
+      });
     });
 
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 300) {
-        scrollToTopBtn.classList.add('show');
+    // Toggle vista de tabla completa
+    const toggleBtn = document.getElementById('toggleView');
+    const fullTable = document.getElementById('fullTable');
+
+    toggleBtn.addEventListener('click', () => {
+      if (fullTable.classList.contains('hidden')) {
+        fullTable.classList.remove('hidden');
+        toggleBtn.textContent = 'Ocultar tabla completa';
       } else {
-        scrollToTopBtn.classList.remove('show');
+        fullTable.classList.add('hidden');
+        toggleBtn.textContent = 'Ver tabla completa (80 kanji)';
       }
     });
-
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
   </script>
 </body>
 </html>
