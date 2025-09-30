@@ -7,16 +7,16 @@
   <meta name="keywords" content="kanji, 1º grado, japonés, kyōiku kanji, aprendizaje">
   <meta name="author" content="Nihongo no Sekai">
   <title>1º Grado – Nihongo no Sekai (日本語の世界)</title>
-  <link rel="icon" href="../../assets/images/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../assets/images/icons/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="../../assets/css/main.css">
-  <link rel="stylesheet" href="../../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
 </head>
 <body class="bg-gray-100 text-gray-800 leading-relaxed">
   <header class="bg-red-600 text-white py-6">
     <div class="container mx-auto px-4 flex items-center gap-4 flex-col md:flex-row">
-      <img src="../../assets/images/logos/logo.png" alt="Logo de Nihongo no Sekai" class="h-20 w-20 object-contain rounded-md shadow-sm animated-img" loading="lazy">
+      <img src="../assets/images/logos/logo.png" alt="Logo de Nihongo no Sekai" class="h-20 w-20 object-contain rounded-md shadow-sm animated-img" loading="lazy">
       <div class="text-center md:text-left">
         <h1 class="text-2xl md:text-3xl font-bold">Nihongo no Sekai (日本語の世界)</h1>
         <p class="text-sm md:text-base">El mundo del japonés: Aprende el idioma y su cultura paso a paso</p>
@@ -32,20 +32,35 @@
         </svg>
       </button>
       <div id="nav-menu" class="nav-menu md:flex md:space-x-6 absolute md:static top-14 right-0 bg-red-800 md:bg-transparent w-full md:w-auto p-4 md:p-0">
-        <a href="../../index.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Inicio</a>
-        <a href="../menu.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Menú</a>
+        <a href="../index.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Inicio</a>
+        <a href="menu.html" class="block md:inline text-white hover:underline py-2 md:py-0 font-semibold animated-btn px-4 py-2 rounded-md">Menú</a>
       </div>
     </div>
   </nav>
 
   <main class="container mx-auto px-4 py-8 bg-white shadow-lg rounded-lg">
     <article id="grado1" class="mb-12">
-      <a href="javascript:history.back()" class="back-btn animated-btn inline-block mb-4 text-white bg-red-600 px-4 py-2 rounded-md hover:bg-red-700 transition-colors">← Volver</a>
+      
+      <!-- Navegación de lecciones -->
+      <div class="flex flex-wrap gap-3 mb-6 justify-center">
+        <a href="hiragana.html" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-colors font-semibold">
+          Hiragana
+        </a>
+        <a href="katakana.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors font-semibold">
+          Katakana
+        </a>
+        <a href="kanji.html" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors font-semibold">
+          Kanji
+        </a>
+        <a href="romaji.html" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors font-semibold">
+          Rōmaji
+        </a>
+      </div>
       
       <h2 class="text-2xl md:text-3xl font-bold text-red-700 mb-6">1º Grado de Primaria – 80 Kanji (小学一年生)</h2>
       
       <div class="mb-8">
-        <img src="../../assets/images/writing-systems/diccionariokanji.jpeg" alt="Diccionario de Kanji" class="w-full max-w-md mx-auto rounded-lg shadow-md">
+        <img src="../assets/images/writing-systems/diccionariokanji.jpeg" alt="Diccionario de Kanji" class="w-full max-w-md mx-auto rounded-lg shadow-md">
       </div>
 
       <p class="mb-6 text-lg">En el 1º Grado de Primaria (小学一年生), los estudiantes japoneses aprenden 80 kanji básicos que forman la base del sistema de escritura. Estos caracteres incluyen números, elementos naturales, partes del cuerpo y conceptos fundamentales.</p>
@@ -61,201 +76,543 @@
 
       <!-- Tabla de Kanji estilo grilla visual -->
       <div class="mb-8" id="kanjiGrid">
+        
+        <!-- Números (1-10) -->
         <h3 class="text-xl font-bold text-red-700 mb-4 text-center">Números (1-10)</h3>
         <div class="grid grid-cols-5 md:grid-cols-10 gap-4 mb-8">
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">1️⃣</div>
             <div class="text-3xl font-bold text-red-800 mb-2">一</div>
             <div class="text-sm text-red-600">イチ</div>
-            <div class="text-sm text-red-600">いち</div>
+            <div class="text-sm text-red-600">ひと</div>
             <div class="text-xs text-gray-600">uno</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">2️⃣</div>
             <div class="text-3xl font-bold text-red-800 mb-2">二</div>
             <div class="text-sm text-red-600">ニ</div>
             <div class="text-sm text-red-600">ふた</div>
             <div class="text-xs text-gray-600">dos</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">3️⃣</div>
             <div class="text-3xl font-bold text-red-800 mb-2">三</div>
             <div class="text-sm text-red-600">サン</div>
             <div class="text-sm text-red-600">み</div>
             <div class="text-xs text-gray-600">tres</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">4️⃣</div>
             <div class="text-3xl font-bold text-red-800 mb-2">四</div>
             <div class="text-sm text-red-600">シ</div>
             <div class="text-sm text-red-600">よん</div>
             <div class="text-xs text-gray-600">cuatro</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">5️⃣</div>
             <div class="text-3xl font-bold text-red-800 mb-2">五</div>
             <div class="text-sm text-red-600">ゴ</div>
             <div class="text-sm text-red-600">いつ</div>
             <div class="text-xs text-gray-600">cinco</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">6️⃣</div>
             <div class="text-3xl font-bold text-red-800 mb-2">六</div>
             <div class="text-sm text-red-600">ロク</div>
-            <div class="text-sm text-red-600">ろく</div>
+            <div class="text-sm text-red-600">む</div>
             <div class="text-xs text-gray-600">seis</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">7️⃣</div>
             <div class="text-3xl font-bold text-red-800 mb-2">七</div>
             <div class="text-sm text-red-600">シチ</div>
             <div class="text-sm text-red-600">なな</div>
             <div class="text-xs text-gray-600">siete</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">8️⃣</div>
             <div class="text-3xl font-bold text-red-800 mb-2">八</div>
             <div class="text-sm text-red-600">ハチ</div>
-            <div class="text-sm text-red-600">はち</div>
+            <div class="text-sm text-red-600">やち</div>
             <div class="text-xs text-gray-600">ocho</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">9️⃣</div>
             <div class="text-3xl font-bold text-red-800 mb-2">九</div>
             <div class="text-sm text-red-600">キュウ</div>
-            <div class="text-sm text-red-600">く</div>
+            <div class="text-sm text-red-600">ここの</div>
             <div class="text-xs text-gray-600">nueve</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🔟</div>
             <div class="text-3xl font-bold text-red-800 mb-2">十</div>
             <div class="text-sm text-red-600">ジュウ</div>
-            <div class="text-sm text-red-600">じゅう</div>
+            <div class="text-sm text-red-600">とお</div>
             <div class="text-xs text-gray-600">diez</div>
           </div>
         </div>
 
+        <!-- Elementos Naturales -->
         <h3 class="text-xl font-bold text-red-700 mb-4 text-center">Elementos Naturales</h3>
-        <div class="grid grid-cols-4 md:grid-cols-6 gap-4 mb-8">
+        <div class="grid grid-cols-4 md:grid-cols-8 gap-4 mb-8">
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">☀️</div>
             <div class="text-3xl font-bold text-red-800 mb-2">日</div>
             <div class="text-sm text-red-600">ニチ</div>
             <div class="text-sm text-red-600">ひ</div>
             <div class="text-xs text-gray-600">sol</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🌙</div>
             <div class="text-3xl font-bold text-red-800 mb-2">月</div>
             <div class="text-sm text-red-600">ゲツ</div>
             <div class="text-sm text-red-600">つき</div>
             <div class="text-xs text-gray-600">luna</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🔥</div>
             <div class="text-3xl font-bold text-red-800 mb-2">火</div>
             <div class="text-sm text-red-600">カ</div>
             <div class="text-sm text-red-600">ひ</div>
             <div class="text-xs text-gray-600">fuego</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">💧</div>
             <div class="text-3xl font-bold text-red-800 mb-2">水</div>
             <div class="text-sm text-red-600">スイ</div>
             <div class="text-sm text-red-600">みず</div>
             <div class="text-xs text-gray-600">agua</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🌳</div>
             <div class="text-3xl font-bold text-red-800 mb-2">木</div>
             <div class="text-sm text-red-600">モク</div>
             <div class="text-sm text-red-600">き</div>
             <div class="text-xs text-gray-600">árbol</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🥇</div>
             <div class="text-3xl font-bold text-red-800 mb-2">金</div>
             <div class="text-sm text-red-600">キン</div>
             <div class="text-sm text-red-600">かね</div>
             <div class="text-xs text-gray-600">oro</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🌍</div>
             <div class="text-3xl font-bold text-red-800 mb-2">土</div>
             <div class="text-sm text-red-600">ド</div>
             <div class="text-sm text-red-600">つち</div>
             <div class="text-xs text-gray-600">tierra</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🌌</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">空</div>
+            <div class="text-sm text-red-600">クウ</div>
+            <div class="text-sm text-red-600">そら</div>
+            <div class="text-xs text-gray-600">cielo</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">⛰️</div>
             <div class="text-3xl font-bold text-red-800 mb-2">山</div>
             <div class="text-sm text-red-600">サン</div>
             <div class="text-sm text-red-600">やま</div>
             <div class="text-xs text-gray-600">montaña</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🌊</div>
             <div class="text-3xl font-bold text-red-800 mb-2">川</div>
             <div class="text-sm text-red-600">セン</div>
             <div class="text-sm text-red-600">かわ</div>
             <div class="text-xs text-gray-600">río</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🪨</div>
             <div class="text-3xl font-bold text-red-800 mb-2">石</div>
             <div class="text-sm text-red-600">セキ</div>
             <div class="text-sm text-red-600">いし</div>
             <div class="text-xs text-gray-600">piedra</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🌸</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">花</div>
+            <div class="text-sm text-red-600">カ</div>
+            <div class="text-sm text-red-600">はな</div>
+            <div class="text-xs text-gray-600">flor</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🌱</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">草</div>
+            <div class="text-sm text-red-600">ソウ</div>
+            <div class="text-sm text-red-600">くさ</div>
+            <div class="text-xs text-gray-600">hierba</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🎋</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">竹</div>
+            <div class="text-sm text-red-600">チク</div>
+            <div class="text-sm text-red-600">たけ</div>
+            <div class="text-xs text-gray-600">bambú</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🌧️</div>
             <div class="text-3xl font-bold text-red-800 mb-2">雨</div>
             <div class="text-sm text-red-600">ウ</div>
             <div class="text-sm text-red-600">あめ</div>
             <div class="text-xs text-gray-600">lluvia</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
-            <div class="text-3xl font-bold text-red-800 mb-2">空</div>
-            <div class="text-sm text-red-600">クウ</div>
-            <div class="text-sm text-red-600">そら</div>
-            <div class="text-xs text-gray-600">cielo</div>
+            <div class="text-2xl mb-1">👑</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">王</div>
+            <div class="text-sm text-red-600">オウ</div>
+            <div class="text-sm text-red-600">-</div>
+            <div class="text-xs text-gray-600">rey</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">💎</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">玉</div>
+            <div class="text-sm text-red-600">ギョク</div>
+            <div class="text-sm text-red-600">たま</div>
+            <div class="text-xs text-gray-600">joya</div>
           </div>
         </div>
 
+        <!-- Personas y Cuerpo -->
         <h3 class="text-xl font-bold text-red-700 mb-4 text-center">Personas y Cuerpo</h3>
-        <div class="grid grid-cols-4 md:grid-cols-6 gap-4 mb-8">
+        <div class="grid grid-cols-4 md:grid-cols-8 gap-4 mb-8">
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">👤</div>
             <div class="text-3xl font-bold text-red-800 mb-2">人</div>
             <div class="text-sm text-red-600">ジン</div>
             <div class="text-sm text-red-600">ひと</div>
             <div class="text-xs text-gray-600">persona</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">👶</div>
             <div class="text-3xl font-bold text-red-800 mb-2">子</div>
             <div class="text-sm text-red-600">シ</div>
             <div class="text-sm text-red-600">こ</div>
             <div class="text-xs text-gray-600">niño</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">👩</div>
             <div class="text-3xl font-bold text-red-800 mb-2">女</div>
             <div class="text-sm text-red-600">ジョ</div>
             <div class="text-sm text-red-600">おんな</div>
             <div class="text-xs text-gray-600">mujer</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">👨</div>
             <div class="text-3xl font-bold text-red-800 mb-2">男</div>
             <div class="text-sm text-red-600">ダン</div>
             <div class="text-sm text-red-600">おとこ</div>
             <div class="text-xs text-gray-600">hombre</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">👄</div>
             <div class="text-3xl font-bold text-red-800 mb-2">口</div>
             <div class="text-sm text-red-600">コウ</div>
             <div class="text-sm text-red-600">くち</div>
             <div class="text-xs text-gray-600">boca</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">👁️</div>
             <div class="text-3xl font-bold text-red-800 mb-2">目</div>
             <div class="text-sm text-red-600">モク</div>
             <div class="text-sm text-red-600">め</div>
             <div class="text-xs text-gray-600">ojo</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">👂</div>
             <div class="text-3xl font-bold text-red-800 mb-2">耳</div>
             <div class="text-sm text-red-600">ジ</div>
             <div class="text-sm text-red-600">みみ</div>
             <div class="text-xs text-gray-600">oído</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">✋</div>
             <div class="text-3xl font-bold text-red-800 mb-2">手</div>
             <div class="text-sm text-red-600">シュ</div>
             <div class="text-sm text-red-600">て</div>
             <div class="text-xs text-gray-600">mano</div>
           </div>
           <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🦶</div>
             <div class="text-3xl font-bold text-red-800 mb-2">足</div>
             <div class="text-sm text-red-600">ソク</div>
             <div class="text-sm text-red-600">あし</div>
             <div class="text-xs text-gray-600">pie</div>
+          </div>
+        </div>
+
+        <!-- Acciones y Conceptos Básicos -->
+        <h3 class="text-xl font-bold text-red-700 mb-4 text-center">Acciones y Conceptos Básicos</h3>
+        <div class="grid grid-cols-4 md:grid-cols-8 gap-4 mb-8">
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">👀</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">見</div>
+            <div class="text-sm text-red-600">ケン</div>
+            <div class="text-sm text-red-600">みる</div>
+            <div class="text-xs text-gray-600">ver</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🔊</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">音</div>
+            <div class="text-sm text-red-600">オン</div>
+            <div class="text-sm text-red-600">おと</div>
+            <div class="text-xs text-gray-600">sonido</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">💪</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">力</div>
+            <div class="text-sm text-red-600">リョク</div>
+            <div class="text-sm text-red-600">ちから</div>
+            <div class="text-xs text-gray-600">fuerza</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">📚</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">学</div>
+            <div class="text-sm text-red-600">ガク</div>
+            <div class="text-sm text-red-600">まなぶ</div>
+            <div class="text-xs text-gray-600">aprender</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🏫</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">校</div>
+            <div class="text-sm text-red-600">コウ</div>
+            <div class="text-sm text-red-600">-</div>
+            <div class="text-xs text-gray-600">escuela</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">📖</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">本</div>
+            <div class="text-sm text-red-600">ホン</div>
+            <div class="text-sm text-red-600">もと</div>
+            <div class="text-xs text-gray-600">libro</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🔤</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">字</div>
+            <div class="text-sm text-red-600">ジ</div>
+            <div class="text-sm text-red-600">あざ</div>
+            <div class="text-xs text-gray-600">letra</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">📝</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">文</div>
+            <div class="text-sm text-red-600">ブン</div>
+            <div class="text-sm text-red-600">ふみ</div>
+            <div class="text-xs text-gray-600">escritura</div>
+          </div>
+        </div>
+
+        <!-- Tamaños y Direcciones -->
+        <h3 class="text-xl font-bold text-red-700 mb-4 text-center">Tamaños y Direcciones</h3>
+        <div class="grid grid-cols-4 md:grid-cols-8 gap-4 mb-8">
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🔍</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">大</div>
+            <div class="text-sm text-red-600">ダイ</div>
+            <div class="text-sm text-red-600">おおきい</div>
+            <div class="text-xs text-gray-600">grande</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🔬</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">小</div>
+            <div class="text-sm text-red-600">ショウ</div>
+            <div class="text-sm text-red-600">ちいさい</div>
+            <div class="text-xs text-gray-600">pequeño</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🎯</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">中</div>
+            <div class="text-sm text-red-600">チュウ</div>
+            <div class="text-sm text-red-600">なか</div>
+            <div class="text-xs text-gray-600">medio</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">⬆️</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">上</div>
+            <div class="text-sm text-red-600">ジョウ</div>
+            <div class="text-sm text-red-600">うえ</div>
+            <div class="text-xs text-gray-600">arriba</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">⬇️</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">下</div>
+            <div class="text-sm text-red-600">カ</div>
+            <div class="text-sm text-red-600">した</div>
+            <div class="text-xs text-gray-600">abajo</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">⬅️</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">左</div>
+            <div class="text-sm text-red-600">サ</div>
+            <div class="text-sm text-red-600">ひだり</div>
+            <div class="text-xs text-gray-600">izquierda</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">➡️</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">右</div>
+            <div class="text-sm text-red-600">ウ</div>
+            <div class="text-sm text-red-600">みぎ</div>
+            <div class="text-xs text-gray-600">derecha</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🚪</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">入</div>
+            <div class="text-sm text-red-600">ニュウ</div>
+            <div class="text-sm text-red-600">はいる</div>
+            <div class="text-xs text-gray-600">entrar</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🚪</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">出</div>
+            <div class="text-sm text-red-600">シュツ</div>
+            <div class="text-sm text-red-600">でる</div>
+            <div class="text-xs text-gray-600">salir</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🧍</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">立</div>
+            <div class="text-sm text-red-600">リツ</div>
+            <div class="text-sm text-red-600">たつ</div>
+            <div class="text-xs text-gray-600">pararse</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">😴</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">休</div>
+            <div class="text-sm text-red-600">キュウ</div>
+            <div class="text-sm text-red-600">やすむ</div>
+            <div class="text-xs text-gray-600">descansar</div>
+          </div>
+        </div>
+
+        <!-- Conceptos Temporales y Números Grandes -->
+        <h3 class="text-xl font-bold text-red-700 mb-4 text-center">Tiempo y Números Grandes</h3>
+        <div class="grid grid-cols-4 md:grid-cols-8 gap-4 mb-8">
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">👆</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">先</div>
+            <div class="text-sm text-red-600">セン</div>
+            <div class="text-sm text-red-600">さき</div>
+            <div class="text-xs text-gray-600">antes</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🌱</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">生</div>
+            <div class="text-sm text-red-600">セイ</div>
+            <div class="text-sm text-red-600">いきる</div>
+            <div class="text-xs text-gray-600">vida</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">📛</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">名</div>
+            <div class="text-sm text-red-600">メイ</div>
+            <div class="text-sm text-red-600">な</div>
+            <div class="text-xs text-gray-600">nombre</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">📅</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">年</div>
+            <div class="text-sm text-red-600">ネン</div>
+            <div class="text-sm text-red-600">とし</div>
+            <div class="text-xs text-gray-600">año</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">⏰</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">時</div>
+            <div class="text-sm text-red-600">ジ</div>
+            <div class="text-sm text-red-600">とき</div>
+            <div class="text-xs text-gray-600">tiempo</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">✅</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">正</div>
+            <div class="text-sm text-red-600">セイ</div>
+            <div class="text-sm text-red-600">ただしい</div>
+            <div class="text-xs text-gray-600">correcto</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">⭕</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">円</div>
+            <div class="text-sm text-red-600">エン</div>
+            <div class="text-sm text-red-600">まる</div>
+            <div class="text-xs text-gray-600">círculo</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">💯</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">百</div>
+            <div class="text-sm text-red-600">ヒャク</div>
+            <div class="text-sm text-red-600">-</div>
+            <div class="text-xs text-gray-600">cien</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🔢</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">千</div>
+            <div class="text-sm text-red-600">セン</div>
+            <div class="text-sm text-red-600">ち</div>
+            <div class="text-xs text-gray-600">mil</div>
+          </div>
+        </div>
+
+        <!-- Objetos y Animales -->
+        <h3 class="text-xl font-bold text-red-700 mb-4 text-center">Objetos y Animales</h3>
+        <div class="grid grid-cols-4 md:grid-cols-8 gap-4 mb-8">
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🚗</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">車</div>
+            <div class="text-sm text-red-600">シャ</div>
+            <div class="text-sm text-red-600">くるま</div>
+            <div class="text-xs text-gray-600">vehículo</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🧵</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">糸</div>
+            <div class="text-sm text-red-600">シ</div>
+            <div class="text-sm text-red-600">いと</div>
+            <div class="text-xs text-gray-600">hilo</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🐚</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">貝</div>
+            <div class="text-sm text-red-600">バイ</div>
+            <div class="text-sm text-red-600">かい</div>
+            <div class="text-xs text-gray-600">concha</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🐕</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">犬</div>
+            <div class="text-sm text-red-600">ケン</div>
+            <div class="text-sm text-red-600">いぬ</div>
+            <div class="text-xs text-gray-600">perro</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🐎</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">馬</div>
+            <div class="text-sm text-red-600">バ</div>
+            <div class="text-sm text-red-600">うま</div>
+            <div class="text-xs text-gray-600">caballo</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🐟</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">魚</div>
+            <div class="text-sm text-red-600">ギョ</div>
+            <div class="text-sm text-red-600">さかな</div>
+            <div class="text-xs text-gray-600">pez</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🐦</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">鳥</div>
+            <div class="text-sm text-red-600">チョウ</div>
+            <div class="text-sm text-red-600">とり</div>
+            <div class="text-xs text-gray-600">ave</div>
+          </div>
+          <div class="kanji-card bg-red-50 border border-red-200 rounded-lg p-4 text-center hover:bg-red-100 transition-colors cursor-pointer">
+            <div class="text-2xl mb-1">🐛</div>
+            <div class="text-3xl font-bold text-red-800 mb-2">虫</div>
+            <div class="text-sm text-red-600">チュウ</div>
+            <div class="text-sm text-red-600">むし</div>
+            <div class="text-xs text-gray-600">insecto</div>
           </div>
         </div>
 
@@ -272,6 +629,7 @@
               <thead>
                 <tr class="bg-red-600 text-white">
                   <th class="p-3 text-center">#</th>
+                  <th class="p-3 text-center">Emoji</th>
                   <th class="p-3 text-center">Kanji</th>
                   <th class="p-3 text-center">On'yomi</th>
                   <th class="p-3 text-center">Kun'yomi</th>
@@ -279,15 +637,86 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- Aquí irían los 80 kanji completos en formato tabla -->
-                <tr class="border-b hover:bg-red-50">
-                  <td class="p-3 text-center">1</td>
-                  <td class="p-3 text-center text-2xl font-bold text-red-800">一</td>
-                  <td class="p-3 text-center">イチ</td>
-                  <td class="p-3 text-center">いち</td>
-                  <td class="p-3 text-center">uno</td>
-                </tr>
-                <!-- ... Resto de kanji ... -->
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">1</td><td class="p-3 text-center text-xl">1️⃣</td><td class="p-3 text-center text-2xl font-bold text-red-800">一</td><td class="p-3 text-center">イチ</td><td class="p-3 text-center">ひと(つ)</td><td class="p-3 text-center">uno</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">2</td><td class="p-3 text-center text-xl">2️⃣</td><td class="p-3 text-center text-2xl font-bold text-red-800">二</td><td class="p-3 text-center">ニ</td><td class="p-3 text-center">ふた(つ)</td><td class="p-3 text-center">dos</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">3</td><td class="p-3 text-center text-xl">3️⃣</td><td class="p-3 text-center text-2xl font-bold text-red-800">三</td><td class="p-3 text-center">サン</td><td class="p-3 text-center">み(っつ)</td><td class="p-3 text-center">tres</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">4</td><td class="p-3 text-center text-xl">4️⃣</td><td class="p-3 text-center text-2xl font-bold text-red-800">四</td><td class="p-3 text-center">シ</td><td class="p-3 text-center">よ(っつ), よん</td><td class="p-3 text-center">cuatro</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">5</td><td class="p-3 text-center text-xl">5️⃣</td><td class="p-3 text-center text-2xl font-bold text-red-800">五</td><td class="p-3 text-center">ゴ</td><td class="p-3 text-center">いつ(つ)</td><td class="p-3 text-center">cinco</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">6</td><td class="p-3 text-center text-xl">6️⃣</td><td class="p-3 text-center text-2xl font-bold text-red-800">六</td><td class="p-3 text-center">ロク</td><td class="p-3 text-center">む(っつ)</td><td class="p-3 text-center">seis</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">7</td><td class="p-3 text-center text-xl">7️⃣</td><td class="p-3 text-center text-2xl font-bold text-red-800">七</td><td class="p-3 text-center">シチ</td><td class="p-3 text-center">なな(つ)</td><td class="p-3 text-center">siete</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">8</td><td class="p-3 text-center text-xl">8️⃣</td><td class="p-3 text-center text-2xl font-bold text-red-800">八</td><td class="p-3 text-center">ハチ</td><td class="p-3 text-center">や(っつ)</td><td class="p-3 text-center">ocho</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">9</td><td class="p-3 text-center text-xl">9️⃣</td><td class="p-3 text-center text-2xl font-bold text-red-800">九</td><td class="p-3 text-center">キュウ, ク</td><td class="p-3 text-center">ここの(つ)</td><td class="p-3 text-center">nueve</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">10</td><td class="p-3 text-center text-xl">🔟</td><td class="p-3 text-center text-2xl font-bold text-red-800">十</td><td class="p-3 text-center">ジュウ</td><td class="p-3 text-center">とお</td><td class="p-3 text-center">diez</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">11</td><td class="p-3 text-center text-xl">☀️</td><td class="p-3 text-center text-2xl font-bold text-red-800">日</td><td class="p-3 text-center">ニチ, ジツ</td><td class="p-3 text-center">ひ, か</td><td class="p-3 text-center">sol, día</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">12</td><td class="p-3 text-center text-xl">🌙</td><td class="p-3 text-center text-2xl font-bold text-red-800">月</td><td class="p-3 text-center">ゲツ, ガツ</td><td class="p-3 text-center">つき</td><td class="p-3 text-center">luna, mes</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">13</td><td class="p-3 text-center text-xl">🔥</td><td class="p-3 text-center text-2xl font-bold text-red-800">火</td><td class="p-3 text-center">カ</td><td class="p-3 text-center">ひ</td><td class="p-3 text-center">fuego</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">14</td><td class="p-3 text-center text-xl">💧</td><td class="p-3 text-center text-2xl font-bold text-red-800">水</td><td class="p-3 text-center">スイ</td><td class="p-3 text-center">みず</td><td class="p-3 text-center">agua</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">15</td><td class="p-3 text-center text-xl">🌳</td><td class="p-3 text-center text-2xl font-bold text-red-800">木</td><td class="p-3 text-center">モク, ボク</td><td class="p-3 text-center">き</td><td class="p-3 text-center">árbol</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">16</td><td class="p-3 text-center text-xl">🥇</td><td class="p-3 text-center text-2xl font-bold text-red-800">金</td><td class="p-3 text-center">キン, コン</td><td class="p-3 text-center">かね</td><td class="p-3 text-center">oro, dinero</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">17</td><td class="p-3 text-center text-xl">🌍</td><td class="p-3 text-center text-2xl font-bold text-red-800">土</td><td class="p-3 text-center">ド, ト</td><td class="p-3 text-center">つち</td><td class="p-3 text-center">tierra</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">18</td><td class="p-3 text-center text-xl">🌌</td><td class="p-3 text-center text-2xl font-bold text-red-800">空</td><td class="p-3 text-center">クウ</td><td class="p-3 text-center">そら, から</td><td class="p-3 text-center">cielo, vacío</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">19</td><td class="p-3 text-center text-xl">⛰️</td><td class="p-3 text-center text-2xl font-bold text-red-800">山</td><td class="p-3 text-center">サン</td><td class="p-3 text-center">やま</td><td class="p-3 text-center">montaña</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">20</td><td class="p-3 text-center text-xl">🌊</td><td class="p-3 text-center text-2xl font-bold text-red-800">川</td><td class="p-3 text-center">セン</td><td class="p-3 text-center">かわ</td><td class="p-3 text-center">río</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">21</td><td class="p-3 text-center text-xl">🪨</td><td class="p-3 text-center text-2xl font-bold text-red-800">石</td><td class="p-3 text-center">セキ, コク</td><td class="p-3 text-center">いし</td><td class="p-3 text-center">piedra</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">22</td><td class="p-3 text-center text-xl">🌸</td><td class="p-3 text-center text-2xl font-bold text-red-800">花</td><td class="p-3 text-center">カ</td><td class="p-3 text-center">はな</td><td class="p-3 text-center">flor</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">23</td><td class="p-3 text-center text-xl">🌱</td><td class="p-3 text-center text-2xl font-bold text-red-800">草</td><td class="p-3 text-center">ソウ</td><td class="p-3 text-center">くさ</td><td class="p-3 text-center">hierba</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">24</td><td class="p-3 text-center text-xl">🎋</td><td class="p-3 text-center text-2xl font-bold text-red-800">竹</td><td class="p-3 text-center">チク</td><td class="p-3 text-center">たけ</td><td class="p-3 text-center">bambú</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">25</td><td class="p-3 text-center text-xl">🌧️</td><td class="p-3 text-center text-2xl font-bold text-red-800">雨</td><td class="p-3 text-center">ウ</td><td class="p-3 text-center">あめ</td><td class="p-3 text-center">lluvia</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">26</td><td class="p-3 text-center text-xl">👑</td><td class="p-3 text-center text-2xl font-bold text-red-800">王</td><td class="p-3 text-center">オウ</td><td class="p-3 text-center">-</td><td class="p-3 text-center">rey</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">27</td><td class="p-3 text-center text-xl">💎</td><td class="p-3 text-center text-2xl font-bold text-red-800">玉</td><td class="p-3 text-center">ギョク</td><td class="p-3 text-center">たま</td><td class="p-3 text-center">joya, esfera</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">28</td><td class="p-3 text-center text-xl">👤</td><td class="p-3 text-center text-2xl font-bold text-red-800">人</td><td class="p-3 text-center">ジン, ニン</td><td class="p-3 text-center">ひと</td><td class="p-3 text-center">persona</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">29</td><td class="p-3 text-center text-xl">👶</td><td class="p-3 text-center text-2xl font-bold text-red-800">子</td><td class="p-3 text-center">シ, ス</td><td class="p-3 text-center">こ</td><td class="p-3 text-center">niño</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">30</td><td class="p-3 text-center text-xl">👩</td><td class="p-3 text-center text-2xl font-bold text-red-800">女</td><td class="p-3 text-center">ジョ</td><td class="p-3 text-center">おんな</td><td class="p-3 text-center">mujer</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">31</td><td class="p-3 text-center text-xl">👨</td><td class="p-3 text-center text-2xl font-bold text-red-800">男</td><td class="p-3 text-center">ダン, ナン</td><td class="p-3 text-center">おとこ</td><td class="p-3 text-center">hombre</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">32</td><td class="p-3 text-center text-xl">👄</td><td class="p-3 text-center text-2xl font-bold text-red-800">口</td><td class="p-3 text-center">コウ, ク</td><td class="p-3 text-center">くち</td><td class="p-3 text-center">boca</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">33</td><td class="p-3 text-center text-xl">👁️</td><td class="p-3 text-center text-2xl font-bold text-red-800">目</td><td class="p-3 text-center">モク</td><td class="p-3 text-center">め</td><td class="p-3 text-center">ojo</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">34</td><td class="p-3 text-center text-xl">👂</td><td class="p-3 text-center text-2xl font-bold text-red-800">耳</td><td class="p-3 text-center">ジ</td><td class="p-3 text-center">みみ</td><td class="p-3 text-center">oído</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">35</td><td class="p-3 text-center text-xl">✋</td><td class="p-3 text-center text-2xl font-bold text-red-800">手</td><td class="p-3 text-center">シュ</td><td class="p-3 text-center">て</td><td class="p-3 text-center">mano</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">36</td><td class="p-3 text-center text-xl">🦶</td><td class="p-3 text-center text-2xl font-bold text-red-800">足</td><td class="p-3 text-center">ソク</td><td class="p-3 text-center">あし</td><td class="p-3 text-center">pie, pierna</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">37</td><td class="p-3 text-center text-xl">👀</td><td class="p-3 text-center text-2xl font-bold text-red-800">見</td><td class="p-3 text-center">ケン</td><td class="p-3 text-center">み(る)</td><td class="p-3 text-center">ver</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">38</td><td class="p-3 text-center text-xl">🔊</td><td class="p-3 text-center text-2xl font-bold text-red-800">音</td><td class="p-3 text-center">オン</td><td class="p-3 text-center">おと</td><td class="p-3 text-center">sonido</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">39</td><td class="p-3 text-center text-xl">💪</td><td class="p-3 text-center text-2xl font-bold text-red-800">力</td><td class="p-3 text-center">リョク, リキ</td><td class="p-3 text-center">ちから</td><td class="p-3 text-center">fuerza</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">40</td><td class="p-3 text-center text-xl">📚</td><td class="p-3 text-center text-2xl font-bold text-red-800">学</td><td class="p-3 text-center">ガク</td><td class="p-3 text-center">まな(ぶ)</td><td class="p-3 text-center">aprender</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">41</td><td class="p-3 text-center text-xl">🏫</td><td class="p-3 text-center text-2xl font-bold text-red-800">校</td><td class="p-3 text-center">コウ</td><td class="p-3 text-center">-</td><td class="p-3 text-center">escuela</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">42</td><td class="p-3 text-center text-xl">📖</td><td class="p-3 text-center text-2xl font-bold text-red-800">本</td><td class="p-3 text-center">ホン</td><td class="p-3 text-center">もと</td><td class="p-3 text-center">libro, origen</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">43</td><td class="p-3 text-center text-xl">🔤</td><td class="p-3 text-center text-2xl font-bold text-red-800">字</td><td class="p-3 text-center">ジ</td><td class="p-3 text-center">あざ</td><td class="p-3 text-center">carácter, letra</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">44</td><td class="p-3 text-center text-xl">📝</td><td class="p-3 text-center text-2xl font-bold text-red-800">文</td><td class="p-3 text-center">ブン, モン</td><td class="p-3 text-center">ふみ</td><td class="p-3 text-center">escritura, oración</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">45</td><td class="p-3 text-center text-xl">🔍</td><td class="p-3 text-center text-2xl font-bold text-red-800">大</td><td class="p-3 text-center">ダイ, タイ</td><td class="p-3 text-center">おお(きい)</td><td class="p-3 text-center">grande</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">46</td><td class="p-3 text-center text-xl">🔬</td><td class="p-3 text-center text-2xl font-bold text-red-800">小</td><td class="p-3 text-center">ショウ</td><td class="p-3 text-center">ちい(さい)</td><td class="p-3 text-center">pequeño</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">47</td><td class="p-3 text-center text-xl">🎯</td><td class="p-3 text-center text-2xl font-bold text-red-800">中</td><td class="p-3 text-center">チュウ</td><td class="p-3 text-center">なか</td><td class="p-3 text-center">dentro, medio</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">48</td><td class="p-3 text-center text-xl">⬆️</td><td class="p-3 text-center text-2xl font-bold text-red-800">上</td><td class="p-3 text-center">ジョウ</td><td class="p-3 text-center">うえ, あ(がる)</td><td class="p-3 text-center">arriba</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">49</td><td class="p-3 text-center text-xl">⬇️</td><td class="p-3 text-center text-2xl font-bold text-red-800">下</td><td class="p-3 text-center">カ, ゲ</td><td class="p-3 text-center">した, さ(がる)</td><td class="p-3 text-center">abajo</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">50</td><td class="p-3 text-center text-xl">⬅️</td><td class="p-3 text-center text-2xl font-bold text-red-800">左</td><td class="p-3 text-center">サ</td><td class="p-3 text-center">ひだり</td><td class="p-3 text-center">izquierda</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">51</td><td class="p-3 text-center text-xl">➡️</td><td class="p-3 text-center text-2xl font-bold text-red-800">右</td><td class="p-3 text-center">ウ, ユウ</td><td class="p-3 text-center">みぎ</td><td class="p-3 text-center">derecha</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">52</td><td class="p-3 text-center text-xl">🚪</td><td class="p-3 text-center text-2xl font-bold text-red-800">入</td><td class="p-3 text-center">ニュウ</td><td class="p-3 text-center">はい(る), い(れる)</td><td class="p-3 text-center">entrar</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">53</td><td class="p-3 text-center text-xl">🚪</td><td class="p-3 text-center text-2xl font-bold text-red-800">出</td><td class="p-3 text-center">シュツ</td><td class="p-3 text-center">で(る), だ(す)</td><td class="p-3 text-center">salir</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">54</td><td class="p-3 text-center text-xl">🧍</td><td class="p-3 text-center text-2xl font-bold text-red-800">立</td><td class="p-3 text-center">リツ</td><td class="p-3 text-center">た(つ)</td><td class="p-3 text-center">levantarse</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">55</td><td class="p-3 text-center text-xl">😴</td><td class="p-3 text-center text-2xl font-bold text-red-800">休</td><td class="p-3 text-center">キュウ</td><td class="p-3 text-center">やす(む)</td><td class="p-3 text-center">descansar</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">56</td><td class="p-3 text-center text-xl">👆</td><td class="p-3 text-center text-2xl font-bold text-red-800">先</td><td class="p-3 text-center">セン</td><td class="p-3 text-center">さき</td><td class="p-3 text-center">antes, futuro</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">57</td><td class="p-3 text-center text-xl">🌱</td><td class="p-3 text-center text-2xl font-bold text-red-800">生</td><td class="p-3 text-center">セイ, ショウ</td><td class="p-3 text-center">い(きる), う(まれる)</td><td class="p-3 text-center">vida, nacer</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">58</td><td class="p-3 text-center text-xl">📛</td><td class="p-3 text-center text-2xl font-bold text-red-800">名</td><td class="p-3 text-center">メイ, ミョウ</td><td class="p-3 text-center">な</td><td class="p-3 text-center">nombre</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">59</td><td class="p-3 text-center text-xl">📅</td><td class="p-3 text-center text-2xl font-bold text-red-800">年</td><td class="p-3 text-center">ネン</td><td class="p-3 text-center">とし</td><td class="p-3 text-center">año</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">60</td><td class="p-3 text-center text-xl">⏰</td><td class="p-3 text-center text-2xl font-bold text-red-800">時</td><td class="p-3 text-center">ジ</td><td class="p-3 text-center">とき</td><td class="p-3 text-center">tiempo, hora</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">61</td><td class="p-3 text-center text-xl">✅</td><td class="p-3 text-center text-2xl font-bold text-red-800">正</td><td class="p-3 text-center">セイ, ショウ</td><td class="p-3 text-center">ただ(しい)</td><td class="p-3 text-center">correcto</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">62</td><td class="p-3 text-center text-xl">⭕</td><td class="p-3 text-center text-2xl font-bold text-red-800">円</td><td class="p-3 text-center">エン</td><td class="p-3 text-center">まる</td><td class="p-3 text-center">círculo, yen</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">63</td><td class="p-3 text-center text-xl">💯</td><td class="p-3 text-center text-2xl font-bold text-red-800">百</td><td class="p-3 text-center">ヒャク</td><td class="p-3 text-center">-</td><td class="p-3 text-center">cien</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">64</td><td class="p-3 text-center text-xl">🔢</td><td class="p-3 text-center text-2xl font-bold text-red-800">千</td><td class="p-3 text-center">セン</td><td class="p-3 text-center">ち</td><td class="p-3 text-center">mil</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">65</td><td class="p-3 text-center text-xl">🚗</td><td class="p-3 text-center text-2xl font-bold text-red-800">車</td><td class="p-3 text-center">シャ</td><td class="p-3 text-center">くるま</td><td class="p-3 text-center">vehículo, carro</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">66</td><td class="p-3 text-center text-xl">🧵</td><td class="p-3 text-center text-2xl font-bold text-red-800">糸</td><td class="p-3 text-center">シ</td><td class="p-3 text-center">いと</td><td class="p-3 text-center">hilo</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">67</td><td class="p-3 text-center text-xl">🐚</td><td class="p-3 text-center text-2xl font-bold text-red-800">貝</td><td class="p-3 text-center">バイ</td><td class="p-3 text-center">かい</td><td class="p-3 text-center">concha</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">68</td><td class="p-3 text-center text-xl">🐕</td><td class="p-3 text-center text-2xl font-bold text-red-800">犬</td><td class="p-3 text-center">ケン</td><td class="p-3 text-center">いぬ</td><td class="p-3 text-center">perro</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">69</td><td class="p-3 text-center text-xl">🐎</td><td class="p-3 text-center text-2xl font-bold text-red-800">馬</td><td class="p-3 text-center">バ</td><td class="p-3 text-center">うま</td><td class="p-3 text-center">caballo</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">70</td><td class="p-3 text-center text-xl">🐟</td><td class="p-3 text-center text-2xl font-bold text-red-800">魚</td><td class="p-3 text-center">ギョ</td><td class="p-3 text-center">さかな</td><td class="p-3 text-center">pez</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">71</td><td class="p-3 text-center text-xl">🐦</td><td class="p-3 text-center text-2xl font-bold text-red-800">鳥</td><td class="p-3 text-center">チョウ</td><td class="p-3 text-center">とり</td><td class="p-3 text-center">ave</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">72</td><td class="p-3 text-center text-xl">🐛</td><td class="p-3 text-center text-2xl font-bold text-red-800">虫</td><td class="p-3 text-center">チュウ</td><td class="p-3 text-center">むし</td><td class="p-3 text-center">insecto</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">73</td><td class="p-3 text-center text-xl">🌱</td><td class="p-3 text-center text-2xl font-bold text-red-800">草</td><td class="p-3 text-center">ソウ</td><td class="p-3 text-center">くさ</td><td class="p-3 text-center">hierba</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">74</td><td class="p-3 text-center text-xl">🔥</td><td class="p-3 text-center text-2xl font-bold text-red-800">火</td><td class="p-3 text-center">カ</td><td class="p-3 text-center">ひ</td><td class="p-3 text-center">fuego</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">75</td><td class="p-3 text-center text-xl">💧</td><td class="p-3 text-center text-2xl font-bold text-red-800">水</td><td class="p-3 text-center">スイ</td><td class="p-3 text-center">みず</td><td class="p-3 text-center">agua</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">76</td><td class="p-3 text-center text-xl">🌳</td><td class="p-3 text-center text-2xl font-bold text-red-800">木</td><td class="p-3 text-center">ボク, モク</td><td class="p-3 text-center">き</td><td class="p-3 text-center">árbol</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">77</td><td class="p-3 text-center text-xl">🌙</td><td class="p-3 text-center text-2xl font-bold text-red-800">月</td><td class="p-3 text-center">ゲツ</td><td class="p-3 text-center">つき</td><td class="p-3 text-center">luna</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">78</td><td class="p-3 text-center text-xl">☀️</td><td class="p-3 text-center text-2xl font-bold text-red-800">日</td><td class="p-3 text-center">ニチ</td><td class="p-3 text-center">ひ</td><td class="p-3 text-center">día, sol</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">79</td><td class="p-3 text-center text-xl">👤</td><td class="p-3 text-center text-2xl font-bold text-red-800">人</td><td class="p-3 text-center">ジン</td><td class="p-3 text-center">ひと</td><td class="p-3 text-center">persona</td></tr>
+                <tr class="border-b hover:bg-red-50"><td class="p-3 text-center">80</td><td class="p-3 text-center text-xl">👶</td><td class="p-3 text-center text-2xl font-bold text-red-800">子</td><td class="p-3 text-center">シ</td><td class="p-3 text-center">こ</td><td class="p-3 text-center">niño</td></tr>
               </tbody>
             </table>
           </div>
@@ -309,8 +738,8 @@
             <div class="flex items-start gap-3 p-3 bg-white rounded-lg">
               <span class="text-2xl">🧠</span>
               <div>
-                <h4 class="font-bold mb-1">Usa mnemónicos</h4>
-                <p class="text-sm text-gray-600">"日" parece un sol con rayos horizontales</p>
+                <h4 class="font-bold mb-1">Usa mnemónicos visuales</h4>
+                <p class="text-sm text-gray-600">Los emojis te ayudan a recordar el significado</p>
               </div>
             </div>
           </div>
@@ -351,8 +780,8 @@
     <p>© 2025 Nihongo no Sekai – Todos los derechos reservados</p>
   </footer>
 
-  <script src="../../assets/js/navigation.js"></script>
-  <script src="../../assets/js/main.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/main.js"></script>
   <script>
     // Funcionalidad de búsqueda
     const searchInput = document.getElementById('searchInput');
